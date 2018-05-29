@@ -32,7 +32,9 @@ ActiveRecord::Schema.define(version: 20180529035925) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
+    t.string   "slug"
     t.text     "body"
+    t.string   "image_url"
     t.integer  "user_id"
     t.integer  "category_id"
     t.datetime "created_at",  null: false

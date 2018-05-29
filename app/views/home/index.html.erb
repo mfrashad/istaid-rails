@@ -1,529 +1,872 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html class="no-js" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Charity HTML Template</title>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Philosophy</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400%7CSource+Sans+Pro:700" rel="stylesheet">
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
 
-	<!-- Owl Carousel -->
-	<link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
-	<link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
 
-	<!-- Font Awesome Icon -->
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-
-	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
-
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 </head>
 
-<body>
-	<!-- HEADER -->
-	<header id="home">
-		<!-- NAVGATION -->
-		<nav id="main-navbar">
-			<div class="container">
-				<div class="navbar-header">
-					<!-- Logo -->
-					<div class="navbar-brand">
-						<a class="logo" href="index.html"><img src="img/logo.png" alt="logo"></a>
-					</div>
-					<!-- Logo -->
+<body id="top">
 
-					<!-- Mobile toggle -->
-					<button class="navbar-toggle-btn">
-							<i class="fa fa-bars"></i>
-						</button>
-					<!-- Mobile toggle -->
+<!-- pageheader================================================== -->
+    <section class="s-pageheader s-pageheader--home">
 
-					<!-- Mobile Search toggle -->
-					<button class="search-toggle-btn">
-							<i class="fa fa-search"></i>
-						</button>
-					<!-- Mobile Search toggle -->
-				</div>
+        <header class="header">
+            <div class="header__content row">
 
-				<!-- Search -->
-				<div class="navbar-search">
-					<button class="search-btn"><i class="fa fa-search"></i></button>
-					<div class="search-form">
-						<form>
-							<input class="input" type="text" name="search" placeholder="Search">
-						</form>
-					</div>
-				</div>
-				<!-- Search -->
+                <div class="header__logo">
+                    <a class="logo" href="index.html">
+                        <img src="images/logo.svg" alt="Homepage">
+                    </a>
+                </div> <!-- end header__logo -->
 
-				<!-- Nav menu -->
-				<ul class="navbar-menu nav navbar-nav navbar-right">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li class="has-dropdown"><a href="#">Causes</a>
-						<ul class="dropdown">
-							<li><a href="single-cause.html">Single Cause</a></li>
-						</ul>
-					</li>
-					<li class="has-dropdown"><a href="#">Events</a>
-						<ul class="dropdown">
-							<li><a href="single-event.html">Single event</a></li>
-						</ul>
-					</li>
-					<li class="has-dropdown"><a href="#">Blog</a>
-						<ul class="dropdown">
-							<li><a href="blog.html">Blog Page</a></li>
-							<li><a href="single-blog.html">Single Blog</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-				<!-- Nav menu -->
-			</div>
-		</nav>
-		<!-- /NAVGATION -->
+                <ul class="header__social">
+                    <li>
+                        <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                    </li>
+                </ul> <!-- end header__social -->
 
-		<!-- HOME OWL -->
-		<div id="home-owl" class="owl-carousel owl-theme">
-			<!-- home item -->
-			<div class="home-item">
-				<!-- section background -->
-				<div class="section-bg" style="background-image: url(./img/background-1.jpg);"></div>
-				<!-- /section background -->
+                <a class="header__search-trigger" href="#0"></a>
 
-				<!-- home content -->
-				<div class="home">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-8">
-								<div class="home-content">
-									<h1>Save The Children</h1>
-									<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-									<a href="#" class="primary-button">View Causes</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /home content -->
-			</div>
-			<!-- /home item -->
+                <div class="header__search">
 
-			<!-- home item -->
-			<div class="home-item">
-				<!-- Background Image -->
-				<div class="section-bg" style="background-image: url(./img/background-2.jpg);"></div>
-				<!-- /Background Image -->
+                    <form role="search" method="get" class="header__search-form" action="#">
+                        <label>
+                            <span class="hide-content">Search for:</span>
+                            <input type="search" class="search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
+                        </label>
+                        <input type="submit" class="search-submit" value="Search">
+                    </form>
+        
+                    <a href="#0" title="Close Search" class="header__overlay-close">Close</a>
 
-				<!-- home content -->
-				<div class="home">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-8">
-								<div class="home-content">
-									<h1>Become A Volunteer</h1>
-									<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-									<a href="#" class="primary-button">Join Us Now!</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /home content -->
-			</div>
-			<!-- /home item -->
-		</div>
-		<!-- /HOME OWL -->
-	</header>
-	<!-- /HEADER -->
+                </div>  <!-- end header__search -->
 
-    <!-- BLOG -->
-	<div id="blog" class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!-- section title -->
-				<div class="col-md-8 col-md-offset-2">
-					<div class="section-title text-center">
-						<h2 class="title">Our Blog</h2>
-						<p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-				<!-- /section title -->
 
-				<!-- blog -->
-				<div class="col-md-4">
-					<div class="article">
-						<div class="article-img">
-							<a href="single-blog.html">
-								<img src="./img/post-1.jpg" alt="">
-							</a>
-						</div>
-						<div class="article-content">
-							<h3 class="article-title"><a href="single-blog.html">Possit nostro aeterno eu vis, ut cum quem reque</a></h3>
-							<ul class="article-meta">
-								<li>12 November 2018</li>
-								<li>By John doe</li>
-								<li>0 Comments</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<!-- /blog -->
+                <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
 
-				<!-- blog -->
-				<div class="col-md-4">
-					<div class="article">
-						<div class="article-img">
-							<a href="single-blog.html">
-								<img src="./img/post-2.jpg" alt="">
-							</a>
-						</div>
-						<div class="article-content">
-							<h3 class="article-title"><a href="single-blog.html">Vix fuisset tibique facilisis cu. Justo accusata ius at</a></h3>
-							<ul class="article-meta">
-								<li>12 November 2018</li>
-								<li>By John doe</li>
-								<li>0 Comments</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<!-- /blog -->
+                <nav class="header__nav-wrap">
 
-				<!-- blog -->
-				<div class="col-md-4">
-					<div class="article">
-						<div class="article-img">
-							<a href="single-blog.html">
-								<img src="./img/post-3.jpg" alt="">
-							</a>
-						</div>
-						<div class="article-content">
-							<h3 class="article-title"><a href="single-blog.html">Possit nostro aeterno eu vis, ut cum quem reque</a></h3>
-							<ul class="article-meta">
-								<li>12 November 2018</li>
-								<li>By John doe</li>
-								<li>0 Comments</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<!-- /blog -->
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /BLOG -->
+                    <h2 class="header__nav-heading h6">Site Navigation</h2>
 
-	<!-- EVENTS -->
-	<div id="events" class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!-- section title -->
-				<div class="col-md-8 col-md-offset-2">
-					<div class="section-title text-center">
-						<h2 class="title">Upcoming Events</h2>
-						<p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-				<!-- /section title -->
+                    <ul class="header__nav">
+                        <li class="current"><a href="index.html" title="">Home</a></li>
+                        <li class="has-children">
+                            <a href="#0" title="">Categories</a>
+                            <ul class="sub-menu">
+                            <li><a href="category.html">Lifestyle</a></li>
+                            <li><a href="category.html">Health</a></li>
+                            <li><a href="category.html">Family</a></li>
+                            <li><a href="category.html">Management</a></li>
+                            <li><a href="category.html">Travel</a></li>
+                            <li><a href="category.html">Work</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-children">
+                            <a href="#0" title="">Blog</a>
+                            <ul class="sub-menu">
+                            <li><a href="single-video.html">Video Post</a></li>
+                            <li><a href="single-audio.html">Audio Post</a></li>
+                            <li><a href="single-gallery.html">Gallery Post</a></li>
+                            <li><a href="single-standard.html">Standard Post</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="style-guide.html" title="">Styles</a></li>
+                        <li><a href="about.html" title="">About</a></li>
+                        <li><a href="contact.html" title="">Contact</a></li>
+                    </ul> <!-- end header__nav -->
 
-				<!-- event -->
-				<div class="col-md-6">
-					<div class="event">
-						<div class="event-img">
-							<a href="single-event.html">
-								<img src="./img/event-1.jpg" alt="">
-							</a>
-						</div>
-						<div class="event-content">
-							<h3><a href="single-event.html">Possit nostro aeterno eu vis, ut cum quem reque</a></h3>
-							<ul class="event-meta">
-								<li><i class="fa fa-clock-o"></i> 24 October, 2018 | 8:00AM - 11:00PM</li>
-								<li><i class="fa fa-map-marker"></i> 2736 Hinkle Deegan Lake Road</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<!-- /event -->
+                    <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
 
-				<!-- event -->
-				<div class="col-md-6">
-					<div class="event">
-						<div class="event-img">
-							<a href="single-event.html">
-								<img src="./img/event-2.jpg" alt="">
-							</a>
-						</div>
-						<div class="event-content">
-							<h3><a href="single-event.html">Vix fuisset tibique facilisis cu. Justo accusata ius at</a></h3>
-							<ul class="event-meta">
-								<li><i class="fa fa-clock-o"></i> 24 October, 2018 | 8:00AM - 11:00PM</li>
-								<li><i class="fa fa-map-marker"></i> 2736 Hinkle Deegan Lake Road</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<!-- /event -->
+                </nav> <!-- end header__nav-wrap -->
 
-				<div class="clearfix visible-md visible-lg"></div>
+            </div> <!-- header-content -->
+        </header> <!-- header -->
 
-				<!-- event -->
-				<div class="col-md-6">
-					<div class="event">
-						<div class="event-img">
-							<a href="single-event.html">
-								<img src="./img/event-3.jpg" alt="">
-							</a>
-						</div>
-						<div class="event-content">
-							<h3><a href="single-event.html">Possit nostro aeterno eu vis, ut cum quem reque</a></h3>
-							<ul class="event-meta">
-								<li><i class="fa fa-clock-o"></i> 24 October, 2018 | 8:00AM - 11:00PM</li>
-								<li><i class="fa fa-map-marker"></i> 2736 Hinkle Deegan Lake Road</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<!-- /event -->
 
-				<!-- event -->
-				<div class="col-md-6">
-					<div class="event">
-						<div class="event-img">
-							<a href="single-event.html">
-								<img src="./img/event-4.jpg" alt="">
-							</a>
-						</div>
-						<div class="event-content">
-							<h3><a href="single-event.html">Vix fuisset tibique facilisis cu. Justo accusata ius at</a></h3>
-							<ul class="event-meta">
-								<li><i class="fa fa-clock-o"></i> 24 October, 2018 | 8:00AM - 11:00PM</li>
-								<li><i class="fa fa-map-marker"></i> 2736 Hinkle Deegan Lake Road</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<!-- /event -->
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /EVENTS -->
+        <div class="pageheader-content row">
+            <div class="col-full">
 
-	<!-- TESTIMONIAL -->
-	<div id="testimonial" class="section">
-		<!-- background section -->
-		<div class="section-bg" style="background-image: url(./img/background-2.jpg);" data-stellar-background-ratio="0.5"></div>
-		<!-- /background section -->
+                <div class="featured">
 
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!-- Testimonial owl -->
-				<div class="col-md-12">
-					<div id="testimonial-owl" class="owl-carousel owl-theme">
-						<!-- testimonial -->
-						<div class="testimonial">
-							<div class="testimonial-meta">
-								<div class="testimonial-img">
-									<img src="./img/avatar-1.jpg" alt="">
-								</div>
-								<h3>John Doe</h3>
-								<span>Volunteer</span>
-							</div>
-							<div class="testimonial-quote">
-								<blockquote>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</blockquote>
-							</div>
-						</div>
-						<!-- /testimonial -->
+                    <div class="featured__column featured__column--big">
+                        <div class="entry" style="background-image:url('images/thumbs/featured/featured-guitarman.jpg');">
+                            
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0">Music</a></span>
 
-						<!-- testimonial -->
-						<div class="testimonial">
-							<div class="testimonial-meta">
-								<div class="testimonial-img">
-									<img src="./img/avatar-2.jpg" alt="">
-								</div>
-								<h3>John Doe</h3>
-								<span>Volunteer</span>
-							</div>
-							<div class="testimonial-quote">
-								<blockquote>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</blockquote>
-							</div>
-						</div>
-						<!-- /testimonial -->
+                                <h1><a href="#0" title="">What Your Music Preference Says About You and Your Personality.</a></h1>
 
-						<!-- testimonial -->
-						<div class="testimonial">
-							<div class="testimonial-meta">
-								<div class="testimonial-img">
-									<img src="./img/avatar-1.jpg" alt="">
-								</div>
-								<h3>John Doe</h3>
-								<span>Volunteer</span>
-							</div>
-							<div class="testimonial-quote">
-								<blockquote>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</blockquote>
-							</div>
-						</div>
-						<!-- /testimonial -->
+                                <div class="entry__info">
+                                    <a href="#0" class="entry__profile-pic">
+                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+                                    </a>
 
-						<!-- testimonial -->
-						<div class="testimonial">
-							<div class="testimonial-meta">
-								<div class="testimonial-img">
-									<img src="./img/avatar-2.jpg" alt="">
-								</div>
-								<h3>John Doe</h3>
-								<span>Volunteer</span>
-							</div>
-							<div class="testimonial-quote">
-								<blockquote>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</blockquote>
-							</div>
-						</div>
-						<!-- /testimonial -->
-					</div>
-				</div>
-				<!-- /Testimonial owl -->
-			</div>
-			<!-- /Row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /TESTIMONIAL -->
+                                    <ul class="entry__meta">
+                                        <li><a href="#0">John Doe</a></li>
+                                        <li>December 29, 2017</li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+                            
+                        </div> <!-- end entry -->
+                    </div> <!-- end featured__big -->
 
-	
+                    <div class="featured__column featured__column--small">
 
-	<!-- FOOTER -->
-	<footer id="footer" class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!-- footer contact -->
-				<div class="col-md-4">
-					<div class="footer">
-						<div class="footer-logo">
-							<a class="logo" href="#"><img src="./img/logo.png" alt=""></a>
-						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<ul class="footer-contact">
-							<li><i class="fa fa-map-marker"></i> 2736 Hinkle Deegan Lake Road</li>
-							<li><i class="fa fa-phone"></i> 607-279-9246</li>
-							<li><i class="fa fa-envelope"></i> <a href="#">Charity@email.com</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /footer contact -->
+                        <div class="entry" style="background-image:url('images/thumbs/featured/featured-watch.jpg');">
+                            
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0">Management</a></span>
 
-				<!-- footer galery -->
-				<div class="col-md-4">
-					<div class="footer">
-						<h3 class="footer-title">Galery</h3>
-						<ul class="footer-galery">
-							<li><a href="#"><img src="./img/galery-1.jpg" alt=""></a></li>
-							<li><a href="#"><img src="./img/galery-2.jpg" alt=""></a></li>
-							<li><a href="#"><img src="./img/galery-3.jpg" alt=""></a></li>
-							<li><a href="#"><img src="./img/galery-4.jpg" alt=""></a></li>
-							<li><a href="#"><img src="./img/galery-5.jpg" alt=""></a></li>
-							<li><a href="#"><img src="./img/galery-6.jpg" alt=""></a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /footer galery -->
+                                <h1><a href="#0" title="">The Pomodoro Technique Really Works.</a></h1>
 
-				<!-- footer newsletter -->
-				<div class="col-md-4">
-					<div class="footer">
-						<h3 class="footer-title">Newsletter</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-						<form class="footer-newsletter">
-							<input class="input" type="email" placeholder="Enter your email">
-							<button class="primary-button">Subscribe</button>
-						</form>
-						<ul class="footer-social">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- /footer newsletter -->
-			</div>
-			<!-- /row -->
+                                <div class="entry__info">
+                                    <a href="#0" class="entry__profile-pic">
+                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+                                    </a>
 
-			<!-- footer copyright & nav -->
-			<div id="footer-bottom" class="row">
-				<div class="col-md-6 col-md-push-6">
-					<ul class="footer-nav">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Causes</a></li>
-						<li><a href="#">Events</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</div>
+                                    <ul class="entry__meta">
+                                        <li><a href="#0">John Doe</a></li>
+                                        <li>December 27, 2017</li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+                          
+                        </div> <!-- end entry -->
 
-				<div class="col-md-6 col-md-pull-6">
-					<div class="footer-copyright">
-						<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
-					</div>
-				</div>
-			</div>
-			<!-- /footer copyright & nav -->
-		</div>
-		<!-- /container -->
-	</footer>
-	<!-- /FOOTER -->
+                        <div class="entry" style="background-image:url('images/thumbs/featured/featured-beetle.jpg');">
 
-	<!-- jQuery Plugins -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/main.js"></script>
+                            <div class="entry__content">
+                                <span class="entry__category"><a href="#0">LifeStyle</a></span>
+
+                                <h1><a href="#0" title="">Throwback To The Good Old Days.</a></h1>
+
+                                <div class="entry__info">
+                                    <a href="#0" class="entry__profile-pic">
+                                        <img class="avatar" src="images/avatars/user-03.jpg" alt="">
+                                    </a>
+
+                                    <ul class="entry__meta">
+                                        <li><a href="#0">John Doe</a></li>
+                                        <li>December 21, 2017</li>
+                                    </ul>
+                                </div>
+                            </div> <!-- end entry__content -->
+
+                        </div> <!-- end entry -->
+
+                    </div> <!-- end featured__small -->
+                </div> <!-- end featured -->
+
+            </div> <!-- end col-full -->
+        </div> <!-- end pageheader-content row -->
+
+    </section> 
+<!-- end s-pageheader -->
+
+
+<!-- s-content================================================== -->
+    <section class="s-content">
+        
+        <div class="row masonry-wrap">
+            <div class="masonry">
+
+                <div class="grid-sizer"></div>
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                        
+                    <div class="entry__thumb">
+                        <a href="single-standard.html" class="entry__thumb-link">
+                            <img src="images/thumbs/masonry/lamp-400.jpg" 
+                                    srcset="images/thumbs/masonry/lamp-400.jpg 1x, images/thumbs/masonry/lamp-800.jpg 2x" alt="">
+                        </a>
+                    </div>
+    
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            
+                            <div class="entry__date">
+                                <a href="single-standard.html">December 15, 2017</a>
+                            </div>
+                            <h1 class="entry__title"><a href="single-standard.html">Just a Standard Format Post.</a></h1>
+                            
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="category.html">Design</a> 
+                                <a href="category.html">Photography</a>
+                            </span>
+                        </div>
+                    </div>
+    
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-quote" data-aos="fade-up">
+                        
+                    <div class="entry__thumb">
+                        <blockquote>
+                                <p>Good design is making something intelligible and memorable. Great design is making something memorable and meaningful.</p>
+    
+                                <cite>Dieter Rams</cite>
+                        </blockquote>
+                    </div>   
+    
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                        
+                    <div class="entry__thumb">
+                        <a href="single-standard.html" class="entry__thumb-link">
+                            <img src="images/thumbs/masonry/tulips-400.jpg" 
+                                    srcset="images/thumbs/masonry/tulips-400.jpg 1x, images/thumbs/masonry/tulips-800.jpg 2x" alt="">
+                        </a>
+                    </div>
+    
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            
+                            <div class="entry__date">
+                                <a href="single-standard.html">December 15, 2017</a>
+                            </div>
+                            <h1 class="entry__title"><a href="single-standard.html">10 Interesting Facts About Caffeine.</a></h1>
+                            
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="category.html">Health</a>
+                            </span>
+                        </div>
+                    </div>
+    
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                    <div class="entry__thumb">
+                        <a href="single-standard.html" class="entry__thumb-link">
+                            <img src="images/thumbs/masonry/cookies-400.jpg" 
+                                    srcset="images/thumbs/masonry/cookies-400.jpg 1x, images/thumbs/masonry/cookies-800.jpg 2x" alt="">
+                        </a>
+                    </div>
+    
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            
+                            <div class="entry__date">
+                                <a href="single-standard.html">December 10, 2017</a>
+                            </div>
+                            <h1 class="entry__title"><a href="single-standard.html">No Sugar Oatmeal Cookies.</a></h1>
+                            
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="category.html">Cooking</a>
+                                <a href="category.html">Health</a>
+                            </span>
+                        </div>
+                    </div>
+    
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                    <div class="entry__thumb">
+                        <a href="single-standard.html" class="entry__thumb-link">
+                            <img src="images/thumbs/masonry/wheel-400.jpg" 
+                                    srcset="images/thumbs/masonry/wheel-400.jpg 1x, images/thumbs/masonry/wheel-800.jpg 2x" alt="">
+                        </a>
+                    </div>
+    
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            
+                            <div class="entry__date">
+                                <a href="single-standard.html">December 10, 2017</a>
+                            </div>
+                            <h1 class="entry__title"><a href="single-standard.html">Visiting Theme Parks Improves Your Health.</a></h1>
+                            
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="#">Health</a> 
+                                <a href="#">Lifestyle</a>
+                            </span>
+                        </div>
+                    </div>
+    
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-video" data-aos="fade-up">
+                        
+                    <div class="entry__thumb video-image">
+                        <a href="https://player.vimeo.com/video/117310401?color=01aef0&title=0&byline=0&portrait=0" data-lity>
+                            <img src="images/thumbs/masonry/shutterbug-400.jpg" 
+                                    srcset="images/thumbs/masonry/shutterbug-400.jpg 1x, images/thumbs/masonry/shutterbug-800.jpg 2x" alt="">
+                        </a>
+                    </div>
+    
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            
+                            <div class="entry__date">
+                                <a href="single-video.html">December 10, 2017</a>
+                            </div>
+                            <h1 class="entry__title"><a href="single-video.html">Key Benefits Of Family Photography.</a></h1>
+                            
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="category.html">Family</a> 
+                                <a href="category.html">Photography</a>
+                            </span>
+                        </div>
+                    </div>
+    
+                </article> <!-- end article -->
+
+
+                <article class="masonry__brick entry format-gallery" data-aos="fade-up">
+                        
+                    <div class="entry__thumb slider">
+                        <div class="slider__slides">
+                            <div class="slider__slide">
+                                <img src="images/thumbs/masonry/gallery/gallery-1-400.jpg" 
+                                        srcset="images/thumbs/masonry/gallery/gallery-1-400.jpg 1x, images/thumbs/masonry/gallery/gallery-1-800.jpg 2x" alt=""> 
+                            </div>
+                            <div class="slider__slide">
+                                <img src="images/thumbs/masonry/gallery/gallery-2-400.jpg" 
+                                        srcset="images/thumbs/masonry/gallery/gallery-2-400.jpg 1x, images/thumbs/masonry/gallery/gallery-2-800.jpg 2x" alt=""> 
+                            </div>
+                            <div class="slider__slide">
+                                <img src="images/thumbs/masonry/gallery/gallery-3-400.jpg" 
+                                        srcset="images/thumbs/masonry/gallery/gallery-3-400.jpg 1x, images/thumbs/masonry/gallery/gallery-3-800.jpg 2x" alt="">  
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            
+                            <div class="entry__date">
+                                <a href="single-gallery.html">December 10, 2017</a>
+                            </div>
+                            <h1 class="entry__title"><a href="single-gallery.html">Workspace Design Trends and Ideas.</a></h1>
+                            
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="category.html">Work</a> 
+                                <a href="category.html">Management</a>
+                            </span>
+                        </div>
+                    </div>
+    
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-audio" data-aos="fade-up">
+
+                    <div class="entry__thumb">
+                        <a href="single-audio.html" class="entry__thumb-link">
+                            <img src="images/thumbs/masonry/guitarman-400.jpg" 
+                                    srcset="images/thumbs/masonry/guitarman-400.jpg 1x, images/thumbs/masonry/guitarman-800.jpg 2x" alt="">
+                        </a>
+                        <div class="audio-wrap">
+                            <audio id="player" src="media/AirReview-Landmarks-02-ChasingCorporate.mp3" width="100%" height="42" controls="controls"></audio>
+                        </div>
+                    </div>
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            
+                            <div class="entry__date">
+                                <a href="single-audio.html">December 10, 2017</a>
+                            </div>
+                            <h1 class="entry__title"><a href="single-audio.html">What Your Music Preference Says About You and Your Personality.</a></h1>
+                            
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="category.html">Music</a> 
+                                <a href="category.html">Lifestyle</a>
+                            </span>
+                        </div>
+                    </div>
+
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-link" data-aos="fade-up">
+                    
+                    <div class="entry__thumb">
+                        <div class="link-wrap">
+                            <p>The Only Resource You Will Need To Start a Blog Using WordPress.</p>
+                            <cite>
+                                <a target="_blank" href="https://colorlib.com/">https://colorlib.com</a>
+                            </cite>
+                        </div>
+                    </div>
+                    
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                    <div class="entry__thumb">
+                        <a href="single-standard.html" class="entry__thumb-link">
+                            <img src="images/thumbs/masonry/jump-400.jpg" 
+                                    srcset="images/thumbs/masonry/jump-400.jpg 1x, images/thumbs/masonry/jump-800.jpg 2x" alt="">
+                        </a>
+                    </div>
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            
+                            <div class="entry__date">
+                                <a href="single-standard.html">December 10, 2017</a>
+                            </div>
+                            <h1 class="entry__title"><a href="single-standard.html">Create Meaningful Family Moments.</a></h1>
+                            
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="category.html">Family</a>
+                                <a href="category.html">Relationship</a>
+                            </span>
+                        </div>
+                    </div>
+
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                    <div class="entry__thumb">
+                        <a href="single-standard.html" class="entry__thumb-link">
+                            <img src="images/thumbs/masonry/beetle-400.jpg" 
+                                    srcset="images/thumbs/masonry/beetle-400.jpg 1x, images/thumbs/masonry/beetle-800.jpg 2x" alt="">
+                        </a>
+                    </div>
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            
+                            <div class="entry__date">
+                                <a href="single-standard.html">December 10, 2017</a>
+                            </div>
+                            <h1 class="entry__title"><a href="single-standard.html">Throwback To The Good Old Days.</a></h1>
+                            
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="category.html">Lifestyle</a>
+                            </span>
+                        </div>
+                    </div>
+
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                    <div class="entry__thumb">
+                        <a href="single-standard.html" class="entry__thumb-link">
+                            <img src="images/thumbs/masonry/fuji-400.jpg" 
+                                    srcset="images/thumbs/masonry/fuji-400.jpg 1x, images/thumbs/masonry/fuji-800.jpg 2x" alt="">
+                        </a>
+                    </div>
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            
+                            <div class="entry__date">
+                                <a href="single-standard.html">December 10, 2017</a>
+                            </div>
+                            <h1 class="entry__title"><a href="single-standard.html">Just Another  Standard Format Post.</a></h1>
+                            
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="category.html">Design</a> 
+                                <a href="category.html">Photography</a>
+                            </span>
+                        </div>
+                    </div>
+
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                    <div class="entry__thumb">
+                        <a href="single-standard.html" class="entry__thumb-link">
+                            <img src="images/thumbs/masonry/sydney-400.jpg" 
+                                    srcset="images/thumbs/masonry/sydney-400.jpg 1x, images/thumbs/masonry/sydney-800.jpg 2x" alt="">
+                        </a>
+                    </div>
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            
+                            <div class="entry__date">
+                                <a href="single-standard.html">December 10, 2017</a>
+                            </div>
+                            <h1 class="entry__title"><a href="single-standard.html">Planning Your First Trip to Sydney.</a></h1>
+                            
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua...
+                            </p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="category.html">Travel</a> 
+                                <a href="category.html">Vacation</a>
+                            </span>
+                        </div>
+                    </div>
+
+                </article> <!-- end article -->
+
+            </div> <!-- end masonry -->
+        </div> <!-- end masonry-wrap -->
+
+        <div class="row">
+            <div class="col-full">
+                <nav class="pgn">
+                    <ul>
+                        <li><a class="pgn__prev" href="#0">Prev</a></li>
+                        <li><a class="pgn__num" href="#0">1</a></li>
+                        <li><span class="pgn__num current">2</span></li>
+                        <li><a class="pgn__num" href="#0">3</a></li>
+                        <li><a class="pgn__num" href="#0">4</a></li>
+                        <li><a class="pgn__num" href="#0">5</a></li>
+                        <li><span class="pgn__num dots">…</span></li>
+                        <li><a class="pgn__num" href="#0">8</a></li>
+                        <li><a class="pgn__next" href="#0">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </section> 
+<!-- s-content -->
+
+
+    <!-- s-extra
+    ================================================== -->
+    <section class="s-extra">
+
+        <div class="row top">
+
+            <div class="col-eight md-six tab-full popular">
+                <h3>Popular Posts</h3>
+
+                <div class="block-1-2 block-m-full popular__posts">
+                    <article class="col-block popular__post">
+                        <a href="#0" class="popular__thumb">
+                            <img src="images/thumbs/small/wheel-150.jpg" alt="">
+                        </a>
+                        <h5><a href="#0">Visiting Theme Parks Improves Your Health.</a></h5>
+                        <section class="popular__meta">
+                                <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                            <span class="popular__date"><span>on</span> <time datetime="2017-12-19">Dec 19, 2017</time></span>
+                        </section>
+                    </article>
+                    <article class="col-block popular__post">
+                        <a href="#0" class="popular__thumb">
+                            <img src="images/thumbs/small/shutterbug-150.jpg" alt="">
+                        </a>
+                        <h5><a href="#0">Key Benefits Of Family Photography.</a></h5>
+                        <section class="popular__meta">
+                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                            <span class="popular__date"><span>on</span> <time datetime="2017-12-18">Dec 18, 2017</time></span>
+                        </section>
+                    </article>
+                    <article class="col-block popular__post">
+                        <a href="#0" class="popular__thumb">
+                            <img src="images/thumbs/small/cookies-150.jpg" alt="">
+                        </a>
+                        <h5><a href="#0">Absolutely No Sugar Oatmeal Cookies.</a></h5>
+                        <section class="popular__meta">
+                                <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                            <span class="popular__date"><span>on</span> <time datetime="2017-12-16">Dec 16, 2017</time></span>
+                        </section>
+                    </article>
+                    <article class="col-block popular__post">
+                        <a href="#0" class="popular__thumb">
+                            <img src="images/thumbs/small/beetle-150.jpg" alt="">
+                        </a>
+                        <h5><a href="#0">Throwback To The Good Old Days.</a></h5>
+                        <section class="popular__meta">
+                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                            <span class="popular__date"><span>on</span> <time datetime="2017-12-16">Dec 16, 2017</time></span>
+                        </section>
+                    </article>
+                    <article class="col-block popular__post">
+                        <a href="#0" class="popular__thumb">
+                            <img src="images/thumbs/small/tulips-150.jpg" alt="">
+                        </a>
+                        <h5><a href="#0">10 Interesting Facts About Caffeine.</a></h5>
+                        <section class="popular__meta">
+                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                            <span class="popular__date"><span>on</span> <time datetime="2017-12-14">Dec 14, 2017</time></span>
+                        </section>
+                    </article>
+                    <article class="col-block popular__post">
+                        <a href="#0" class="popular__thumb">
+                            <img src="images/thumbs/small/salad-150.jpg" alt="">
+                        </a>
+                        <h5><a href="#0">Healthy Mediterranean Salad Recipes</a></h5>
+                        <section class="popular__meta">
+                            <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
+                            <span class="popular__date"><span>on</span> <time datetime="2017-12-12">Dec 12, 2017</time></span>
+                        </section>
+                    </article>
+                </div> <!-- end popular_posts -->
+            </div> <!-- end popular -->
+            
+            <div class="col-four md-six tab-full about">
+                <h3>About Philosophy</h3>
+
+                <p>
+                Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
+                </p>
+
+                <ul class="about__social">
+                    <li>
+                        <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                    </li>
+                </ul> <!-- end header__social -->
+            </div> <!-- end about -->
+
+        </div> <!-- end row -->
+
+        <div class="row bottom tags-wrap">
+            <div class="col-full tags">
+                <h3>Tags</h3>
+
+                <div class="tagcloud">
+                    <a href="#0">Salad</a>
+                    <a href="#0">Recipe</a>
+                    <a href="#0">Places</a>
+                    <a href="#0">Tips</a>
+                    <a href="#0">Friends</a>
+                    <a href="#0">Travel</a>
+                    <a href="#0">Exercise</a>
+                    <a href="#0">Reading</a>
+                    <a href="#0">Running</a>
+                    <a href="#0">Self-Help</a>
+                    <a href="#0">Vacation</a>
+                </div> <!-- end tagcloud -->
+            </div> <!-- end tags -->
+        </div> <!-- end tags-wrap -->
+
+    </section> <!-- end s-extra -->
+
+
+    <!-- s-footer
+    ================================================== -->
+    <footer class="s-footer">
+
+        <div class="s-footer__main">
+            <div class="row">
+                
+                <div class="col-two md-four mob-full s-footer__sitelinks">
+                        
+                    <h4>Quick Links</h4>
+
+                    <ul class="s-footer__linklist">
+                        <li><a href="#0">Home</a></li>
+                        <li><a href="#0">Blog</a></li>
+                        <li><a href="#0">Styles</a></li>
+                        <li><a href="#0">About</a></li>
+                        <li><a href="#0">Contact</a></li>
+                        <li><a href="#0">Privacy Policy</a></li>
+                    </ul>
+
+                </div> <!-- end s-footer__sitelinks -->
+
+                <div class="col-two md-four mob-full s-footer__archives">
+                        
+                    <h4>Archives</h4>
+
+                    <ul class="s-footer__linklist">
+                        <li><a href="#0">January 2018</a></li>
+                        <li><a href="#0">December 2017</a></li>
+                        <li><a href="#0">November 2017</a></li>
+                        <li><a href="#0">October 2017</a></li>
+                        <li><a href="#0">September 2017</a></li>
+                        <li><a href="#0">August 2017</a></li>
+                    </ul>
+
+                </div> <!-- end s-footer__archives -->
+
+                <div class="col-two md-four mob-full s-footer__social">
+                        
+                    <h4>Social</h4>
+
+                    <ul class="s-footer__linklist">
+                        <li><a href="#0">Facebook</a></li>
+                        <li><a href="#0">Instagram</a></li>
+                        <li><a href="#0">Twitter</a></li>
+                        <li><a href="#0">Pinterest</a></li>
+                        <li><a href="#0">Google+</a></li>
+                        <li><a href="#0">LinkedIn</a></li>
+                    </ul>
+
+                </div> <!-- end s-footer__social -->
+
+                <div class="col-five md-full end s-footer__subscribe">
+                        
+                    <h4>Our Newsletter</h4>
+
+                    <p>Sit vel delectus amet officiis repudiandae est voluptatem. Tempora maxime provident nisi et fuga et enim exercitationem ipsam. Culpa consequatur occaecati.</p>
+
+                    <div class="subscribe-form">
+                        <form id="mc-form" class="group" novalidate="true">
+
+                            <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
+                
+                            <input type="submit" name="subscribe" value="Send">
+                
+                            <label for="mc-email" class="subscribe-message"></label>
+                
+                        </form>
+                    </div>
+
+                </div> <!-- end s-footer__subscribe -->
+
+            </div>
+        </div> <!-- end s-footer__main -->
+
+        <div class="s-footer__bottom">
+            <div class="row">
+                <div class="col-full">
+                    <div class="s-footer__copyright">
+                        <span>© Copyright Philosophy 2018</span> 
+                        <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
+                    </div>
+
+                    <div class="go-top">
+                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end s-footer__bottom -->
+
+    </footer> <!-- end s-footer -->
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 

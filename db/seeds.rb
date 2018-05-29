@@ -6,7 +6,7 @@ require 'faker'
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-r = Random.new
+seeder = Seed.new
 
 User.create(
   name: 'icad123',
@@ -15,17 +15,5 @@ User.create(
   role: 'admin'
 )
 
-3.times do
-  Category.create(
-    name: Faker::Job.field
-  )
-end
-
-10.times do
-  Post.create(
-    title: Faker::Lorem.word,
-    body: Faker::Lorem.sentence,
-    user_id: 1,
-    category_id: r.rand(Category.count) + 1
-  )
-end
+seeder.category
+seeder.post

@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.includes(:category).all
+    @posts = get_posts
+    @categories = Category.all
   end
 
   # GET /posts/1
@@ -62,13 +63,29 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:title, :body, :category_id, :user_id)
+  def get_posts
+    category = params[:category]
+    search = params[:search]
+    if category.blank? && search.blank?
+      posts = Post.all
+    elsif category.blank? && search.present?
+      posts = Post.search(search)
+    elsif category.present? && search.blank?
+      posts = Post.by_category(category)
+    elsif category.present? && search.present?
+      posts = Post.by_category(category).search(search)
     end
+    posts.page(params[:page])
+  end
+  # Use callbacks to share common setup or constraints between actions.
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+  # Never trust parameters from the scary internet, only allow the white list through.
+
+  def post_params
+    params.require(:post).permit(:title, :body, :category_id, :user_id)
+  end
 end
