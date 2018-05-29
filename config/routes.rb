@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   resources :categories
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
+  resources :comments do
+    resources :comments
+  end
   root 'home#index'
 
   get '/login' => 'sessions#new'
@@ -9,6 +14,7 @@ Rails.application.routes.draw do
   
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
   
 
   # The priority is based upon order of creation: first created -> highest priority.
