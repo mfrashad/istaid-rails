@@ -1,25 +1,258 @@
 <p id="notice"><%= notice %></p>
+<!-- SECTION -->
+  <div class="section">
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <!-- MAIN -->
+        <main id="main" class="col-md-9">
+          <!-- article -->
+          <div class="article">
+            <!-- article img -->
+            <div class="article-img">
+              <img src="./img/post-img.jpg" alt="">
+            </div>
+            <!-- article img -->
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+            <!-- article content -->
+            <div class="article-content">
+              <!-- article title -->
+              <h2 class="article-title"><%= @post.title %></h2>
+              <!-- /article title -->
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+              <!-- article meta -->
+              <ul class="article-meta">
+                <li><%= @post.created_at %></li>
+                <li><%= "By #{@post.user.name}" %></li>
+                <li>0 Comments</li>
+              </ul>
+              <!-- /article meta -->
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+              <%= @post.body %>
+            </div>
+            <!-- /article content -->
 
-<h3>Comments</h3>
+            <!-- article tags share -->
+            <div class="article-tags-share">
+              <!-- article tags -->
+              <ul class="tags">
+                <li>TAGS:</li>
+                <li><a href="#">Charity</a></li>
+                <li><a href="#">Health</a></li>
+                <li><a href="#">Donation</a></li>
+              </ul>
+              <!-- /article tags -->
 
-<%= form_for [@post, Comment.new] do |f| %>
-<%= f.text_area :body, placeholder: "Add a comment" %><br/>
-<%= f.submit "Add Comment" %>
-<% end %>
+              <!-- article share -->
+              <ul class="share">
+                <li>SHARE:</li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              </ul>
+              <!-- /article share -->
+            </div>
+            <!-- /article tags share -->
 
-<ul>
-  <%= render(partial: 'comments/comment', collection: @post.comments) %>
-</ul>
+            <!-- article comments -->
+            <div class="article-comments">
+              <h3>Comments (3)</h3>
+              <%= render(partial: 'comments/comment', collection: @post.comments) %>
+            </div>
+            <!-- /article comments -->
+
+            <!-- article reply form -->
+            <div class="article-reply">
+              <h3>Leave a reply</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <%= form_for [@post, Comment.new] do |f| %>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input class="input" placeholder="Name" type="text">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input class="input" placeholder="Email" type="email">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <%= f.text_area :body, class: "input", placeholder: "Message" %><br/>
+                    </div>
+                    <%= f.submit "Add Comment", class: "primary-button" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <!-- /article reply form -->
+          </div>
+          <!-- /article -->
+        </main>
+        <!-- /MAIN -->
+
+        <!-- ASIDE -->
+        <aside id="aside" class="col-md-3">
+          <!-- category widget -->
+          <div class="widget">
+            <h3 class="widget-title">Category</h3>
+            <div class="widget-category">
+              <ul>
+                <li><a href="#">Health<span>(57)</span></a></li>
+                <li><a href="#">Food<span>(86)</span></a></li>
+                <li><a href="#">Education<span>(241)</span></a></li>
+                <li><a href="#">Donation<span>(65)</span></a></li>
+                <li><a href="#">Events<span>(14)</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /category widget -->
+
+          <!-- posts widget -->
+          <div class="widget">
+            <h3 class="widget-title">Latest Posts</h3>
+            <!-- single post -->
+            <div class="widget-post">
+              <a href="#">
+                <div class="widget-img">
+                  <img src="/img/widget-1.jpg" alt="">
+                </div>
+                <div class="widget-content">
+                  Possit nostro aeterno eu vis, ut cum quem reque
+                </div>
+              </a>
+              <ul class="article-meta">
+                <li>By John doe</li>
+                <li>12 November 2018</li>
+              </ul>
+            </div>
+            <!-- /single post -->
+
+            <!-- single post -->
+            <div class="widget-post">
+              <a href="#">
+                <div class="widget-img">
+                  <img src="/img/widget-2.jpg" alt="">
+                </div>
+                <div class="widget-content">
+                  Vix fuisset tibique facilisis cu. Justo accusata ius at
+                </div>
+              </a>
+              <ul class="article-meta">
+                <li>By John doe</li>
+                <li>12 November 2018</li>
+              </ul>
+            </div>
+            <!-- /single post -->
+
+            <!-- single post -->
+            <div class="widget-post">
+              <a href="#">
+                <div class="widget-img">
+                  <img src="/img/widget-3.jpg" alt="">
+                </div>
+                <div class="widget-content">
+                  Possit nostro aeterno eu vis, ut cum quem reque
+                </div>
+              </a>
+              <ul class="article-meta">
+                <li>By John doe</li>
+                <li>12 November 2018</li>
+              </ul>
+            </div>
+            <!-- /single post -->
+          </div>
+          <!-- /posts widget -->
+
+          <!-- causes widget -->
+          <div class="widget">
+            <h3 class="widget-title">Latest Causes</h3>
+
+            <!-- single causes -->
+            <div class="widget-causes">
+              <a href="#">
+                <div class="widget-img">
+                  <img src="/img/widget-1.jpg" alt="">
+                </div>
+                <div class="widget-content">
+                  Possit nostro aeterno eu vis, ut cum quem reque
+                  <div class="causes-progress">
+                    <div class="causes-progress-bar">
+                      <div style="width: 64%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div>
+                <span class="causes-raised">Raised: <strong>52.000$</strong></span> -
+                <span class="causes-goal">Goal: <strong>90.000$</strong></span>
+              </div>
+            </div>
+            <!-- /single causes -->
+
+            <!-- single causes -->
+            <div class="widget-causes">
+              <a href="#">
+                <div class="widget-img">
+                  <img src="/img/widget-2.jpg" alt="">
+                </div>
+                <div class="widget-content">
+                  Vix fuisset tibique facilisis cu. Justo accusata ius at
+                  <div class="causes-progress">
+                    <div class="causes-progress-bar">
+                      <div style="width: 75%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div>
+                <span class="causes-raised">Raised: <strong>52.000$</strong></span> -
+                <span class="causes-goal">Goal: <strong>90.000$</strong></span>
+              </div>
+            </div>
+            <!-- /single causes -->
+
+            <!-- single causes -->
+            <div class="widget-causes">
+              <a href="#">
+                <div class="widget-img">
+                  <img src="/img/widget-3.jpg" alt="">
+                </div>
+                <div class="widget-content">
+                  Possit nostro aeterno eu vis, ut cum quem reque
+                  <div class="causes-progress">
+                    <div class="causes-progress-bar">
+                      <div style="width: 53%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div>
+                <span class="causes-raised">Raised: <strong>52.000$</strong></span> -
+                <span class="causes-goal">Goal: <strong>90.000$</strong></span>
+              </div>
+            </div>
+            <!-- /single causes -->
+          </div>
+          <!-- causes widget -->
+        </aside>
+        <!-- /ASIDE -->
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /SECTION -->
+
+  <script>
+    $(document).ready(function(){
+      $('a.reply').on('click', function(e){
+        e.preventDefault();
+        $('#reply-'+e.target.dataset.id).toggle();
+      });
+    });
+  </script>

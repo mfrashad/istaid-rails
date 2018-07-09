@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def index
     @posts = get_posts
     @categories = Category.all
+    render(layout: "home")
   end
 
   # GET /posts/1

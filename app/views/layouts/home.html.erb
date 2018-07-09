@@ -33,11 +33,10 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <script src="/js/jquery.min.js"></script>
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
+    <!-- HEADER -->
+  <header id="home">
     <!-- NAVGATION -->
     <nav id="main-navbar">
       <div class="container">
@@ -99,29 +98,34 @@
     </nav>
     <!-- /NAVGATION -->
 
-    <!-- Page Header -->
-    <div id="page-header">
-      <!-- section background -->
-      <div class="section-bg" style="background-image: url(/img/background-2.jpg);"></div>
-      <!-- /section background -->
-
-      <!-- page header content -->
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="header-content">
-              <h1>Single Blog Page</h1>
-              <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
-              </ul>
+    <!-- HOME OWL -->
+    <div id="home-owl" class="owl-carousel owl-theme">
+    <% @posts.take(3).each do |post| %>
+      <!-- home item -->
+      <div class="home-item">
+        <!-- section background -->
+        <div class="section-bg" style="background-image: url(/img/background-1.jpg);"></div>
+        <!-- /section background -->
+        <!-- home content -->
+        <div class="home">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="home-content">
+                  <h1><%= post.title %> </h1>
+                  <p class="lead"><%= post.body.truncate(100) %> </p>
+                  <a href="<%= post_url(post.id) %>" class="primary-button">Read More</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <!-- /home content -->
       </div>
-      <!-- /page header content -->
+      <!-- /home item -->
+      <% end %>
     </div>
-    <!-- /Page Header -->
+    <!-- /HOME OWL -->
   </header>
   <!-- /HEADER -->
 
@@ -215,6 +219,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <!-- /FOOTER -->
 
   <!-- jQuery Plugins -->
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/owl.carousel.min.js"></script>
   <script src="/js/jquery.stellar.min.js"></script>
