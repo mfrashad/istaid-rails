@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+	<meta name="turbolinks-visit-control" content="reload">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +35,7 @@
 
 </head>
 
-<body>
+<body data-no-turbolink="true" >
 	<!-- HEADER -->
 	<header id="home">
 		<!-- NAVGATION -->
@@ -114,7 +115,7 @@
 								<div class="home-content">
 									<h1><%= post.title %> </h1>
 									<p class="lead"><%= post.body.truncate(100) %> </p>
-									<a href="#" class="primary-button">Read More</a>
+									<a href="<%= post_url(post.id) %>" class="primary-button">Read More</a>
 								</div>
 							</div>
 						</div>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :comments do
     resources :comments
   end
-  root 'home#index'
+  root 'posts#index'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
