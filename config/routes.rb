@@ -8,6 +8,18 @@ Rails.application.routes.draw do
   end
   root 'posts#index'
 
+  namespace :admin do
+    root 'posts#index'
+    resources :categories
+    resources :posts do
+      resources :comments
+    end
+    resources :comments do
+      resources :comments
+    end
+    resources :users
+  end
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
