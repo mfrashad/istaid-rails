@@ -13,9 +13,10 @@
           </div>
         </div>
         <!-- /section title -->
+        <div class="flex-container">
         <% @posts.each do |post| %>
         <!-- blog -->
-        <div class="col-md-4">
+        
           <div class="article">
             <div class="article-img">
               <a href="single-blog.html">
@@ -33,13 +34,14 @@
             </div>
             <a href="<%= post_url(post.id)%>" class="primary-button article-button">Read more</a>
           </div>
-        </div>
+        
         <!-- /blog -->
         <% end %>
-
+        </div>
       </div>
       <!-- /row -->
     </div>
+    <%= will_paginate @posts %>
     <!-- /container -->
   </div>
   <!-- /BLOG -->

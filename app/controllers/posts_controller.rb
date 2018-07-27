@@ -80,7 +80,7 @@ class PostsController < ApplicationController
     elsif category.present? && search.present?
       posts = Post.by_category(category).search(search)
     end
-    posts.page(params[:page])
+    posts.paginate(page: params[:page], per_page: 6)
   end
   # Use callbacks to share common setup or constraints between actions.
 
