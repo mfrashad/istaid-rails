@@ -9,7 +9,7 @@
     <span><%= @post.user.name %></span>
   </div>
   <div class="post-content section">
-    <%= @post.body %>
+    <%= @post.body.html_safe %>
   </div>
   <div class="comments">
     <h3>Comments</h3>

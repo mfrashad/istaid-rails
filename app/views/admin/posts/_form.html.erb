@@ -1,18 +1,19 @@
 <div class="card-panel">
-<%= form_for(@post) do |f| %>
+<%= form_for([:admin, @post]) do |f| %>
 <%= f.hidden_field :user_id, value: current_user.id %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
       <% @post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
+    <script>
+      M.toast({html: $("#error_explanation").html()});
+    </script>
   <% end %>
-
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -27,15 +28,23 @@
       <%= f.file_field :thumbnail %>
     </div>
     <div class="file-path-wrapper">
-      <input class="file-path validate" type="text">
+      <input class="file-path validate" type="text" placeholder="Upload the thumbnail here">
     </div>
   </div>
   <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body, class: "materialize-textarea", cols: 100, rows: 5  %>
+    <%= f.label :summary %><br>
+    <%= f.text_area :summary, class: "materialize-textarea", id: "summary-textarea", data: { length: 300 }, placeholder: "Write the post summary here" %>
   </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.cktext_area :body, class: 'someclass', rows: 40, ckeditor: { language: 'us' } %>
+  </div>
+  <br>
   <button class="btn waves-effect waves-light" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
   </button>
 <% end %>
 </div>
+<script>
+$('textarea#summary-textarea').characterCounter();
+</script>

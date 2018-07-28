@@ -33,6 +33,7 @@ gem 'cloudinary'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'puma'
+gem 'ckeditor'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

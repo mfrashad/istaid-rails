@@ -57,6 +57,8 @@
   <li><a href="mobile.html">Mobile</a></li>
 </ul>
 <%= yield %>
-
+<% if notice %>
+<script>M.toast({html: '<%= notice %>' });</script>
+<% end %>
 </body>
 </html>

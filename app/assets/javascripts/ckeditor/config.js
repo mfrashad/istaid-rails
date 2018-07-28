@@ -1,0 +1,6 @@
+CKEDITOR.editorConfig = function (config) {
+  // ... other configuration ...
+  config.height = 600;
+
+  // ... rest of the original config.js  ...
+}
