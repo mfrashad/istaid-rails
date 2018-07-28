@@ -14,13 +14,4 @@ class ApplicationController < ActionController::Base
   def require_admin
     redirect_to '/login' unless current_user && current_user.admin?
   end
-
-  def nav_links
-    [
-      { label: 'Home', key: 'home', href: '/posts' },
-      { label: 'Categories', key: 'blog', href: '/blog', has_children: true, children: Category.all },
-      { label: 'Gallery', key: 'gallery', href: '/gallery'},
-      { label: 'Contact', key: 'contact', href: '/contact' },
-    ]
-  end
 end

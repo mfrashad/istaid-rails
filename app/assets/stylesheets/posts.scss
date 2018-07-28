@@ -1,3 +1,108 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.header-banner {
+  text-align: center;
+  width: 100vw;
+  height: 100%;
+  color: white;
+  box-sizing: border-box;
+  font-size: 2em;
+
+  .banner-tab {
+    position: relative;
+    padding: 0px;
+    width: auto;
+    height: 350px;
+  }
+}
+
+.blog {
+  margin: 0px;
+  padding: 20px 0px;
+  background-color: #FCFCFC;
+}
+
+.categories {
+  a {
+    margin: 3px;
+  }
+}
+
+.post {
+  margin: 20px;
+  width: 500px;
+  height: 450px;
+  color: #86969D;
+  .card-image {
+    height: 200px;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+  .card-content {
+    h5 {
+      color: #566871;
+    }
+    p {
+      color: #919191;
+    }
+  }
+}
+.single-post {
+  padding-bottom: 100px;
+}
+.post-content {
+  font-size: 1.5em;
+}
+.comment-box {
+  width: 800px;
+  .comment-header {
+    padding: 0px 20px;
+  }
+  .comment-content {
+    width: 600px;
+    padding: 5px 20px;
+    font-size: 1.5em;
+  }
+}
+
+.reply {
+  textarea {
+    min-height: 8rem;
+  }
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #00B24ADD;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transition: .5s ease;
+
+  &:hover {
+    background-color: #00B24A11;
+  }
+}
+
+.overlay-text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.inline-icons {
+  vertical-align: bottom;
+
+}

@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   def index
     @posts = get_posts
     @categories = Category.all
-    render(layout: "home")
+    @menus = get_menus
+    # render(layout: "home")
   end
 
   # GET /posts/1
@@ -87,9 +88,44 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
+
+  def get_menus
+  [
+    {
+      title: "Blog",
+      url: "#",
+      image_url: "blog-bg.jpg",
+    },
+    {
+      title: "About Us",
+      url: "/about",
+      image_url: "about-bg.jpg",
+    },
+    {
+      title: "Team",
+      url: "/team",
+      image_url: "team-bg.jpg",
+    },
+    {
+      title: "Events",
+      url: "/events",
+      image_url: "events-bg.jpg",
+    },
+    {
+      title: "Gallery",
+      url: "/gallery",
+      image_url: "gallery-bg.jpg",
+    },
+    {
+      title: "Donate",
+      url: "/donate",
+      image_url: "donate-bg.jpg",
+    },
+  ]
+  end
   # Never trust parameters from the scary internet, only allow the white list through.
 
   def post_params
-    params.require(:post).permit(:title, :body, :category_id, :user_id)
+    params.require(:post).permit(:title, :body, :category_id, :user_id, :thumbnail)
   end
 end

@@ -1,0 +1,13 @@
+// Place all the styles related to the Static controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.person-card {
+  width: 250px;
+  height: 560px;
+  img {
+    max-width: 250px;
+    max-height: 400px;
+  }
+  margin: 20px;
+}

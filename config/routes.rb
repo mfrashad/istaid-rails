@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
+  get '/:page' => 'static#show'
+
   
 
   # The priority is based upon order of creation: first created -> highest priority.

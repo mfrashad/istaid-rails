@@ -1,0 +1,72 @@
+<h1>Editing Post</h1>
+<div class="panel panel-default">
+          <div class="panel-heading">
+            Contact Form
+            <ul class="pull-right panel-settings panel-button-tab-right">
+              <li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
+                <em class="fa fa-cogs"></em>
+              </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li>
+                    <ul class="dropdown-settings">
+                      <li><a href="#">
+                        <em class="fa fa-cog"></em> Settings 1
+                      </a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">
+                        <em class="fa fa-cog"></em> Settings 2
+                      </a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">
+                        <em class="fa fa-cog"></em> Settings 3
+                      </a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
+          <div class="panel-body">
+            <%= form_for(@post, class: "form-horizontal") do |f| %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <% if @post.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+            
+                  <ul>
+                  <% @post.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <fieldset>
+                <!-- Name input-->
+                <div class="form-group">
+                  <label class="col-md-2 control-label" for="title">Title</label>
+                  <div class="col-md-10">
+                    <%= f.text_field :title %>
+                  </div>
+                </div>
+              
+                <!-- Message body -->
+                <div class="form-group">
+                  <label class="col-md-2 control-label" for="body">Your Post Content</label>
+                  <div class="col-md-10">
+                    <%= f.text_area :body, rows: 5 %>
+                  </div>
+                </div>
+                
+                <!-- Form actions -->
+                <div class="form-group">
+                  <div class="col-md-12 widget-right">
+                    <button type="submit" class="btn btn-default btn-md pull-right">Submit</button>
+                  </div>
+                </div>
+              </fieldset>
+            <% end %>
+          </div>
+        </div>
+
+<%= link_to 'Show', @post %> |
+<%= link_to 'Back', posts_path %>

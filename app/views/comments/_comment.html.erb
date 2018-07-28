@@ -1,41 +1,33 @@
-<!-- comment -->
-              <div class="media">
-                <div class="media-left">
-                  <img class="media-object" src="/img/avatar-1.jpg" alt="">
-                </div>
-                <div class="media-body">
-                  <div class="media-heading">
-                    <h4>Anon</h4>
-                    <span class="time"><%= time_ago_in_words(comment.created_at) %> ago</span>
-                    <a href="#" class="reply" data-id="<%= comment.id %>" >Reply</a>
-                  </div>
-                  <p><%= comment.body %></p>
-                </div>
-                <div id="<%= "reply-#{comment.id}" %>" class="article-reply" hidden>
-                    <h3>Leave a reply</h3>
-                    <%= form_for [@post, Comment.new] do |f| %>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <input class="input" placeholder="Name" type="text">
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <input class="input" placeholder="Email" type="email">
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <%= f.text_area :body, class: "input", placeholder: "Message" %><br/>
-                          </div>
-                          <%= f.submit "Add Comment", class: "primary-button" %>
-                        </div>
-                      </div>
-                    <% end %>
-                </div>
-                <!-- comment -->
-                <%= render partial: 'comments/comment', collection: comment.comments %>
-                <!-- /comment -->
-              </div>
-              <!-- /comment -->
+<div class="comment-box card-panel">
+  <div class="valign-wrapper">
+    <div class="comment-left left">
+      <%= image_tag "avatar-1.jpg", class: "circle responsive-img large"%>
+    </div>
+    <div class="comment-right right">
+      <div class="comment-header">
+        <h6>Mary Jane<h6>
+        <span><%= time_ago_in_words(comment.created_at) %> ago </span>
+        <button type='button' class="right reply-button btn waves-effect waves-light" data-id="<%= comment.id %>" >Reply</button>
+      </div>
+      <div class="comment-content">
+        <p> <%= comment.body %></p>
+      </div>
+    </div>
+  </div>
+  <div class="valign-wrapper">
+    <%= render partial: 'comments/comment', collection: comment.comments %>
+  </div>
+  <div id="<%= "reply-#{comment.id}" %>" class="card-panel reply reply-box" style="display:none;">
+    <%= form_for [comment, comment.comments.build] do |f| %>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.text_area :body, class: "materialize-textarea", id: "body-textarea", rows: 3 %>
+          <label for="body-textarea">Reply to this comment</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    <% end %>
+  </div>
+</div>

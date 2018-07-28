@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: istaid
+  api_key: '237374676336579'
+  api_secret: vq_sNsYXSZJyOD_ss9vSrQXE1i0
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: istaid
+  api_key: '237374676336579'
+  api_secret: vq_sNsYXSZJyOD_ss9vSrQXE1i0
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: istaid
+  api_key: '237374676336579'
+  api_secret: vq_sNsYXSZJyOD_ss9vSrQXE1i0
+  enhance_image_tag: true
+  static_image_support: false

@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_many :comments, as: :commentable
+  mount_uploader :thumbnail, ThumbnailUploader
 
   default_scope -> { includes(:user).order(created_at: :desc) }
   scope :by_category, -> (category_name) do

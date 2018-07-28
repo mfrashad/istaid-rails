@@ -1,0 +1,46 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "materialize/components/color-variables";
+$primary-color: #00B24A !default;
+// $secondary-color: color("yellow", "base") !default;
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "materialize";
+
+@font-face {
+  font-family: 'BrandonText-Medium';
+  src: url('BrandonText-Medium.otf') format('truetype');
+}
+@font-face {
+  font-family: 'BrandonText-Regular';
+  src: url('BrandonText-Regular.otf') format('truetype');
+}
+
+body {
+    margin: 0px;
+    font-family: 'BrandonText-Regular'
+}
+
+nav {
+  padding-left: 20px;
+  background-color: #00B24AF5;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
