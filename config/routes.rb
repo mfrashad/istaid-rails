@@ -7,10 +7,13 @@ Rails.application.routes.draw do
   resources :comments do
     resources :comments
   end
-  root 'posts#index'
-
+  resources :galleries
+  resources :employees
+  root 'posts#home'
+  get '/blog' => 'posts#index'
+  get '/events' => 'posts#events'
   namespace :admin do
-    root 'posts#index'
+    root 'dashboards#index'
     resources :categories
     resources :posts do
       resources :comments
@@ -19,6 +22,8 @@ Rails.application.routes.draw do
       resources :comments
     end
     resources :users
+    resources :galleries
+    resources :employees
   end
 
   get '/login' => 'sessions#new'

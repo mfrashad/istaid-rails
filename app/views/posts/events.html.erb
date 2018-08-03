@@ -1,5 +1,5 @@
 <div class='blog text-center'>
-  <h1 class="center-align"> Blog </h1>
+  <h1 class="center-align"> Kegiatan </h1>
 
   <div class="row">
     <div class="col s6 offset-s3 container">
@@ -15,7 +15,7 @@
       <div class="row center-align categories">
         <%= link_to "All", posts_path(search: params[:search]), class: "waves-effect waves-light btn" %>
         <% @categories.each do |category| %>
-          <%= link_to "#{category.name}", posts_path(category: category.name, search: params[:search]), class: "waves-effect waves-light btn" %>
+          <%= link_to "#{category.name}", blog_path(category: category.name, search: params[:search]), class: "waves-effect waves-light btn" %>
         <% end %>"
       </div>
       <h3 class="center-align"><%= params[:category] %></h3>

@@ -1,0 +1,35 @@
+<div class="card-panel">
+<%= form_for([:admin, @gallery]) do |f| %>
+  <% if @gallery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gallery.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% @gallery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+    <script>
+      M.toast({html: $("#error_explanation").html()});
+    </script>
+  <% end %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>Image</span>
+      <%= f.file_field :thumbnail, multipe: true %>
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text" placeholder="Upload the thumbnail here">
+    </div>
+  </div>
+  <%= image_preview(f) %>
+  <br>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+<% end %>
+</div>

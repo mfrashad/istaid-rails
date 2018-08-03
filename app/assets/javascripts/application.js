@@ -16,6 +16,20 @@
 //= require_tree .
 //= require materialize
 
+function image_preview(input, width, height) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('.img_prev')
+        .show()
+        .attr('src', e.target.result)
+        .width(width)
+        .height(height);
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
 $(document).ready(function(){
   $('.sidenav').sidenav();
   $('select').formSelect();

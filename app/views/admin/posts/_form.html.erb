@@ -22,10 +22,12 @@
     <%= f.label :category_id %><br>
     <%= f.collection_select(:category_id, Category.all, :id, :name) %>
   </div>
+  <img class="img_prev" src="#" alt="your image" />
+  <%= image_tag(@post.thumbnail.thumb.url) if @post.thumbnail? %>
   <div class="file-field input-field">
     <div class="btn">
       <span>Image</span>
-      <%= f.file_field :thumbnail %>
+      <%= f.file_field :thumbnail, onchange: 'image_preview(this, 800 ,600);' %>
     </div>
     <div class="file-path-wrapper">
       <input class="file-path validate" type="text" placeholder="Upload the thumbnail here">

@@ -14,4 +14,39 @@ class ApplicationController < ActionController::Base
   def require_admin
     redirect_to '/login' unless current_user && current_user.admin?
   end
+
+  def get_menus
+    @menus = [
+      {
+        title: "Artikel",
+        url: "/blog",
+        image_url: "blog-bg.jpg",
+      },
+      {
+        title: "Tentang Kami",
+        url: "/about",
+        image_url: "about-bg.jpg",
+      },
+      {
+        title: "Tim Kami",
+        url: "/team",
+        image_url: "team-bg.jpg",
+      },
+      {
+        title: "Kegiatan",
+        url: "/events",
+        image_url: "events-bg.jpg",
+      },
+      {
+        title: "Galeri",
+        url: "/gallery",
+        image_url: "gallery-bg.jpg",
+      },
+      {
+        title: "Donasi",
+        url: "/donate",
+        image_url: "donate-bg.jpg",
+      },
+    ]
+    end
 end

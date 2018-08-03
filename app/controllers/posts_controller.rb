@@ -1,14 +1,23 @@
 class PostsController < ApplicationController
+  before_action :get_menus
   before_action :set_post, only: %i(show edit update destroy)
   before_action :require_admin, only: %i(new create edit destroy)
 
   # GET /posts
   # GET /posts.json
+  def home
+    @posts = get_posts
+    @categories = Category.all
+  end
+
   def index
     @posts = get_posts
     @categories = Category.all
-    @menus = get_menus
-    # render(layout: "home")
+  end
+
+  def events
+    @posts = get_posts('Event')
+    @categories = Category.all
   end
 
   # GET /posts/1
@@ -19,9 +28,7 @@ class PostsController < ApplicationController
 
   private
 
-  def get_posts
-    category = params[:category]
-    search = params[:search]
+  def get_posts(category=params[:category], search=params[:search])
     if category.blank? && search.blank?
       posts = Post.all
     elsif category.blank? && search.present?
@@ -37,41 +44,6 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
-  end
-
-  def get_menus
-  [
-    {
-      title: "Blog",
-      url: "#",
-      image_url: "blog-bg.jpg",
-    },
-    {
-      title: "About Us",
-      url: "/about",
-      image_url: "about-bg.jpg",
-    },
-    {
-      title: "Team",
-      url: "/team",
-      image_url: "team-bg.jpg",
-    },
-    {
-      title: "Events",
-      url: "/events",
-      image_url: "events-bg.jpg",
-    },
-    {
-      title: "Gallery",
-      url: "/gallery",
-      image_url: "gallery-bg.jpg",
-    },
-    {
-      title: "Donate",
-      url: "/donate",
-      image_url: "donate-bg.jpg",
-    },
-  ]
   end
   # Never trust parameters from the scary internet, only allow the white list through.
 

@@ -21,17 +21,46 @@ $primary-color: #00B24A !default;
 @import "materialize";
 
 @font-face {
-  font-family: 'BrandonText-Medium';
+  font-family: 'BrandonText';
   src: url('BrandonText-Medium.otf') format('truetype');
 }
 @font-face {
-  font-family: 'BrandonText-Regular';
-  src: url('BrandonText-Regular.otf') format('truetype');
+  font-family: 'BrandonText';
+  src: url('BrandonText-Bold.otf') format('truetype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'BrandonText';
+  src: url('BrandonText-Bold.otf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'BrandonText';
+  src: url('BrandonText-BoldItalic.otf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'BrandonText';
+  src: url('BrandonText-MediumItalic.otf') format('truetype');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'BrandonText';
+  src: url('BrandonText-Light.otf') format('truetype');
+  font-weight: lighter;
+}
+@font-face {
+  font-family: 'BrandonText';
+  src: url('BrandonText-LightItalic.otf') format('truetype');
+  font-weight: lighter;
+  font-style: italic;
 }
 
 body {
     margin: 0px;
-    font-family: 'BrandonText-Regular'
+    font-family: 'BrandonText';
+    background-color: #FCFCFC;
 }
 
 nav {
@@ -43,4 +72,9 @@ nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+}
+
+.img_prev {
+  display: none;
+  object-fit: cover;
 }

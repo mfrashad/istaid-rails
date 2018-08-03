@@ -1,6 +1,5 @@
 class Admin::PostsController < Admin::BaseController
   before_action :set_post, only: %i(show edit update destroy)
-  before_action :require_admin, only: %i(new create edit destroy)
 
   # GET /posts
   # GET /posts.json
