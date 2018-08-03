@@ -4,6 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  image      :string
+#  caption    :string
 #  gallery_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
