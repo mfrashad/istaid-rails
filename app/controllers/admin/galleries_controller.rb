@@ -12,33 +12,34 @@ class Admin::GalleriesController < Admin::BaseController
   def edit
   end
 
+  def destroy
+    @gallery = Gallery.find(params[:id])
+    @gallery.delete
+    redirect_to admin_galleries_path
+  end
+
   def create
     @gallery = Gallery.new(gallery_params)
-
-    respond_to do |format|
-      if @gallery.save
-        format.html { redirect_to admin_galleries_url, notice: 'Gallery was successfully created.' }
-        format.json { render :show, status: :created, location: @gallery }
-      else
-        format.html { render :new }
-        format.json { render json: @gallery.errors, status: :unprocessable_entity }
-      end
+    if @gallery.save
+      flash[:notice] = "Your gallery has been created."
+      redirect_to admin_galleries_path
+    else
+      flash[:alert] = "Something went wrong."
+      render :new
     end
   end
 
-  # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
   def update
-    respond_to do |format|
-      if @gallery.update(gallery_params)
-        format.html { redirect_to admin_galleries_url, notice: 'Galleries was successfully updated.' }
-        format.json { render :show, status: :ok, location: @gallery }
-      else
-        format.html { render :edit }
-        format.json { render json: @gallery.errors, status: :unprocessable_entity }
-      end
+    @gallery.update(gallery_params)
+    if @gallery.save
+      flash[:notice] = "Your gallery has been created."
+      redirect_to admin_galleries_path
+    else
+      flash[:alert] = "Something went wrong."
+      render :new
     end
   end
+
 
   private
 
@@ -47,6 +48,6 @@ class Admin::GalleriesController < Admin::BaseController
   end
 
   def gallery_params
-    params.require(:gallery).permit(:title, :images)
+    params.require(:gallery).permit(:title, :description)
   end
 end

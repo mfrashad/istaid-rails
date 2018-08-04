@@ -1,0 +1,25 @@
+<div class="container">
+  <h3> Gallery </h3>
+  <%= link_to edit_admin_gallery_path(@gallery), class:'btn waves-effect waves-light' do %>
+    <i class="material-icons left">arrow_back</i>Back
+  <% end%>
+  <div class="card-panel">
+    <%= form_for [:admin, @gallery, @gallery.gallery_images.build] do |f| %>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Image</span>
+          <%= f.file_field :image, multiple: true, name: 'gallery_image[image]' %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload the images here">
+        </div>
+      </div>
+    <% end %>
+
+    <div id='gallery_images' class='flex-container'>
+      <%= render @gallery_images %>
+    </div>
+
+  </div>
+</div>
+

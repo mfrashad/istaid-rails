@@ -1,0 +1,10 @@
+<% unless gallery_image.new_record?%>
+<div class="card image-container hoverable">
+  <div class="card-image">
+    <%= image_tag(gallery_image.image.thumb.url, class: 'gallery-image-thumbnail') unless gallery_image.image.nil? %>
+  </div>
+  <div class="card-action">
+    <%= link_to "Delete", admin_gallery_gallery_image_path(gallery_image.gallery, gallery_image), data: {:confirm => 'Are you sure?'}, method: :delete %>
+  </div>
+</div>
+<% end %>

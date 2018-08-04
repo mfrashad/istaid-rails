@@ -34,6 +34,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'puma'
 gem 'ckeditor'
+gem "jquery-fileupload-rails"
 
 # Use Unicorn as the app server
 # gem 'unicorn'

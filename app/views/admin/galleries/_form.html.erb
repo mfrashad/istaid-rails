@@ -1,5 +1,5 @@
 <div class="card-panel">
-<%= form_for([:admin, @gallery]) do |f| %>
+<%= form_for [:admin, @gallery], html: { multipart: true } do |f| %>
   <% if @gallery.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@gallery.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -17,16 +17,20 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
-  <div class="file-field input-field">
-    <div class="btn">
-      <span>Image</span>
-      <%= f.file_field :thumbnail, multipe: true %>
-    </div>
-    <div class="file-path-wrapper">
-      <input class="file-path validate" type="text" placeholder="Upload the thumbnail here">
-    </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
   </div>
-  <%= image_preview(f) %>
+  <% if @gallery.id %>
+  <%= link_to admin_gallery_gallery_images_path(@gallery) do %>
+    <div class="btn">
+      <span>Edit Images</span>
+    </div>
+  <% end %>
+  <% end %>
+  <div id='gallery_images' class='flex-container'>
+    <%= render @gallery.gallery_images %>
+  </div>
   <br>
   <button class="btn waves-effect waves-light" type="submit" name="action">Submit
     <i class="material-icons right">send</i>

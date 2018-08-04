@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get '/events' => 'posts#events'
   namespace :admin do
     root 'dashboards#index'
+    resources :galleries do
+      resources :gallery_images
+    end
     resources :categories
     resources :posts do
       resources :comments

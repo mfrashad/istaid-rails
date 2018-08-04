@@ -9,6 +9,7 @@
 #
 
 class Gallery < ActiveRecord::Base
-  has_many :gallery_images, dependent: :destroy
+  has_many :gallery_images, inverse_of: :gallery, dependent: :destroy
   accepts_nested_attributes_for :gallery_images, allow_destroy: true, reject_if: :all_blank # Ignore the blank template record
+  validates :title, presence: true;
 end

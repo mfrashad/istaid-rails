@@ -13,4 +13,13 @@
 class GalleryImage < ActiveRecord::Base
   belongs_to :gallery
   mount_uploader :image, GalleryImageUploader
+
+  def to_jq_upload
+    {
+      "url" => image.url,
+      "delete_url" => id,
+      "picture_id" => id,
+      "delete_type" => "DELETE"
+    }.to_json
+  end
 end
