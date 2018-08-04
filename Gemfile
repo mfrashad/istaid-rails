@@ -29,8 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.1.0'
 
 gem 'materialize-sass', '~> 1.0.0.rc2'
-gem 'cloudinary'
 gem 'carrierwave'
+gem 'cloudinary'
 gem "mini_magick"
 gem 'puma'
 gem 'ckeditor'
