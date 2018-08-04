@@ -8,6 +8,9 @@
 #  commentable_type :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  name             :string
+#  email            :string
+#  post_id          :integer
 #
 
 require 'test_helper'

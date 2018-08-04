@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
       },
       {
         title: "Galeri",
-        url: "/gallery",
+        url: "/galleries",
         image_url: "gallery-bg.jpg",
       },
       {

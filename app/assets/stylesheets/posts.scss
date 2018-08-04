@@ -9,7 +9,7 @@
   box-sizing: border-box;
   font-size: 2em;
 
-  .banner-tab {
+  .banner-tab.col {
     position: relative;
     padding: 0px;
     width: auto;
@@ -110,4 +110,16 @@
 //FORM
 #summary-textarea {
   height: 6rem;
+}
+
+.comment-avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.comment-box {
+  .reply-box .comment-box {
+    width: 100%;
+    max-width: 800px;
+  }
 }

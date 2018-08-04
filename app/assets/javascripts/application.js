@@ -34,4 +34,9 @@ function image_preview(input, width, height) {
 $(document).ready(function(){
   $('.sidenav').sidenav();
   $('select').formSelect();
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+  $('.materialboxed').materialbox();
 });

@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+    <div id="notice">
+      <h2><%= notice %></h2>
+    </div>
+<% end %>
 <div class='container single-post'>
   <h1><%= @post.title %></h1>
   <div class="divider"></div><br>
@@ -17,16 +21,23 @@
   </div>
   <div class="reply">
     <h3> Leave a Comment</h3>
-    <form>
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea" rows="3"></textarea>
-          <label for="textarea1">Write your comment</label>
-        </div>
+    <%= form_for [@post, @post.comments.build] do |f| %>
+      <%= f.hidden_field :post_id, value: @post.id%>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :body %><br>
+        <%= f.text_area :body, class: 'materialize-textarea', placeholder: 'Write your comment here!' %>
       </div>
       <button class="btn waves-effect waves-light" type="submit" name="action">Submit
         <i class="material-icons right">send</i>
       </button>
-    </form>
+    <% end %>
   </div>
 </div>

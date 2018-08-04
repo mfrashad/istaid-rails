@@ -79,7 +79,20 @@ nav {
   object-fit: cover;
 }
 
+.thumbnail {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+}
 
 .margin-10 {
   margin: 10px;
+}
+
+.carousel-item {
+  object-fit: cover;
+}
+
+#notice {
+  display: none;
 }

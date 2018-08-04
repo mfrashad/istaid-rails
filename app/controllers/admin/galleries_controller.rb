@@ -13,7 +13,6 @@ class Admin::GalleriesController < Admin::BaseController
   end
 
   def destroy
-    @gallery = Gallery.find(params[:id])
     @gallery.delete
     redirect_to admin_galleries_path
   end

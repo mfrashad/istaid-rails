@@ -1,24 +1,17 @@
 class Admin::CommentsController < Admin::BaseController
   before_action :find_commentable
 
-  def new
-    @comment = Comment.new
+  def index
+    @comments = Comment.all
   end
 
-  def create
-    @comment = @commentable.comments.new comment_params
-    if @comment.save
-      redirect_to :back, notice: 'Your comment was successfully posted!'
-    else
-      redirect_to :back, notice: "Your comment wasn't posted!"
-    end
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.delete
+    redirect_to admin_comments_path
   end
 
   private
-
-  def comment_params
-    params.require(:comment).permit(:body)
-  end
 
   def find_commentable
     @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]

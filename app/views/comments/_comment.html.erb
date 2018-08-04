@@ -1,11 +1,11 @@
 <div class="comment-box card-panel">
   <div class="valign-wrapper">
     <div class="comment-left left">
-      <%= image_tag "avatar-1.jpg", class: "circle responsive-img large"%>
+      <%= image_tag "anonymous-avatar.jpg", class: "comment-avatar circle responsive-img large"%>
     </div>
     <div class="comment-right right">
       <div class="comment-header">
-        <h6>Mary Jane<h6>
+        <h6><%= comment.name %><h6>
         <span><%= time_ago_in_words(comment.created_at) %> ago </span>
         <button type='button' class="right reply-button btn waves-effect waves-light" data-id="<%= comment.id %>" >Reply</button>
       </div>
@@ -14,16 +14,23 @@
       </div>
     </div>
   </div>
-  <div class="valign-wrapper">
+  <div class="reply-box">
     <%= render partial: 'comments/comment', collection: comment.comments %>
   </div>
   <div id="<%= "reply-#{comment.id}" %>" class="card-panel reply reply-box" style="display:none;">
     <%= form_for [comment, comment.comments.build] do |f| %>
-      <div class="row">
-        <div class="input-field col s12">
-          <%= f.text_area :body, class: "materialize-textarea", id: "body-textarea", rows: 3 %>
-          <label for="body-textarea">Reply to this comment</label>
-        </div>
+      <%= f.hidden_field :post_id, value: comment.post_id%>
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :body %><br>
+        <%= f.text_area :body, class: 'materialize-textarea', placeholder: 'Write your comment here!' %>
       </div>
       <button class="btn waves-effect waves-light" type="submit" name="action">Submit
         <i class="material-icons right">send</i>
@@ -31,3 +38,4 @@
     <% end %>
   </div>
 </div>
+<br>

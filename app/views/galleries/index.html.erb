@@ -1,0 +1,23 @@
+<div class='blog text-center'>
+  <h1 class="center-align"> Gallery </h1>
+
+  <div class='flex-container'>
+
+    <% @galleries.each do |gallery| %>
+    <%= link_to gallery do %>
+    <div class='post'>
+      <div class="card hoverable z-depth-1">
+        <div class="card-image">
+          <% unless gallery.gallery_images.nil? %>
+            <%= image_tag gallery.gallery_images.first.image.thumb.url, class: 'thumbnail' %><br />
+          <% end %>
+        </div>
+        <div class="card-content">
+          <h5><b><%= gallery.title%></b></h5>
+        </div>
+      </div>
+    </div>
+    <% end%>
+    <% end %>
+  </div>
+</div>
