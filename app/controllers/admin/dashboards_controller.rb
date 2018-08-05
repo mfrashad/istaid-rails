@@ -2,7 +2,7 @@ class Admin::DashboardsController < Admin::BaseController
   def index
     @dashboards = [
       {
-        title: 'Artikel',
+        title: 'Buletin',
         url: admin_posts_path,
       },
       {

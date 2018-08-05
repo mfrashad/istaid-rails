@@ -22,44 +22,44 @@ $primary-color: #00B24A !default;
 
 @font-face {
   font-family: 'BrandonText';
-  src: url('BrandonText-Medium.otf') format('truetype');
+  src: font-url('BrandonText-Medium.otf') format('truetype');
 }
 @font-face {
   font-family: 'BrandonText';
-  src: url('BrandonText-Bold.otf') format('truetype');
+  src: font-url('BrandonText-Bold.otf') format('truetype');
   font-weight: bold;
 }
 @font-face {
   font-family: 'BrandonText';
-  src: url('BrandonText-Bold.otf') format('truetype');
+  src: font-url('BrandonText-Bold.otf') format('truetype');
   font-weight: 500;
 }
 @font-face {
   font-family: 'BrandonText';
-  src: url('BrandonText-BoldItalic.otf') format('truetype');
+  src: font-url('BrandonText-BoldItalic.otf') format('truetype');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'BrandonText';
-  src: url('BrandonText-MediumItalic.otf') format('truetype');
+  src: font-url('BrandonText-MediumItalic.otf') format('truetype');
   font-style: italic;
 }
 @font-face {
   font-family: 'BrandonText';
-  src: url('BrandonText-Light.otf') format('truetype');
+  src: font-url('BrandonText-Light.otf') format('truetype');
   font-weight: lighter;
 }
 @font-face {
   font-family: 'BrandonText';
-  src: url('BrandonText-LightItalic.otf') format('truetype');
+  src: font-url('BrandonText-LightItalic.otf') format('truetype');
   font-weight: lighter;
   font-style: italic;
 }
 
 body {
     margin: 0px;
-    font-family: 'BrandonText';
+    font-family: 'BrandonText', 'Roboto';
     background-color: #FCFCFC;
 }
 

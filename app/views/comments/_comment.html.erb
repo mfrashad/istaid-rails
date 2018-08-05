@@ -7,7 +7,7 @@
       <div class="comment-header">
         <h6><%= comment.name %><h6>
         <span><%= time_ago_in_words(comment.created_at) %> ago </span>
-        <button type='button' class="right reply-button btn waves-effect waves-light" data-id="<%= comment.id %>" >Reply</button>
+        <button type='button' class="right reply-button btn waves-effect waves-light" data-id="<%= comment.id %>" >Balas</button>
       </div>
       <div class="comment-content">
         <p> <%= comment.body %></p>
@@ -21,7 +21,7 @@
     <%= form_for [comment, comment.comments.build] do |f| %>
       <%= f.hidden_field :post_id, value: comment.post_id%>
       <div class="field">
-        <%= f.label :name %><br>
+        <%= f.label :name, 'Nama' %><br>
         <%= f.text_field :name %>
       </div>
       <div class="field">
@@ -29,10 +29,10 @@
         <%= f.text_field :email %>
       </div>
       <div class="field">
-        <%= f.label :body %><br>
+        <%= f.label :body, 'Isi Komentar' %><br>
         <%= f.text_area :body, class: 'materialize-textarea', placeholder: 'Write your comment here!' %>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <button class="btn waves-effect waves-light" type="submit" name="action">Kirim
         <i class="material-icons right">send</i>
       </button>
     <% end %>

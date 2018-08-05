@@ -8,12 +8,12 @@
         <div class="input-field">
           <i class="material-icons prefix">search</i>
           <textarea id="search" class="materialize-textarea"></textarea>
-          <label for="search">Search</label>
+          <label for="search">Cari</label>
         </div>
       </div>
 
       <div class="row center-align categories">
-        <%= link_to "All", posts_path(search: params[:search]), class: "waves-effect waves-light btn" %>
+        <%= link_to "Semua", posts_path(search: params[:search]), class: "waves-effect waves-light btn" %>
         <% @categories.each do |category| %>
           <%= link_to "#{category.name}", blog_path(category: category.name, search: params[:search]), class: "waves-effect waves-light btn" %>
         <% end %>"

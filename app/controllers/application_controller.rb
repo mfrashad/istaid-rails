@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def get_menus
     @menus = [
       {
-        title: "Artikel",
+        title: "Buletin",
         url: "/blog",
         image_url: "blog-bg.jpg",
       },

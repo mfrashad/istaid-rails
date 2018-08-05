@@ -14,6 +14,7 @@
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400%7CSource+Sans+Pro:700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <%= favicon_link_tag 'favicon.ico' %>
 
 </head>
 <body>
@@ -26,7 +27,7 @@
       </a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/">Artikel</a></li>
+        <li><a href="/">Buletin</a></li>
         <li><a href="/about">Tentang Kami</a></li>
         <li><a href="/team">Tim Kami</a></li>
         <li><a href="/events">Kegiatan</a></li>
@@ -50,10 +51,12 @@
 </div>
 
 <ul class="sidenav" id="mobile-demo">
-  <li><a href="sass.html">Sass</a></li>
-  <li><a href="badges.html">Components</a></li>
-  <li><a href="collapsible.html">Javascript</a></li>
-  <li><a href="mobile.html">Mobile</a></li>
+  <li><a href="/">Buletin</a></li>
+  <li><a href="/about">Tentang Kami</a></li>
+  <li><a href="/team">Tim Kami</a></li>
+  <li><a href="/events">Kegiatan</a></li>
+  <li><a href="/gallery">Galeri</a></li>
+  <li><a href="/donate">Donasi</a></li>
 </ul>
 <%= yield %>
 <% if notice %>
