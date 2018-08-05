@@ -1,4 +1,4 @@
-require 'faker'
+# require 'faker'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -6,7 +6,7 @@ require 'faker'
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-seeder = Seed.new
+# seeder = Seed.new
 
 User.create(
   name: 'icad123',
@@ -15,5 +15,5 @@ User.create(
   role: 'admin'
 )
 
-seeder.category
-seeder.post
+# seeder.category
+# seeder.post
