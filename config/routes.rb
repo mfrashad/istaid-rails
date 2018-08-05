@@ -1,17 +1,19 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :categories
-  resources :posts do
+  resources :posts, only: [:show, :index] do
     resources :comments
   end
   resources :comments do
     resources :comments
   end
-  resources :galleries
-  resources :employees
+  resources :galleries, only: [:show, :index]
+  resources :employees, only: :index
   root 'posts#home'
   get '/blog' => 'posts#index'
   get '/events' => 'posts#events'
+  get '/team' => 'employees#index'
+
   namespace :admin do
     root 'dashboards#index'
     resources :galleries do

@@ -1,0 +1,27 @@
+<div class="container">
+<h3> Categories </h3>
+<%= link_to admin_root_path, class:'btn waves-effect waves-light' do %>
+  <i class="material-icons left">arrow_back</i>Back
+<% end%>
+<div class="card-panel">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= link_to 'Edit', edit_admin_category_path(category) %></td>
+        <td><%= link_to 'Destroy', [:admin, category], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New category', new_admin_category_path, class:'btn waves-effect waves-light' %><br>
+</div>
+</div>

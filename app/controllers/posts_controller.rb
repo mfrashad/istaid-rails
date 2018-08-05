@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def events
-    @posts = get_posts('Event')
+    @posts = get_posts('Kegiatan')
     @categories = Category.all
   end
 

@@ -32,7 +32,7 @@ class EmployeeImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    cloudinary_transformation width: 300, height: 200, crop: :fill, gravity: :face
+    cloudinary_transformation width: 250, height: 300, crop: :fill, gravity: :face
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
