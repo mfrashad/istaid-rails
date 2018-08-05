@@ -2,7 +2,7 @@ class Admin::CommentsController < Admin::BaseController
   before_action :find_commentable
 
   def index
-    @comments = Comment.all
+    @comments = Comment.all.paginate(page: params[:page], per_page: 20)
   end
 
   def destroy

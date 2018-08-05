@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  resources :categories
   resources :posts, only: [:show, :index] do
-    resources :comments
+    resources :comments, only: [:show, :index]
   end
-  resources :comments do
-    resources :comments
+  resources :comments, only: [:show, :index] do
+    resources :comments, only: [:show, :index]
   end
   resources :galleries, only: [:show, :index]
   resources :employees, only: :index

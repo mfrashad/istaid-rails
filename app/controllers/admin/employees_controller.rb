@@ -2,7 +2,7 @@ class Admin::EmployeesController < Admin::BaseController
   before_action :set_employee, only: %i(show edit update destroy)
 
   def index
-    @employees = Employee.all
+    @employees = Employee.all.paginate(page: params[:page], per_page: 20)
   end
 
   def new

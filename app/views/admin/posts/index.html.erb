@@ -25,7 +25,9 @@
     <% end %>
   </tbody>
 </table>
-<%= will_paginate @posts %>
+<div class="center">
+    <%= will_paginate @posts, renderer: @custom_paginate_renderer %>
+</div>
 <%= link_to 'New Post', new_admin_post_path, class:'btn waves-effect waves-light' %><br>
 </div>
 </div>

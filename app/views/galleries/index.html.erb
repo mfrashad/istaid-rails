@@ -1,5 +1,5 @@
 <div class='blog text-center'>
-  <h1 class="center-align"> Gallery </h1>
+  <h1 class="center-align"> Galeri </h1>
 
   <div class='flex-container'>
 
@@ -19,5 +19,8 @@
     </div>
     <% end%>
     <% end %>
+  </div>
+  <div class="center">
+    <%= will_paginate @galleries, renderer: @custom_paginate_renderer %>
   </div>
 </div>

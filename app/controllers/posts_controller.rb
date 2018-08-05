@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :get_menus
   before_action :set_post, only: %i(show edit update destroy)
-  before_action :require_admin, only: %i(new create edit destroy)
 
   # GET /posts
   # GET /posts.json

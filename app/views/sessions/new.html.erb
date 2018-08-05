@@ -1,9 +1,14 @@
+<div class="container">
+<div class="card-panel">
 <h1>Login</h1>
 
 <%= form_tag '/login' do %>
 
   Email: <%= text_field_tag :email %>
   Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Login
+  </button>
 
 <% end %>
+</div>
+</div>

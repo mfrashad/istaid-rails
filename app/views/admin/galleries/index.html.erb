@@ -25,6 +25,8 @@
   </tbody>
 </table>
 <%= link_to 'New Gallery', new_admin_gallery_path, class:'btn waves-effect waves-light' %><br>
-<%# <%= will_paginate @galleries %>
+<div class="center">
+    <%= will_paginate @galleries, renderer: @custom_paginate_renderer %>
+</div>
 </div>
 </div>

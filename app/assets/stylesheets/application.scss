@@ -16,6 +16,7 @@
 
 @import "materialize/components/color-variables";
 $primary-color: #00B24A !default;
+$secondary-color: color("green", "lighten-1") !default;
 // $secondary-color: color("yellow", "base") !default;
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "materialize";
@@ -93,6 +94,6 @@ nav {
   object-fit: cover;
 }
 
-#notice {
+#notice, #error_explanation {
   display: none;
 }

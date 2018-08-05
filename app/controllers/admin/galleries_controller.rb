@@ -2,7 +2,7 @@ class Admin::GalleriesController < Admin::BaseController
   before_action :set_gallery, only: %i(show edit update destroy)
 
   def index
-    @galleries = Gallery.all
+    @galleries = Gallery.all.paginate(page: params[:page], per_page: 20)
   end
 
   def new
@@ -38,7 +38,6 @@ class Admin::GalleriesController < Admin::BaseController
       render :new
     end
   end
-
 
   private
 
