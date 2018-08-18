@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = get_posts
+    @posts = get_posts('Buletin')
     @categories = Category.all
   end
 
