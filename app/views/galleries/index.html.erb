@@ -5,15 +5,18 @@
 
     <% @galleries.each do |gallery| %>
     <%= link_to gallery do %>
-    <div class='post'>
+    <div class='gallery-image'>
       <div class="card hoverable z-depth-1">
         <div class="card-image">
           <% unless gallery.gallery_images.nil? %>
-            <%= image_tag gallery.gallery_images.first.image.thumb.url, class: 'thumbnail' %><br />
+            <a href="<%= gallery.gallery_images.first.image.url %>" data-lightbox="<%= gallery.id %>">
+              <%= image_tag gallery.gallery_images.first.image.thumb.url, class: 'thumbnail' %>
+            </a>
+            <% gallery.gallery_images.offset(1).each do |gallery_image| %>
+              <a href="<%= gallery_image.image.url %>" data-lightbox="<%= gallery.id %>" style="display:none;"></a>
+            <% end %>
           <% end %>
-        </div>
-        <div class="card-content">
-          <h5><b><%= gallery.title%></b></h5>
+          <span class="card-title"><%= gallery.title%></span>
         </div>
       </div>
     </div>
@@ -24,3 +27,8 @@
     <%= will_paginate @galleries, renderer: @custom_paginate_renderer %>
   </div>
 </div>
+<script>
+$(document).ready(function(event) {
+  lightbox.init();
+});
+</script>
