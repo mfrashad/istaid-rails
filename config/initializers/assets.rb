@@ -11,3 +11,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( posts.js static.js admin/galleries.js posts.scss static.scss )
 Rails.application.config.assets.precompile += %w( ckeditor/*)
 Rails.application.config.assets.precompile += %w(ckeditor/config.js)
+Rails.application.config.assets.precompile += %w( lightbox/* )

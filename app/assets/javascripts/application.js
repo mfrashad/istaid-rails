@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-fileupload/basic
 //= require ckeditor/init
+//= require lightbox
 //= require_tree .
 //= require materialize
 

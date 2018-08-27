@@ -35,6 +35,8 @@ gem "mini_magick"
 gem 'puma'
 gem 'ckeditor'
 gem "jquery-fileupload-rails"
+gem 'lightbox2-rails'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
