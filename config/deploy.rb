@@ -7,8 +7,8 @@ set :repo_url, "git@github.com:mfrashad/istaid-rails.git"
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/cloudinary.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
-set :passenger_environment_variables, { :path => '/usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini/bin:$PATH' }
-set :passenger_restart_command, '/usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini/bin/passenger-config restart-app'
+# set :passenger_environment_variables, { :path => '/usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini/bin:$PATH' }
+# set :passenger_restart_command, '/usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini/bin/passenger-config restart-app'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
