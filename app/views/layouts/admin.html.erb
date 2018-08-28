@@ -30,6 +30,11 @@
         <li><a href="/events">Kegiatan</a></li>
         <li><a href="/gallery">Galeri</a></li>
         <li><a href="/donate">Donasi</a></li>
+        <% if current_user&.admin? %>
+          <li><a href="/admin">Admin</a></li>
+        <% else %>
+          <li><a href="/login">Login</a></li>
+        <% end %>
         <%# <li>
           <div class="center row">
             <div class="col s12 " >
