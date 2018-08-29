@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/widgets/sortable
 //= require jquery-fileupload/basic
+//= require jquery-ui/widgets/sortable
+//= require rails_sortable
 //= require ckeditor/init
 //= require lightbox
 //= require_tree .
