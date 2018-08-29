@@ -1,18 +1,18 @@
-<div class='header-banner'>
-  <div class="row">
+<div class='header-banner flex-container'>
     <% @menus.each do |menu| %>
     <%= link_to menu[:url] do%>
     <div class="banner-tab col s4 valign-wrapper hoverable z-depth-1">
       <div class="overlay">
-        <div class="overlay-text"><h1> <%= menu[:title] %> </h1></div>
+        <div class="overlay-text"><h3> <%= menu[:title] %> </h3></div>
       </div>
-      <%= cl_image_tag(menu[:image_url], :width => 455, :height => 350, 
+      <%= cl_image_tag(menu[:image_url], :width => 420, :height => 350, 
                            :crop => :fill) %>
     </div>
     <% end%>
     <% end %>
-  </div>
 </div>
+
+
 <div class='blog text-center'>
   <h1 class="center-align"> Buletin </h1>
 

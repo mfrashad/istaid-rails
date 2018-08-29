@@ -10,11 +10,40 @@
   font-size: 2em;
 
   .banner-tab.col {
+    margin: 10px;
     position: relative;
     padding: 0px;
     width: auto;
     height: 350px;
   }
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #00B24ADD;
+  overflow: hidden;
+  width: 100%;
+  height: 2.5em;
+  transition: .5s ease;
+}
+
+.banner-tab.col:hover .overlay{
+  height: 100%;
+}
+
+.overlay-text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 1em;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 .blog {
@@ -72,34 +101,6 @@
   textarea {
     min-height: 8rem;
   }
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #00B24ADD;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  transition: .5s ease;
-
-  &:hover {
-    background-color: #00B24A11;
-  }
-}
-
-.overlay-text {
-  white-space: nowrap; 
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
 }
 
 .inline-icons {
