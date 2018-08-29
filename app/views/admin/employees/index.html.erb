@@ -12,9 +12,9 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="sortable">
     <% @employees.each do |employee| %>
-      <tr>
+      <tr id="<%= employee.sortable_id %>">
         <td><%= employee.name %></td>
         <td><%= employee.position %></td>
         <td><%= link_to 'Show', employees_path %></td>

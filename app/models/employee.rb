@@ -12,5 +12,7 @@
 #
 
 class Employee < ActiveRecord::Base
+  include RailsSortable::Model
+  set_sortable :sort
   mount_uploader :image, EmployeeImageUploader
 end

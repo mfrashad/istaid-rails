@@ -1,8 +1,8 @@
 <div class="container center-align">
   <h1> Tim Istaid </h1>
-  <div class="flex-container">
+  <div class="flex-container <%= "sortable" if current_user&.admin? %> ">
     <% @employees.each do |employee| %>
-    <div class="card person-card">
+    <div class="card person-card" id="<%= employee.sortable_id %>">
       <div class="card-image">
           <%= image_tag employee.image.thumb.url %>
         </div>

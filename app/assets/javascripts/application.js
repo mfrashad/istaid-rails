@@ -43,4 +43,5 @@ $(document).ready(function(){
     indicators: true
   });
   $('.materialboxed').materialbox();
+  $('.sortable').railsSortable();
 });

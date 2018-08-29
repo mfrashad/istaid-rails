@@ -21,6 +21,10 @@
     <%= f.label :position %><br>
     <%= f.text_field :position %>
   </div>
+  <div class="field">
+    <%= f.label :sort %><br>
+    <%= f.text_field :sort %>
+  </div>
   <img class="img_prev" src="#" alt="your image" object-fit='cover' />
   <%= image_tag(@employee.image_url) if @employee.image? %>
   <div class="file-field input-field">

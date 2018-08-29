@@ -2,7 +2,7 @@ class Admin::EmployeesController < Admin::BaseController
   before_action :set_employee, only: %i(show edit update destroy)
 
   def index
-    @employees = Employee.all.paginate(page: params[:page], per_page: 20)
+    @employees = Employee.order(:sort).all.paginate(page: params[:page], per_page: 20)
   end
 
   def new
@@ -47,6 +47,6 @@ class Admin::EmployeesController < Admin::BaseController
   end
 
   def employee_params
-    params.require(:employee).permit(:name, :position, :image)
+    params.require(:employee).permit(:name, :position, :image, :sort)
   end
 end
