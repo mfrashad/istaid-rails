@@ -17,6 +17,4 @@ class Event < ActiveRecord::Base
 
   validates :title, presence: true, length: { minimum: 3 }
   validates :body, presence: true
-  validates :category, presence: true
-  validates :user, presence: true
 end
