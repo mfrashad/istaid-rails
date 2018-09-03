@@ -3,9 +3,9 @@
     <%= link_to menu[:url] do%>
     <div class="banner-tab col s4 valign-wrapper hoverable z-depth-1">
       <div class="overlay">
-        <div class="overlay-text"><h3> <%= menu[:title] %> </h3></div>
+        <div class="overlay-text"><h5> <%= menu[:title] %> </h5></div>
       </div>
-      <%= cl_image_tag(menu[:image_url], :width => 420, :height => 350, 
+      <%= cl_image_tag(menu[:image_url], :width => 350, :height => 250, 
                            :crop => :fill) %>
     </div>
     <% end%>
