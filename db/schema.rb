@@ -57,11 +57,13 @@ ActiveRecord::Schema.define(version: 20180903033117) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string  "title"
-    t.text    "body"
-    t.string  "summary"
-    t.string  "thumbnail"
-    t.integer "gallery_id"
+    t.string   "title"
+    t.text     "body"
+    t.string   "summary"
+    t.string   "thumbnail"
+    t.integer  "gallery_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "events", ["gallery_id"], name: "index_events_on_gallery_id", using: :btree
