@@ -1,0 +1,25 @@
+<div class='blog text-center'>
+  <h1 class="center-align"> Kegiatan </h1>
+
+  <div class='flex-container'>
+
+    <% @events.each do |event| %>
+    <%= link_to event do %>
+    <div class='post'>
+      <div class="card hoverable z-depth-1">
+        <div class="card-image">
+          <% unless event.thumbnail_url.nil? %><%= image_tag event.thumbnail.thumb.url %><br /><% end %>
+        </div>
+        <div class="card-content">
+          <h5><b><%= event.title%></b></h5>
+          <p><%= event.summary %></p>
+        </div>
+      </div>
+    </div>
+    <% end%>
+    <% end %>
+  </div>
+  <div class="center">
+    <%= will_paginate @events, renderer: @custom_paginate_renderer %>
+  </div>
+</div>
