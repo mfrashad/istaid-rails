@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:show, :index] do
     resources :comments, only: [:show, :index]
   end
+  resources :events, only: [:show, :index]
   resources :comments, only: [:show, :index] do
     resources :comments, only: [:show, :index]
   end
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
     resources :galleries do
       resources :gallery_images
     end
+    resources :events
     resources :categories
     resources :posts do
       resources :comments
