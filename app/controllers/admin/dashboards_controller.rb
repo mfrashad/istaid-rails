@@ -6,6 +6,10 @@ class Admin::DashboardsController < Admin::BaseController
         url: admin_posts_path,
       },
       {
+        title: 'Kegiatan',
+        url: admin_events_path,
+      },
+      {
         title: 'Staff',
         url: admin_employees_path,
       },

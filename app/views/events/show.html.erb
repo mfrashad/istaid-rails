@@ -1,0 +1,25 @@
+<% if notice %>
+    <div id="notice">
+      <h2><%= notice %></h2>
+    </div>
+<% end %>
+<div class='container single-post'>
+  <h1><%= @event.title %></h1>
+  <div class="divider"></div><br>
+  <div class="meta-info">
+    <i class="inline-icons material-icons">today</i>
+    <span><%= @event.created_at.strftime('%B %e, %Y') %></span>
+  </div>
+  <div class="event-content section">
+    <div class='card'>
+      <div class='card-image'>
+        <div class="carousel carousel-slider center">
+          <% @event.gallery.gallery_images.each do |image| %>
+            <%= image_tag image.image.url, class: 'carousel-item' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= @event.body.html_safe %>
+  </div>
+</div>
