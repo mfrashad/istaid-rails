@@ -42,7 +42,7 @@ class Admin::EventsController < Admin::BaseController
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
-      if @event.update(post_params)
+      if @event.update(event_params)
         format.html { redirect_to admin_eventts_url, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
