@@ -2,3 +2,11 @@
 h3 {
   color: $text-color;
 }
+
+.pagination > li > a{
+  color: black;
+}
+
+.pagination > li.active > a {
+  color: $text-color;
+}
