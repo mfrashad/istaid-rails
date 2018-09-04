@@ -13,14 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
 @import "lightbox";
 @import "materialize/components/color-variables";
-$primary-color: #00B24A !default;
-$background-color: #2c3e50;
-$text-color: white;
-$invert-text-color: black;
-$secondary-color: color("green", "lighten-1") !default;
+@import 'shared';
 // $secondary-color: color("yellow", "base") !default;
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "materialize";

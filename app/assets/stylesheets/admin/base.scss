@@ -1,12 +1,12 @@
-@import '../application';
+@import 'shared';
 h3 {
   color: $text-color;
 }
 
-.pagination > li > a{
+.admin .pagination > li > a{
   color: black;
 }
 
-.pagination > li.active > a {
+.admin .pagination > li.active > a {
   color: $text-color;
 }
