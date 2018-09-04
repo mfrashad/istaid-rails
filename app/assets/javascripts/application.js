@@ -42,6 +42,11 @@ $(document).ready(function(){
     fullWidth: true,
     indicators: true
   });
+  setTimeout(autoplay, 3000);
+  function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 3000);
+  }
   $('.materialboxed').materialbox();
   $('.sortable').railsSortable();
 });
