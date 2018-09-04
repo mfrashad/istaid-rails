@@ -1,12 +1,17 @@
 # encoding: utf-8
 class CkeditorPictureUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
   include Ckeditor::Backend::CarrierWave
   include Cloudinary::CarrierWave
 
-  # Include RMagick or ImageScience support:
-  # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
-  # include CarrierWave::ImageScience
+  process tags: ["photo_album_sample"]
+  process convert: "jpg"
+  version :thumbnail do
+    eager
+    resize_to_fit(200, 200)
+    cloudinary_transformation quality: 80
+  end
+
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
