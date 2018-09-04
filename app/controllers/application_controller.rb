@@ -55,7 +55,7 @@ class ApplicationController < ActionController::Base
     # Return nice pagination for materialize
     Class.new(WillPaginate::ActionView::LinkRenderer) do
     def container_attributes
-      {class: "pagination"}
+      { class: "pagination" }
     end
 
     def page_number(page)

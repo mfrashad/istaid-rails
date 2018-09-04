@@ -2,7 +2,7 @@ class GalleriesController < ApplicationController
   before_action :set_gallery, only: %i(show edit update destroy)
 
   def index
-    @galleries = Gallery.all.paginate(page: params[:page], per_page: 6)
+    @galleries = Gallery.all.paginate(page: params[:page], per_page: 10)
   end
 
 
