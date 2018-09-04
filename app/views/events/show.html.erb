@@ -11,15 +11,17 @@
     <span><%= @event.created_at.strftime('%B %e, %Y') %></span>
   </div>
   <div class="event-content section">
+    <% unless @event.gallery.nil?%>
     <div class='card'>
       <div class='card-image'>
         <div class="carousel carousel-slider center">
-          <% @event.gallery.gallery_images.each do |image| %>
+          <% @event&.gallery&.gallery_images&.each do |image| %>
             <%= image_tag image.image.url, class: 'carousel-item' %>
           <% end %>
         </div>
       </div>
     </div>
+    <% end %>
     <%= @event.body.html_safe %>
   </div>
 </div>
