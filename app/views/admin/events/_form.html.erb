@@ -19,7 +19,7 @@
   </div>
   <div class="input-field">
     <%= f.label :gallery_id %><br>
-    <%= f.collection_select(:gallery_id, Gallery.all, :id, :title) %>
+    <%= f.collection_select(:gallery_id, Gallery.all, :id, :title, include_blank: true) %>
   </div>
   <img class="img_prev" src="#" alt="your image" />
   <%= image_tag(@event.thumbnail.thumb.url) if @event.thumbnail? %>
