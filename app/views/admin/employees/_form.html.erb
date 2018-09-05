@@ -25,8 +25,7 @@
     <%= f.label :sort %><br>
     <%= f.text_field :sort %>
   </div>
-  <img class="img_prev" src="#" alt="your image" object-fit='cover' />
-  <%= image_tag(@employee.image_url) if @employee.image? %>
+  <%= image_tag(@employee.image_url, class: "img_prev", style: ('display:none;' if @employee.image_url.nil? )) %>
   <div class="file-field input-field">
     <div class="btn">
       <span>Image</span>

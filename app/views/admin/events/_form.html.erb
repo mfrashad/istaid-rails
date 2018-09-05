@@ -21,12 +21,11 @@
     <%= f.label :gallery_id %><br>
     <%= f.collection_select(:gallery_id, Gallery.all, :id, :title, include_blank: true) %>
   </div>
-  <img class="img_prev" src="#" alt="your image" />
-  <%= image_tag(@event.thumbnail.thumb.url) if @event.thumbnail? %>
+  <%= image_tag(@event.thumbnail.thumb.url, class: 'img_prev', style: ('display:none;' if @event.thumbnail.nil? ))) %>
   <div class="file-field input-field">
     <div class="btn">
       <span>Image</span>
-      <%= f.file_field :thumbnail, onchange: 'image_preview(this, 800 ,600);' %>
+      <%= f.file_field :thumbnail, onchange: 'image_preview(this);' %>
     </div>
     <div class="file-path-wrapper">
       <input class="file-path validate" type="text" placeholder="Upload the thumbnail here">
