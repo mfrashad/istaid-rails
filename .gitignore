@@ -12,6 +12,7 @@
 !/log/.keep
 /tmp
 /public/uploads
+.byebug_history
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

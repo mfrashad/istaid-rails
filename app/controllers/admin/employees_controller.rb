@@ -30,7 +30,7 @@ class Admin::EmployeesController < Admin::BaseController
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
-      if @employee.update(employee_params)
+      if @employee.update_attributes(employee_params)
         format.html { redirect_to admin_employees_url, notice: 'Employee was successfully updated.' }
         format.json { render :show, status: :ok, location: @employee }
       else
