@@ -24,7 +24,7 @@ class GalleryImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
-  process resize_to_fit: [2000, 2000]
+  process resize_to_limit: [2000, 2000]
   #
   # def scale(width, height)
   #   # do something
