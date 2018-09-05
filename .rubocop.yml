@@ -369,12 +369,12 @@ Style/TrailingCommaInArguments:
 Style/TrailingCommaInArrayLiteral:
   Description: 'Checks for trailing comma in array literals.'
   EnforcedStyleForMultiline: comma
-  Enabled: true
+  Enabled: false
 
 Style/TrailingCommaInHashLiteral:
   Description: 'Checks for trailing comma in hash literals.'
   EnforcedStyleForMultiline: comma
-  Enabled: true
+  Enabled: false
 
 Layout/SpaceInLambdaLiteral:
   EnforcedStyle: require_space
