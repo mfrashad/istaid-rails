@@ -21,7 +21,7 @@
     <%= f.label :gallery_id %><br>
     <%= f.collection_select(:gallery_id, Gallery.all, :id, :title, include_blank: true) %>
   </div>
-  <%= image_tag(@event.thumbnail.thumb.url, class: 'img_prev', style: ('display:none;' if @event.thumbnail.nil? ))) %>
+  <%= image_tag(@event.thumbnail.thumb.url, class: 'img_prev', style: ('display:none;' if @event.thumbnail.nil? )) %>
   <div class="file-field input-field">
     <div class="btn">
       <span>Image</span>
