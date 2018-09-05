@@ -4,7 +4,7 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   include Ckeditor::Backend::CarrierWave
   include Cloudinary::CarrierWave
 
-  process tags: ["photo_album_sample"]
+  process tags: ["ckeditor", model.class.name.demodulize]
   process convert: "jpg"
   version :thumbnail do
     eager
@@ -20,7 +20,7 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
 
   def public_id
-    model.id
+    "#{model.class.name.demodulize}/#{model.title}_#{timestamp}_"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -50,5 +50,10 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_white_list
     Ckeditor.image_file_types
+  end
+
+  def timestamp
+    var = :"@#{mounted_as}_timestamp"
+    model.instance_variable_get(var) || model.instance_variable_set(var, Time.now.to_i)
   end
 end

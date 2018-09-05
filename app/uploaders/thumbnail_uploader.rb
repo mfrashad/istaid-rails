@@ -11,7 +11,7 @@ class ThumbnailUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def public_id
-    timestamp
+    "#{model.class.name.demodulize}/#{model.title}_#{timestamp}_"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -29,6 +29,7 @@ class ThumbnailUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+  process :assign_tags
 
   # Create different versions of your uploaded files:
   version :thumb do
@@ -46,9 +47,12 @@ class ThumbnailUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  def assign_tags
+    { tags: [model.class.name.demodulize] }
+  end
+
   def timestamp
     var = :"@#{mounted_as}_timestamp"
     model.instance_variable_get(var) || model.instance_variable_set(var, Time.now.to_i)
   end
-
 end
