@@ -17,7 +17,11 @@
 
 .donate-card.card-panel {
   width: 500px;
-  height: 400px;
+  height: 450px;
   font-size: 2em;
   margin: 50px auto;
+  color: black;
+  blockquote {
+    text-align: left;
+  }
 }
