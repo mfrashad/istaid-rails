@@ -1,6 +1,7 @@
 <div class="card-panel">
 <%= form_for([:admin, @post]) do |f| %>
-<%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <ul>
@@ -14,15 +15,19 @@
       M.toast({html: $("#error_explanation").html()});
     </script>
   <% end %>
+
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+
   <div class="input-field">
     <%= f.label :category_id %><br>
     <%= f.collection_select(:category_id, Category.all, :id, :name) %>
   </div>
+
   <%= image_tag(@post.thumbnail.thumb.url, class: 'img_prev', style: ('display:none;' if @post.thumbnail.nil? )) %>
+
   <div class="file-field input-field">
     <div class="btn">
       <span>Image</span>
@@ -32,19 +37,47 @@
       <input class="file-path validate" type="text" placeholder="Upload the thumbnail here">
     </div>
   </div>
+
+  <div class="field">
+    <%= f.label :remote_thumbnail_url %><br>
+    <%= f.text_field :remote_thumbnail_url, onchange: 'remote_image_preview(this);' %>
+  </div>
+
+   <a class="waves-effect waves-light btn modal-trigger" href="#browse_server_modal">Browse Server</a>
+
   <div class="field">
     <%= f.label :summary %><br>
     <%= f.text_area :summary, class: "materialize-textarea", id: "summary-textarea", data: { length: 300 }, placeholder: "Write the post summary here" %>
   </div>
+
   <div class="field">
     <%= f.label :body %><br>
     <%= f.cktext_area :body, class: 'someclass', rows: 40, ckeditor: { language: 'us' } %>
   </div>
   <br>
+
   <button class="btn waves-effect waves-light" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
   </button>
 <% end %>
+</div>
+
+<!-- Modal Structure -->
+<div id="browse_server_modal" class="modal">
+  <div class="modal-content">
+    <h4>Choose file from server</h4>
+    <div class="container flex-container">
+
+      <select class="image-picker show-html">
+        <% Cloudinary::Api.resources["resources"].each do |image| %>
+          <option data-img-src="<%= image["url"] %>" value="<%= image["url"] %>">  </option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
 </div>
 <script>
 $('textarea#summary-textarea').characterCounter();

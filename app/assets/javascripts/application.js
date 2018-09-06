@@ -18,6 +18,7 @@
 //= require rails_sortable
 //= require ckeditor/init
 //= require lightbox
+//= require image-picker.min
 //= require_tree .
 //= require materialize
 
@@ -35,6 +36,16 @@ function image_preview(input, width, height) {
   }
 }
 
+function remote_image_preview(input, width, height){
+  if (input.value) {
+    $('.img_prev')
+        .show()
+        .attr('src', input.value)
+        .width(width)
+        .height(height);
+  }
+}
+
 $(document).ready(function(){
   $('.sidenav').sidenav();
   $('select').formSelect();
@@ -49,4 +60,9 @@ $(document).ready(function(){
   }
   $('.materialboxed').materialbox();
   $('.sortable').railsSortable();
+  $('.modal').modal();
+  $("select").imagepicker({
+    hide_select : true,
+    show_label  : false
+  })
 });

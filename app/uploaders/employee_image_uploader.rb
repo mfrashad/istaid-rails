@@ -35,6 +35,10 @@ class EmployeeImageUploader < CarrierWave::Uploader::Base
     cloudinary_transformation width: 250, height: 300, crop: :fill, gravity: :face
   end
 
+  version :small_thumb do
+    process resize_to_fill: [133, 100]
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist

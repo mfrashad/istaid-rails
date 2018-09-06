@@ -10,3 +10,11 @@ h3 {
 .admin .pagination > li.active > a {
   color: $text-color;
 }
+
+.image-container.card {
+  padding: 0;
+  width: 300px;
+  height: 100%;
+  text-align: center;
+  margin: 10px;
+}

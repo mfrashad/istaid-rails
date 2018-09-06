@@ -139,3 +139,12 @@
     max-width: 800px;
   }
 }
+
+.image-container.card {
+  padding: 0;
+  width: 133px;
+  height: 100px;
+  text-align: center;
+  margin: 10px;
+  object-fit: cover;
+}
