@@ -55,7 +55,7 @@ server "ec2-18-223-96-208.us-east-2.compute.amazonaws.com",
   roles: %w{web app},
   ssh_options: {
     user: "deploy", # overrides user setting above
-    keys: %w(~/.ssh/id_rsa),
+    keys: %w(~/.ssh/mfrashad.pem),
     forward_agent: false,
     auth_methods: %w(publickey password)
     # password: "please use keys"
