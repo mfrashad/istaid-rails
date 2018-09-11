@@ -4,7 +4,7 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   include Ckeditor::Backend::CarrierWave
   include Cloudinary::CarrierWave
 
-  process tags: ["ckeditor", model.class.name.demodulize]
+  process :assign_tags
   process convert: "jpg"
   version :thumbnail do
     eager
@@ -50,6 +50,10 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_white_list
     Ckeditor.image_file_types
+  end
+
+  def assign_tags
+    { tags: ["ckeditor", model.class.name.demodulize] }
   end
 
   def timestamp
