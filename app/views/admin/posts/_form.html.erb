@@ -20,7 +20,7 @@
   </div>
   <div class="input-field">
     <%= f.label :category_id %><br>
-    <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+    <%= f.collection_select(:category_id, Category.post, :id, :name) %>
   </div>
   <%= image_tag(@post.thumbnail.thumb.url, class: 'img_prev', style: ('display:none;' if @post.thumbnail.nil? )) %>
   <div class="file-field input-field">

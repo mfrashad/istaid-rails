@@ -2,12 +2,26 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i(show edit update destroy)
 
   def index
-    @events = Event.all.paginate(page: params[:page], per_page: 10)
+    @events = get_events
+    @categories = Category.event
   end
 
   def show; end
 
   private
+
+  def get_events(category=params[:category], search=params[:search])
+    if category.blank? && search.blank?
+      events = Event.all
+    elsif category.blank? && search.present?
+      events = Event.search(search)
+    elsif category.present? && search.blank?
+      events = Event.by_category(category)
+    elsif category.present? && search.present?
+      events = Event.by_category(category).search(search)
+    end
+    events.paginate(page: params[:page], per_page: 10)
+  end
 
   def set_event
     @event = Event.find(params[:id])

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :posts, only: [:show, :index] do
     resources :comments, only: [:show, :index, :create]
   end
-  resources :events, only: [:show, :index]
+  resources :events, only: [:show, :index] do
+    resources :comments, only: [:show, :index, :create]
+  end
   resources :comments, only: [:show, :index] do
     resources :comments, only: [:show, :index]
   end
@@ -11,7 +13,6 @@ Rails.application.routes.draw do
   resources :employees, only: :index
   root 'posts#home'
   get '/blog' => 'posts#index'
-  get '/events' => 'posts#events'
   get '/team' => 'employees#index'
 
   namespace :admin do
@@ -19,7 +20,9 @@ Rails.application.routes.draw do
     resources :galleries do
       resources :gallery_images
     end
-    resources :events
+    resources :events do
+      resources :comments
+    end
     resources :categories
     resources :posts do
       resources :comments

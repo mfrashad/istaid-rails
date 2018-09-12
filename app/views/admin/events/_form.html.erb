@@ -18,6 +18,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="input-field">
+    <%= f.label :category_id %><br>
+    <%= f.collection_select(:category_id, Category.event, :id, :name) %>
+  </div>
+  <div class="input-field">
     <%= f.label :gallery_id %><br>
     <%= f.collection_select(:gallery_id, Gallery.all, :id, :title, include_blank: true) %>
   </div>
