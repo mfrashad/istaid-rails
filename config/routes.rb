@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:show, :index, :create]
   end
   resources :comments, only: [:show, :index] do
-    resources :comments, only: [:show, :index]
+    resources :comments, only: [:show, :index, :create]
   end
   resources :galleries, only: [:show, :index]
   resources :employees, only: :index

@@ -3,7 +3,7 @@
       <h2><%= notice %></h2>
     </div>
 <% end %>
-<div class='container single-post'>
+<div class='container single-event'>
   <h1><%= @event.title %></h1>
   <div class="divider"></div><br>
   <div class="meta-info">
@@ -23,5 +23,30 @@
     </div>
     <% end %>
     <%= @event.body.html_safe %>
+  </div>
+  <div class="comments">
+    <h3>Komentar</h3>
+    <%= render(partial: 'comments/comment', collection: @event.comments) %>
+  </div>
+  <div class="reply">
+    <h4> Tulis Komentar</h4>
+    <%= form_for [@event, @event.comments.build] do |f| %>
+      <%= f.hidden_field :event_id, value: @event.id%>
+      <div class="field">
+        <%= f.label :name, 'Nama' %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :body, 'Isi Komentar' %><br>
+        <%= f.text_area :body, class: 'materialize-textarea', placeholder: 'Tulis Komentar di Sini!' %>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Kirim
+        <i class="material-icons right">send</i>
+      </button>
+    <% end %>
   </div>
 </div>
