@@ -6,17 +6,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def home
     @posts = get_posts
-    @categories = Category.all
+    @categories = Category.post
   end
 
   def index
-    @posts = get_posts('Buletin')
-    @categories = Category.all
-  end
-
-  def events
-    @posts = get_posts('Kegiatan')
-    @categories = Category.all
+    @posts = get_posts
+    @categories = Category.post
   end
 
   # GET /posts/1
