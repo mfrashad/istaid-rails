@@ -9,5 +9,6 @@
 #
 
 class Category < ActiveRecord::Base
+  enum model_type: { event: 0, post: 1 }
   has_many :posts
 end
