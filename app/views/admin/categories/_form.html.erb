@@ -14,6 +14,10 @@
     </script>
   <% end %>
   <div class="field">
+    <%= f.label :type %><br>
+    <%= f.select :model_type, Category.model_types.map { |key, value| [key.humanize, key] } %>
+  </div>
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
