@@ -35,6 +35,7 @@
         <%= f.label :body, 'Isi Komentar' %><br>
         <%= f.text_area :body, class: 'materialize-textarea', placeholder: 'Tulis Komentar di Sini!' %>
       </div>
+      <%= recaptcha_tags %>
       <button class="btn waves-effect waves-light" type="submit" name="action">Kirim
         <i class="material-icons right">send</i>
       </button>

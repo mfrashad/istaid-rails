@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @commentable.comments.new comment_params
-    if @comment.save
+    if verify_recaptcha(model: @comment) && @comment.save
       redirect_to :back, notice: 'Your comment was successfully posted!'
     else
       redirect_to :back, notice: "Your comment wasn't posted! #{@comment.errors.messages}"

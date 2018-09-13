@@ -41,6 +41,7 @@ gem 'ckeditor'
 gem "jquery-fileupload-rails"
 gem 'lightbox2-rails'
 gem 'simple_form'
+gem "recaptcha"
 
 gem 'ed25519'
 # Use Unicorn as the app server
