@@ -9,7 +9,11 @@ class Admin::EmployeesController < Admin::BaseController
     @employee = Employee.new
   end
 
-  def edit
+  def edit; end
+
+  def destroy
+    @employee.delete
+    redirect_to admin_employees_path
   end
 
   def create

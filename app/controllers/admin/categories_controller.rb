@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::BaseController
-  before_action :get_category, only: [:edit, :update]
+  before_action :get_category, only: [:edit, :update, :destroy]
   def index
     @categories = Category.all.paginate(page: params[:page], per_page: 20)
   end
@@ -14,8 +14,12 @@ class Admin::CategoriesController < Admin::BaseController
     redirect_to admin_categories_path
   end
 
-  def edit
+  def destroy
+    @category.delete
+    redirect_to admin_categories_path
   end
+
+  def edit; end
 
   def update
     @category.update_attributes(category_params)
