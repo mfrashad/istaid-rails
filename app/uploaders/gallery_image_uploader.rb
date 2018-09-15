@@ -11,8 +11,10 @@ class GalleryImageUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def public_id
-    model.id
+    "#{model.class.name.demodulize}/#{model.gallery.title}_#{timestamp}"
   end
+
+  process :assign_tags
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
@@ -43,6 +45,15 @@ class GalleryImageUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_whitelist
     %w(jpg jpeg gif png)
+  end
+
+  def assign_tags
+    { tags: [model.class.name.demodulize] }
+  end
+
+  def timestamp
+    var = :"@#{mounted_as}_timestamp"
+    model.instance_variable_get(var) || model.instance_variable_set(var, Time.now.to_i)
   end
 
   # Override the filename of the uploaded files:
