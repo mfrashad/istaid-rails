@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     resources :users
     resources :galleries
     resources :employees
+    resources :static_pages
   end
 
   get '/login' => 'sessions#new'
@@ -42,7 +43,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
-  get '/:page' => 'static#show'
+  get '/:page' => 'static_pages#show'
 
   
 

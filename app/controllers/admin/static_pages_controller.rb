@@ -1,7 +1,7 @@
 class Admin::StaticPagesController < Admin::BaseController
   before_action :get_static_page, only: [:edit, :update]
   def index
-    @categories = StaticPage.all.paginate(page: params[:page], per_page: 20)
+    @static_pages = StaticPage.all.paginate(page: params[:page], per_page: 20)
   end
 
   def edit; end
@@ -19,6 +19,6 @@ class Admin::StaticPagesController < Admin::BaseController
   end
 
   def static_page_params
-    params.require(:static_page).permit(:body)
+    params.require(:static_page).permit(:name, :body)
   end
 end

@@ -25,6 +25,10 @@ class Admin::DashboardsController < Admin::BaseController
         title: 'Kategori',
         url: admin_categories_path,
       },
+      {
+        title: 'Pages',
+        url: admin_static_pages_path,
+      }
     ]
   end
 end

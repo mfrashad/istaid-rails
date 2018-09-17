@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
       },
       {
         title: "Tentang Kami",
-        url: "/about",
+        url: "/tentang_kami",
         image_url: "about-bg.jpg",
       },
       {

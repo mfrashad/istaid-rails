@@ -20,7 +20,13 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
 
   def public_id
-    "#{model.class.name.demodulize}/#{model.title}_#{timestamp}_"
+    "#{model.class.name.demodulize}/#{model_name}_#{timestamp}_"
+  end
+
+  def model_name
+    name = model&.title if defined?(model.title)
+    name ||= model&.name if defined?(model.name)
+    name
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
