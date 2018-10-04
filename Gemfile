@@ -42,6 +42,7 @@ gem "jquery-fileupload-rails"
 gem 'lightbox2-rails'
 gem 'simple_form'
 gem "recaptcha"
+gem 'social-share-button'
 
 gem 'ed25519'
 # Use Unicorn as the app server

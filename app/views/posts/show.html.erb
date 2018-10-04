@@ -15,6 +15,8 @@
   <div class="post-content section">
     <%= @post.body.html_safe %>
   </div>
+  <h4>Share This</h4>
+  <%= social_share_button_tag(@post.title, url: request.original_url, image: @post.thumbnail.thumb.url , desc: @post.summary) %>
   <div class="comments">
     <h3>Komentar</h3>
     <%= render(partial: 'comments/comment', collection: @post.comments) %>

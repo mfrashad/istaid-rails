@@ -24,6 +24,8 @@
     <% end %>
     <%= @event.body.html_safe %>
   </div>
+  <h4>Share This</h4>
+  <%= social_share_button_tag(@event.title, url: request.original_url, image: @event.thumbnail.thumb.url , desc: @event.summary) %>
   <div class="comments">
     <h3>Komentar</h3>
     <%= render(partial: 'comments/comment', collection: @event.comments) %>
