@@ -62,13 +62,15 @@
 
 .post {
   margin: 20px;
-  width: 500px;
-  height: 450px;
+  margin-bottom: 40px;
+  width: 400px;
+  height: 550px;
   color: $text-color;
   .card {
     background-color: white;
     .card-image {
-      height: 200px;
+      height: 300px;
+      width: 400px;
       background-color: white;
       img {
         width: auto;
@@ -76,6 +78,7 @@
       }
     }
     .card-content {
+      padding-top: 5px;
       h5 {
         color: $invert-text-color;
       }

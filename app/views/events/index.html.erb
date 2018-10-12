@@ -41,6 +41,9 @@
           <h5><b><%= event.title%></b></h5>
           <p><%= event.summary %></p>
         </div>
+        <div class="card-action">
+          <a href="<%=events_path(category: event&.category&.name, search: params[:search])%>"><%= event&.category&.name %></a>
+        </div>
       </div>
     </div>
     <% end%>
