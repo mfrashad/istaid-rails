@@ -20,7 +20,7 @@ class EventsController < ApplicationController
     elsif category.present? && search.present?
       events = Event.by_category(category).search(search)
     end
-    events.paginate(page: params[:page], per_page: 10)
+    events.paginate(page: params[:page], per_page: 10).order('updated_at DESC')
   end
 
   def set_event

@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     elsif category.present? && search.present?
       posts = Post.by_category(category).search(search)
     end
-    posts.paginate(page: params[:page], per_page: 10)
+    posts.paginate(page: params[:page], per_page: 10).order('updated_at DESC')
   end
   # Use callbacks to share common setup or constraints between actions.
 
