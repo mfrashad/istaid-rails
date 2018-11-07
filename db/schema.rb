@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180917083609) do
+ActiveRecord::Schema.define(version: 20181107153528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,9 +63,10 @@ ActiveRecord::Schema.define(version: 20180917083609) do
     t.string   "summary"
     t.string   "thumbnail"
     t.integer  "gallery_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "category_id"
+    t.datetime "published_at"
   end
 
   add_index "events", ["category_id"], name: "index_events_on_category_id", using: :btree
@@ -74,8 +75,9 @@ ActiveRecord::Schema.define(version: 20180917083609) do
   create_table "galleries", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.datetime "published_at"
   end
 
   create_table "gallery_images", force: :cascade do |t|
@@ -93,10 +95,11 @@ ActiveRecord::Schema.define(version: 20180917083609) do
     t.string   "image_url"
     t.integer  "user_id"
     t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "thumbnail"
     t.string   "summary"
+    t.datetime "published_at"
   end
 
   create_table "static_pages", force: :cascade do |t|
