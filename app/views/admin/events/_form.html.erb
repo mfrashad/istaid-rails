@@ -17,6 +17,10 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+  <div class="field">
+    <%= f.label :published_at %><br>
+    <%= f.date_field :published_at %>
+  </div>
   <div class="input-field">
     <%= f.label :category_id %><br>
     <%= f.collection_select(:category_id, Category.event, :id, :name) %>

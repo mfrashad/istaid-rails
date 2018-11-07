@@ -46,6 +46,6 @@ class Admin::GalleriesController < Admin::BaseController
   end
 
   def gallery_params
-    params.require(:gallery).permit(:title, :description)
+    params.require(:gallery).permit(:title, :published_at, :description)
   end
 end

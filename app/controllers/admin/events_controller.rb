@@ -70,6 +70,6 @@ class Admin::EventsController < Admin::BaseController
   # Never trust parameters from the scary internet, only allow the white list through.
 
   def event_params
-    params.require(:event).permit(:title, :summary, :body, :gallery_id, :category_id, :thumbnail)
+    params.require(:event).permit(:title, :published_at, :summary, :body, :gallery_id, :category_id, :thumbnail)
   end
 end
