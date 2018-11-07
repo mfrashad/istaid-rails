@@ -4,7 +4,7 @@ class Admin::EventsController < Admin::BaseController
   # GET /posts
   # GET /posts.json
   def index
-    @events = Event.all.paginate(page: params[:page], per_page: 20)
+    @events = Event.all.order("published_at DESC").paginate(page: params[:page], per_page: 20)
     render(layout: "admin")
   end
 

@@ -5,7 +5,7 @@ class Admin::PostsController < Admin::BaseController
   # GET /posts.json
   def index
     @posts = get_posts
-    @categories = Category.all
+    @categories = Category.all.order("published_at DESC")
     render(layout: "admin")
   end
 
