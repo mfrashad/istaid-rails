@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
   has_many :comments, as: :commentable
   mount_uploader :thumbnail, ThumbnailUploader
 
-  default_scope -> { includes(:user).order(created_at: :desc) }
+  default_scope -> { includes(:user).order(published_at: :desc) }
   scope :by_category, -> (category_name) do
     joins(:category).where(categories: { name: category_name })
   end
