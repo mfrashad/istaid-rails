@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:mfrashad/social-share-button.git
+  revision: 485eb4449d1d373a6c456089ff6a62abaefaf1fc
+  specs:
+    social-share-button (1.1.0)
+      coffee-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -211,8 +218,6 @@ GEM
     simple_form (4.0.0)
       actionpack (> 4)
       activemodel (> 4)
-    social-share-button (1.1.0)
-      coffee-rails
     spring (2.0.2)
       activesupport (>= 4.2)
     sprockets (3.7.1)
@@ -279,7 +284,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form
-  social-share-button
+  social-share-button!
   spring
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
