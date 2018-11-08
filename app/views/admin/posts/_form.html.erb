@@ -20,7 +20,7 @@
   </div>
   <div class="field">
     <%= f.label :published_at %><br>
-    <%= f.date_field :published_at %>
+    <%= f.date_field :published_at, value: @post&.published_at.nil? ? Date.today : @post.published_at %>
   </div>
   <div class="input-field">
     <%= f.label :category_id %><br>
