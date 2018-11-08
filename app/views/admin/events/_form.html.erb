@@ -19,7 +19,7 @@
   </div>
   <div class="field">
     <%= f.label :published_at %><br>
-    <%= f.date_field :published_at, value: @event&.published_at.nil? ? Date.today : @event.published_at %>
+    <%= f.date_field :published_at, value: @event&.published_at.nil? ? Date.today : @event.published_at.to_date %>
   </div>
   <div class="input-field">
     <%= f.label :category_id %><br>

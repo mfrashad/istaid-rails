@@ -19,7 +19,7 @@
   </div>
   <div class="field">
     <%= f.label :published_at %><br>
-    <%= f.date_field :published_at, value: @gallery&.published_at.nil? ? Date.today : @gallery.published_at %>
+    <%= f.date_field :published_at, value: @gallery&.published_at.nil? ? Date.today : @gallery.published_at.to_date %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
