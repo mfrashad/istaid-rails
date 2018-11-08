@@ -25,10 +25,6 @@
     <%= @event.body.html_safe %>
   </div>
   <h4>Share This</h4>
-  <!-- Meta tags for facebook and whatsapp -->
-  <meta property="og:title" content="<%= @event.title %>">
-  <meta property="og:description" content="<%= @event.summary %>">
-  <meta property="og:image" content="<%= @event.thumbnail.thumb.url %>">
   <%= social_share_button_tag(@event.title, url: request.original_url, image: @event.thumbnail.thumb.url , desc: @event.summary) %>
   <div class="comments">
     <h3>Komentar</h3>

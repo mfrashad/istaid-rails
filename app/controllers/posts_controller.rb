@@ -18,6 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
 
   def show
+    set_meta_tags @post
   end
 
   private

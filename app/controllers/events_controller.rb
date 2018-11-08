@@ -6,7 +6,9 @@ class EventsController < ApplicationController
     @categories = Category.event
   end
 
-  def show; end
+  def show
+    set_meta_tags @event
+  end
 
   private
 

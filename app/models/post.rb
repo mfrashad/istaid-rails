@@ -30,6 +30,18 @@ class Post < ActiveRecord::Base
     where('title ILIKE lower(?) OR body ILIKE lower(?)', "%#{search}%", "%#{search}%" )
   end
 
+  def to_meta_tags
+    {
+      title: title,
+      image_src: thumbnail.thumb.url,
+      og: {
+        title: title,
+        type: 'article',
+        image: thumbnail.thumb.url
+      }
+    }
+  end
+
   validates :title, presence: true, length: { minimum: 3 }
   validates :body, presence: true
   validates :category, presence: true
