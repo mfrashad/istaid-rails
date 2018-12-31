@@ -26,12 +26,12 @@ class ApplicationController < ActionController::Base
       {
         title: "Tentang Kami",
         url: "/tentang-kami",
-        image_url: "about-bg.jpg",
+        image_url: "team-bg.jpg",
       },
       {
-        title: "Tim Kami",
-        url: "/team",
-        image_url: "team-bg.jpg",
+        title: "Video",
+        url: "/video",
+        image_url: "video-bg.jpg",
       },
       {
         title: "Kegiatan",
