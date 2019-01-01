@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:show, :index] do
     resources :comments, only: [:show, :index, :create]
   end
+  resources :videos, only: [:show, :index]
   resources :events, only: [:show, :index] do
     resources :comments, only: [:show, :index, :create]
   end
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
       resources :comments
     end
     resources :users
+    resources :videos
     resources :galleries
     resources :employees
     resources :static_pages

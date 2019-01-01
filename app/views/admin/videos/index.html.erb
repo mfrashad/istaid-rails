@@ -1,0 +1,30 @@
+<div class="container">
+<h3> Videos </h3>
+<%= link_to admin_root_path, class:'btn waves-effect waves-light' do %>
+  <i class="material-icons left">arrow_back</i>Back
+<% end%>
+<div class="card-panel">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan=3></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @videos.each do |video| %>
+      <tr>
+        <td><%= video.title %></td>
+        <td><%= link_to 'Show', video %></td>
+        <td><%= link_to 'Edit', edit_admin_video_path(video) %></td>
+        <td><%= link_to 'Destroy', [:admin, video], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="center">
+    <%= will_paginate @videos, renderer: @custom_paginate_renderer %>
+</div>
+<%= link_to 'New video', new_admin_video_path, class:'btn waves-effect waves-light' %><br>
+</div>
+</div>

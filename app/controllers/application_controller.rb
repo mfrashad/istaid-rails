@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
       },
       {
         title: "Video",
-        url: "/video",
+        url: "/videos",
         image_url: "video-bg.jpg",
       },
       {

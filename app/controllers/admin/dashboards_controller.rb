@@ -14,6 +14,10 @@ class Admin::DashboardsController < Admin::BaseController
         url: admin_employees_path,
       },
       {
+        title: 'Video',
+        url: admin_videos_path,
+      },
+      {
         title: 'Galeri',
         url: admin_galleries_path,
       },

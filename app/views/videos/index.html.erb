@@ -1,0 +1,17 @@
+<div class='blog text-center'>
+  <h1 class="center-align"> Video </h1>
+
+  <div class='flex-container'>
+
+    <% @videos.each do |video| %>
+    <%= link_to video do %>
+    <div class='video'>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=video.youtube_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <% end%>
+    <% end %>
+  </div>
+  <div class="center">
+    <%= will_paginate @videos, renderer: @custom_paginate_renderer %>
+  </div>
+</div>

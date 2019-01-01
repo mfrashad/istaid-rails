@@ -1,0 +1,34 @@
+<div class="card-panel">
+<%= form_for([:admin, @video]) do |f| %>
+  <% if @video.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <li><h6><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h6></li>
+      <% @video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+    <script>
+      M.toast({html: $("#error_explanation").html()});
+    </script>
+  <% end %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :youtube_url %><br>
+    <%= f.text_field :youtube_url %>
+  </div>
+  <%= image_tag(@video.thumbnail, class: 'img_prev', style: ('display:none;' if @video.thumbnail.nil? )) %>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.cktext_area :body, class: 'someclass', rows: 40, ckeditor: { language: 'us' } %>
+  </div>
+  <br>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+<% end %>
+</div>
