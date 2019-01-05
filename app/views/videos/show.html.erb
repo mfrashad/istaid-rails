@@ -3,4 +3,6 @@
   <div class="iframe-video">
     <iframe class="youtube-vido" src="https://www.youtube.com/embed/<%=@video.youtube_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
+  <h4 class="white-text">Share This</h4>
+  <%= social_share_button_tag(@video.title, url: request.original_url, image: @video.thumbnail) %>
 </div>
