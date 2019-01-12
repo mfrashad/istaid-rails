@@ -5,7 +5,7 @@
       <div class="overlay">
         <div class="overlay-text"><h5> <%= menu[:title] %> </h5></div>
       </div>
-      <%= cl_image_tag(menu[:image_url], :width => 350, :height => 250, 
+      <%= cl_image_tag(menu[:image_url], class: 'responsive-img', aspect_ratio: "16:9", width: 450, height: 250,
                            :crop => :fill) %>
     </div>
     <% end%>
@@ -45,7 +45,7 @@
     <div class='post'>
       <div class="card hoverable z-depth-1">
         <div class="card-image">
-          <% unless post.thumbnail_url.nil? %><%= image_tag post.thumbnail.thumb.url %><br /><% end %>
+          <% unless post.thumbnail_url.nil? %><%= image_tag post.thumbnail.thumb.url, class: 'responsive-img' %><br /><% end %>
         </div>
         <div class="card-content">
           <h5><b><%= post.title%></b></h5>

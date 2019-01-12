@@ -32,10 +32,10 @@
 
     <% @events.each do |event| %>
     <%= link_to event do %>
-    <div class='post'>
+    <div class='event'>
       <div class="card hoverable z-depth-1">
         <div class="card-image">
-          <% unless event.thumbnail_url.nil? %><%= image_tag event.thumbnail.thumb.url %><br /><% end %>
+          <% unless event.thumbnail_url.nil? %><%= image_tag event.thumbnail.thumb.url, class: 'responsive-img' %><br /><% end %>
         </div>
         <div class="card-content">
           <h5><b><%= event.title%></b></h5>
