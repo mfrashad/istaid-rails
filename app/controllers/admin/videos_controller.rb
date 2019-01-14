@@ -4,7 +4,7 @@ class Admin::VideosController < Admin::BaseController
   # GET /posts
   # GET /posts.json
   def index
-    @videos = Video.all.paginate(page: params[:page], per_page: 20)
+    @videos = Video.all.order("published_at DESC").paginate(page: params[:page], per_page: 20)
     render(layout: "admin")
   end
 
@@ -87,6 +87,6 @@ class Admin::VideosController < Admin::BaseController
   # Never trust parameters from the scary internet, only allow the white list through.
 
   def video_params
-    params.require(:video).permit(:title, :body, :user_id, :thumbnail, :youtube_url, :youtube_id)
+    params.require(:video).permit(:title, :body, :user_id, :published_at, :thumbnail, :youtube_url, :youtube_id)
   end
 end

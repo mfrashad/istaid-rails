@@ -21,6 +21,10 @@
     <%= f.label :youtube_url %><br>
     <%= f.text_field :youtube_url %>
   </div>
+  <div class="field">
+    <%= f.label :published_at %><br>
+    <%= f.date_field :published_at, value: @video&.published_at.nil? ? Date.today : @video.published_at.to_date %>
+  </div>
   <%= image_tag(@video.thumbnail, class: 'img_prev', style: ('display:none;' if @video.thumbnail.nil? )) %>
   <div class="field">
     <%= f.label :body %><br>
