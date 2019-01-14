@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190114103630) do
+ActiveRecord::Schema.define(version: 20190114145250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,7 +90,6 @@ ActiveRecord::Schema.define(version: 20190114103630) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
-    t.string   "slug"
     t.text     "body"
     t.string   "image_url"
     t.integer  "user_id"
