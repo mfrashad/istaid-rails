@@ -42,8 +42,7 @@ class Admin::GalleriesController < Admin::BaseController
   private
 
   def set_gallery
-    @gallery = Gallery.find(params[:id])
-  end
+    @gallery = Gallery.find_by slug: params[:slug]
 
   def gallery_params
     params.require(:gallery).permit(:title, :published_at, :description)

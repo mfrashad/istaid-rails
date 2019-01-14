@@ -46,4 +46,8 @@ class Post < ActiveRecord::Base
   validates :body, presence: true
   validates :category, presence: true
   validates :user, presence: true
+
+  def to_param
+    slug
+  end
 end

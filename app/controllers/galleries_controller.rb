@@ -12,6 +12,6 @@ class GalleriesController < ApplicationController
   private
 
   def set_gallery
-    @gallery = Gallery.find(params[:id])
+    @gallery = Gallery.find_by slug: params[:slug]
   end
 end

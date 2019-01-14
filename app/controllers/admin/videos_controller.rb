@@ -82,7 +82,7 @@ class Admin::VideosController < Admin::BaseController
   # Use callbacks to share common setup or constraints between actions.
 
   def set_video
-    @video = Video.find(params[:id])
+    @video = Video.find_by slug: params[:slug]
   end
   # Never trust parameters from the scary internet, only allow the white list through.
 

@@ -36,6 +36,10 @@ class Event < ActiveRecord::Base
     }
   end
 
+  def to_param
+    slug
+  end
+
   validates :title, presence: true, length: { minimum: 3 }
   validates :body, presence: true
 end

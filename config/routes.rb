@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  resources :posts, only: [:show, :index] do
+  resources :posts, only: [:show, :index], param: :slug do
     resources :comments, only: [:show, :index, :create]
   end
-  resources :videos, only: [:show, :index]
-  resources :events, only: [:show, :index] do
+  resources :videos, only: [:show, :index], param: :slug
+  resources :events, only: [:show, :index], param: :slug do
     resources :comments, only: [:show, :index, :create]
   end
   resources :comments, only: [:show, :index] do
     resources :comments, only: [:show, :index, :create]
   end
-  resources :galleries, only: [:show, :index]
+  resources :galleries, only: [:show, :index], param: :slug
   resources :employees, only: :index
   root 'posts#home'
   get '/blog' => 'posts#index'

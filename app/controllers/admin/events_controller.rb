@@ -65,7 +65,7 @@ class Admin::EventsController < Admin::BaseController
   private
 
   def set_event
-    @event = Event.find(params[:id])
+    @event = Event.find_by slug: params[:slug]
   end
   # Never trust parameters from the scary internet, only allow the white list through.
 
