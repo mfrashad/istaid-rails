@@ -26,7 +26,7 @@ class Admin::EventsController < Admin::BaseController
   # POST /posts.json
   def create
     @event = Event.new(event_params)
-    @event = @event.title.parameterize
+    @event.slug = @event.title.parameterize
     respond_to do |format|
       if @event.save
         format.html { redirect_to admin_events_url, notice: 'Post was successfully created.' }
