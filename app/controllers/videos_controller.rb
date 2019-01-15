@@ -5,5 +5,6 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find_by slug: params[:slug]
+    set_meta_tags @video
   end
 end

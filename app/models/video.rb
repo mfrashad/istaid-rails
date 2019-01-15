@@ -7,7 +7,7 @@ class Video < ActiveRecord::Base
       image_src: thumbnail,
       og: {
         title: title,
-        type: 'video',
+        video: 'https://www.youtube.com/v/'+youtube_id,
         image: thumbnail,
         url: youtube_url,
       }
