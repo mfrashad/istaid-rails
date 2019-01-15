@@ -26,7 +26,7 @@ class Admin::EventsController < Admin::BaseController
   # POST /posts.json
   def create
     @event = Event.new(event_params)
-
+    @event = @event.title.parameterize
     respond_to do |format|
       if @event.save
         format.html { redirect_to admin_events_url, notice: 'Post was successfully created.' }
@@ -41,8 +41,10 @@ class Admin::EventsController < Admin::BaseController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @event.assign_attributes(event_params)
+    @event.slug = @event.title.parameterize
     respond_to do |format|
-      if @event.update_attributes(event_params)
+      if @event.save
         format.html { redirect_to admin_events_url, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else

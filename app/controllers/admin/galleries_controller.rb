@@ -19,6 +19,7 @@ class Admin::GalleriesController < Admin::BaseController
 
   def create
     @gallery = Gallery.new(gallery_params)
+    @gallery.slug = @gallery.title.parameterize
     if @gallery.save
       flash[:notice] = "Your gallery has been created."
       redirect_to admin_galleries_path
@@ -29,7 +30,8 @@ class Admin::GalleriesController < Admin::BaseController
   end
 
   def update
-    @gallery.update_attributes(gallery_params)
+    @gallery.assign_attributes(gallery_params)
+    @gallery.slug = gallery.title.parameterize
     if @gallery.save
       flash[:notice] = "Your gallery has been created."
       redirect_to admin_galleries_path

@@ -29,6 +29,7 @@ class Admin::PostsController < Admin::BaseController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.slug = @post.title.parameterize
     respond_to do |format|
       if @post.save
         format.html { redirect_to admin_posts_url, notice: 'Post was successfully created.' }
@@ -43,8 +44,10 @@ class Admin::PostsController < Admin::BaseController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @post.assign_attributes(post_params)
+    @post.slug = @post.title.parameterize
     respond_to do |format|
-      if @post.update_attributes(post_params)
+      if @post.save
         format.html { redirect_to admin_posts_url, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else

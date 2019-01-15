@@ -18,22 +18,22 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'dashboards#index'
-    resources :galleries do
+    resources :galleries, param: :slug do
       resources :gallery_images
     end
-    resources :events do
+    resources :events, param: :slug do
       resources :comments
     end
     resources :categories
-    resources :posts do
+    resources :posts, param: :slug do
       resources :comments
     end
     resources :comments do
       resources :comments
     end
     resources :users
-    resources :videos
-    resources :galleries
+    resources :videos, param: :slug
+    resources :galleries, param: :slug
     resources :employees
     resources :static_pages
   end

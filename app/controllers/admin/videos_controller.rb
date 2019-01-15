@@ -29,6 +29,7 @@ class Admin::VideosController < Admin::BaseController
   def create
     @video = Video.new(video_params)
     @video.youtube_id = youtube_id(@video.youtube_url)
+    @video.slug = @video.title.parameterize
     @video.thumbnail = "https://img.youtube.com/vi/"+@video.youtube_id+"/hqdefault.jpg"
     respond_to do |format|
       if @video.save
@@ -45,9 +46,11 @@ class Admin::VideosController < Admin::BaseController
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
-      params[:video][:youtube_id] = youtube_id(params[:video][:youtube_url])
-      params[:video][:thumbnail] = "https://img.youtube.com/vi/"+params[:video][:youtube_id]+"/hqdefault.jpg"
-      if @video.update_attributes(video_params)
+      @video.assign_attributes(video_params)
+      @video.slug = @video.title.parameterize
+      @video.youtube_id = youtube_id(@video.youtube_url)
+      @video.thumbnail = "https://img.youtube.com/vi/"+@video.youtube_id+"/hqdefault.jpg"
+      if @video.save
         format.html { redirect_to admin_videos_url, notice: 'Video was successfully updated.' }
         format.json { render :show, status: :ok, location: @video }
       else
