@@ -9,7 +9,6 @@ class Video < ActiveRecord::Base
         title: title,
         video: 'https://www.youtube.com/v/'+youtube_id,
         image: thumbnail,
-        url: youtube_url,
       }
     }
   end
