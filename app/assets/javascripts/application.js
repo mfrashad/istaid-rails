@@ -15,6 +15,8 @@
 //= require jquery-ui/widgets/sortable
 //= require jquery-fileupload/basic
 //= require jquery-ui/widgets/sortable
+//= require popper
+//= require bootstrap
 //= require rails_sortable
 //= require ckeditor/init
 //= require lightbox
