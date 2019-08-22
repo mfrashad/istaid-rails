@@ -36,7 +36,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'dotenv-rails'
 
 # gem 'materialize-sass', '~> 1.0.0.rc2'
-gem 'bulma-rails'
+gem 'bootstrap', '~> 4.3.1'
 gem 'carrierwave'
 gem 'cloudinary'
 gem "mini_magick"
