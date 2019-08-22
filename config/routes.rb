@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
-  get '/:page' => 'static_pages#show'
+  get '/pages/:page' => 'static_pages#show'
 
   
 

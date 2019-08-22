@@ -20,7 +20,6 @@
 //= require lightbox
 //= require social-share-button
 //= require_tree .
-//= require materialize
 
 function image_preview(input, width, height) {
   if (input.files && input.files[0]) {
