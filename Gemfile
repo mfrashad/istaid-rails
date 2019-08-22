@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.8'
+gem 'rails', '5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
@@ -32,7 +32,8 @@ gem 'bcrypt_pbkdf'
 gem 'will_paginate', '~> 3.1.0'
 gem 'dotenv-rails'
 
-gem 'materialize-sass', '~> 1.0.0.rc2'
+# gem 'materialize-sass', '~> 1.0.0.rc2'
+gem 'bulma-rails'
 gem 'carrierwave'
 gem 'cloudinary'
 gem "mini_magick"
