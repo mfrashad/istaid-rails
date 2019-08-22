@@ -2,19 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'shared';
-.header-banner {
-  text-align: center;
-  width: 100vw;
-  height: 100%;
-  color: white;
-  box-sizing: border-box;
-  font-size: 2em;
 
-  .banner-tab.col {
-    margin: 20px;
-    position: relative;
-    padding: 0px;
-    width: 450px;
+.card {
+  border-radius: 20px;
+}
+
+.card-img-overlay {
+  background-color: rgba(0,0,0,0.1);
+  background-image: linear-gradient(to right, #0F2027DD, #203A43DD);
+  border-radius: 20px;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.card-img-overlay:hover {
+  background-color: rgba(0,0,0,0.4);
+  
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+@media (max-width: 768px) {
+  .header-banner.flex-container {
+    display: none;
   }
 }
 
