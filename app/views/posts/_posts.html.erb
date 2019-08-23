@@ -1,0 +1,43 @@
+<div class='blog text-center container-fluid p-5'>
+  <h1 class="center-align"> Buletin </h1>
+  <%= render 'searchbar' %>
+</div>
+
+
+  <div class='d-flex flex-wrap'>
+    <% @posts.each do |post| %>
+    
+    <div class="post card">
+      <!-- Card image -->
+      <div class="view overlay">
+        <% if post.thumbnail_url %>
+          <%= image_tag post.thumbnail.thumb.url, class: 'card-img-top img-fluid' %>
+        <% else %>
+          <%= image_tag 'missing-image.jpg', class: 'card-img-top img-fluid' %>
+        <% end %>
+        <%= link_to post do %>
+          <div class="mask rgba-white-slight"></div>
+        <% end %>
+      </div>
+
+      <!-- Card content -->
+      <div class="card-body">
+
+        <!-- Title -->
+        <h4 class="card-title"><b><%= post.title%></b></h4>
+        <!-- Text -->
+        <p class="card-text"><%= post.summary %></p>
+        <!-- Button -->
+        <a href="<%=posts_path(category: post&.category&.name, search: params[:search])%>" class="btn dark-gradient white-text"><%= post.category.name %></a>
+
+      </div>
+
+    </div>
+    <!-- Card -->
+    <% end%>
+    
+  </div>
+  <div class="center">
+    <!--%= will_paginate @posts%-->
+  </div>
+</div>
