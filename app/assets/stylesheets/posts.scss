@@ -11,7 +11,7 @@
   background-color: rgba(0,0,0,0.1);
   background: linear-gradient(to bottom, rgba(15,32,39,0.86) 0%,rgba(50, 84, 95, 0.86) 100%);
   border-radius: 20px;
-  opacity: 1;
+  opacity: 0.8;
   transition: opacity 1s;
 }
 
@@ -22,8 +22,9 @@
   transition: opacity 1s;
 }
 
-.form-control:focus {
+input.form-control:focus {
   box-shadow: none;
+  outline: none;
 }
 
 @media (max-width: 768px) {
