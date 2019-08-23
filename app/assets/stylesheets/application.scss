@@ -19,6 +19,7 @@
 // $secondary-color: color("yellow", "base") !default;
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "bootstrap";
+@import "font-awesome";
 
 //social share button size
 $size: 30px;
@@ -68,6 +69,7 @@ body {
     margin: 0px;
     font-family: 'Montserrat','BrandonText', 'Roboto';
     background-color: $background-color;
+    color: $text-color;
 }
 
 nav {

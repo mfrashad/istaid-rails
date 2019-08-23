@@ -13,19 +13,25 @@
 </div>
 
 
-<div class='blog text-center container-fluid'>
+<div class='blog text-center container-fluid p-5'>
   <h1 class="center-align"> Buletin </h1>
+
+  <div class="container">
+      <%= form_tag(posts_path, method: :get, class: 'search-form', placeholder: 'Cari sesuatu') do %>
+          
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+          <div class="input-group">
+            <%= text_field_tag :search, nil, class: 'form-control border-0 bg-light rounded rounded-pill' %>
+            <div class="input-group-append">
+              <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
 
   <div class="row">
     <div class="col s6 offset-s3 container">
-
-      <div class="row">
-        <div class="input-field">
-          <i class="material-icons prefix">search</i>
-          <textarea id="search" class="materialize-textarea"></textarea>
-          <label for="search">Cari Sesuatu</label>
-        </div>
-      </div>
 
       <div class="row center-align categories">
         <%= link_to "Semua", posts_path(search: params[:search]), class: "waves-effect waves-light btn" %>
@@ -34,7 +40,7 @@
         <% end %>
       </div>
       <h3 class="center-align"><%= params[:category] %></h3>
-    </div> 
+    </div>
   </div>
 
 
