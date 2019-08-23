@@ -39,7 +39,10 @@ function image_preview(input, width, height) {
 }
 
 $(document).ready(function(){
-  $('.sidenav').sidenav();
+  $('img').error(function() {
+    $(this).attr('src', '/images/missing-image.jpg');
+  });
+
   $('select').formSelect();
   $('.carousel.carousel-slider').carousel({
     fullWidth: true,

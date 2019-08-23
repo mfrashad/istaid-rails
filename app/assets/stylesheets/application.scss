@@ -141,3 +141,13 @@ h1 {
 .dark-gradient {
   background: linear-gradient(40deg, #0F2027, #203A43) !important;
 }
+
+.post.card {
+  margin: 20px;
+  width: 400px;
+  max-width: 400px;
+  height: 450px;
+  .card-content {
+    height: 250px;
+  }
+}

@@ -6,14 +6,13 @@
 
     <% @posts.each do |post| %>
     <%= link_to post do %>
-    <div class='post'>
-      <div class="card hoverable z-depth-1">
+      <div class="post card hoverable z-depth-1">
         <div class="card-image">
           <% unless post.thumbnail_url.nil? %><%= image_tag post.thumbnail.thumb.url %><br /><% end %>
         </div>
-        <div class="card-content">
+        <div class="card-content text-break">
           <h5><b><%= post.title%></b></h5>
-          <p><%= post.summary %></p>
+          <p class="text-wrap text-break"><%= post.summary %></p>
         </div>
         <div class="card-action">
           <a href="<%=events_path(category: post&.category&.name, search: params[:search])%>"><%= post.category.name %></a>
@@ -22,7 +21,6 @@
     </div>
     <% end%>
     <% end %>
-  </div>
   <div class="center">
     <!--%= will_paginate @posts, renderer: @custom_paginate_renderer %-->
   </div>
