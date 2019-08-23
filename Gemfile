@@ -36,7 +36,6 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'dotenv-rails'
 
 # gem 'materialize-sass', '~> 1.0.0.rc2'
-gem 'bootstrap', '~> 4.3.1'
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'cloudinary'
