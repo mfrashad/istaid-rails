@@ -32,7 +32,7 @@ gem 'listen', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt_pbkdf'
 
-gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate', '~> 3.1.7'
 gem 'dotenv-rails'
 
 # gem 'materialize-sass', '~> 1.0.0.rc2'

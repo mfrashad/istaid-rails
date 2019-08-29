@@ -38,6 +38,6 @@
     
   </div>
   <div class="center">
-    <!--%= will_paginate @posts%-->
+    <%= will_paginate @posts, renderer: @custom_paginate_renderer %>
   </div>
 </div>
