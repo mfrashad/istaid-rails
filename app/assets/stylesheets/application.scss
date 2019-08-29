@@ -24,7 +24,7 @@
 @import "font-awesome";
 
 //social share button size
-$size: 30px;
+$share-icon-size: 30px;
 @font-face {
   font-family: 'Montserrat';
   src: font-url('Montserrat-Regular.ttf') format('truetype');
@@ -119,9 +119,9 @@ h1 {
 
 .social-share-button {
   .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
+    background-size: $share-icon-size $share-icon-size;
+    height: $share-icon-size;
+    width: $share-icon-size;
   }
 }
 
@@ -142,12 +142,23 @@ h1 {
   background: linear-gradient(40deg, #0F2027, #203A43) !important;
 }
 
-.post.card {
-  margin: 20px;
-  width: 400px;
-  max-width: 400px;
-  height: 450px;
-  .card-content {
-    height: 250px;
+$share-icon-size: 40px;
+.social-share-button {
+  .ssb-icon {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 8px 10px;
+    background-size: $share-icon-size;
+    border-radius: 5px;
+    height: $share-icon-size;
+    width: $share-icon-size;
+  }
+
+  .ssb-icon:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 3px 5px;
+    background-size: $share-icon-size+ 5;
+    border-radius: 5px;
+    height: $share-icon-size + 5;
+    width: $share-icon-size + 5;
   }
 }

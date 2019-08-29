@@ -3,44 +3,64 @@
       <h2><%= notice %></h2>
     </div>
 <% end %>
-<div class='container single-post'>
-  <h1><%= @post.title %></h1>
-  <div class="divider"></div><br>
-  <div class="meta-info">
-    <i class="inline-icons material-icons">today</i>
-    <span><%= @post.created_at.strftime('%B %e, %Y') %></span>
-    <i class="inline-icons material-icons">account_circle</i>
-    <span><%= @post.user.name %></span>
-  </div>
-  <div class="post-content section">
-    <%= @post.body.html_safe %>
-  </div>
-  <h4>Share This</h4>
-  <%= social_share_button_tag(@post.title, url: request.original_url, image: @post.thumbnail.thumb.url , desc: @post.summary) %>
-  <div class="comments">
-    <h3>Komentar</h3>
-    <%= render(partial: 'comments/comment', collection: @post.comments) %>
-  </div>
-  <div class="reply">
-    <h4> Tulis Komentar</h4>
-    <%= form_for [@post, @post.comments.build] do |f| %>
-      <%= f.hidden_field :post_id, value: @post.id%>
-      <div class="field">
-        <%= f.label :name, 'Nama' %><br>
-        <%= f.text_field :name %>
+<div class='d-flex flex-wrap justify-content-center'>
+  <div class="article card">
+    <!-- Card image -->
+    <div class="view overlay">
+      <% if @post.thumbnail_url %>
+        <%= image_tag @post.thumbnail.url, class: 'card-img-top img-fluid' %>
+      <% else %>
+        <%= image_tag 'missing-image.jpg', class: 'card-img-top img-fluid' %>
+      <% end %>
+      <%= link_to @post do %>
+        <div class="mask rgba-white-slight"></div>
+      <% end %>
+    </div>
+    <!-- Card content -->
+    <div class="card-body">
+      <!-- Title -->
+      <h3 class="card-title text-center"><b><%= @post.title%></b></h3>
+      <div class="meta-info text-center">
+        <i class="inline-icons material-icons">today</i>
+        <span><%= @post.created_at.strftime('%B %e, %Y') %></span>
+        <i class="inline-icons material-icons">account_circle</i>
+        <span><%= @post.user.name %></span>
       </div>
-      <div class="field">
-        <%= f.label :email %><br>
-        <%= f.text_field :email %>
+      <!-- Text -->
+      <p class="card-text"><%= @post.body.html_safe %></p>
+      <!-- Button -->
+      <a href="<%=posts_path(category: @post&.category&.name, search: params[:search])%>" class="btn dark-gradient white-text"><%= @post.category.name %></a>
+      <div class=" text-muted mt-4">
+        <h4>Share This</h4>
+        <%= social_share_button_tag(@post.title, url: request.original_url, image: @post.thumbnail.thumb.url , desc: @post.summary) %>
       </div>
-      <div class="field">
-        <%= f.label :body, 'Isi Komentar' %><br>
-        <%= f.text_area :body, class: 'materialize-textarea', placeholder: 'Tulis Komentar di Sini!' %>
-      </div>
-      <%= recaptcha_tags %>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Kirim
-        <i class="material-icons right">send</i>
-      </button>
-    <% end %>
+    </div>
+    <div class="card-footer text-muted text-center mt-4">
+      <div class="comments">
+        <h3>Komentar</h3>
+          <%= render(partial: 'comments/comment', collection: @post&.comments) %>
+        </div>
+        <div class="reply">
+          <h4> Tulis Komentar</h4>
+          <%= form_for([@post, @post.comments.build], html: {class: 'text-center border border-light'}) do |f| %>
+            <%= f.hidden_field :post_id, value: @post.id%>
+            <div class="field">
+              <%= f.text_field :name, class: 'form-control mb-4 black-text', placeholder: 'Nama' %>
+            </div>
+            <div class="field">
+              <%= f.text_field :email, class: 'form-control mb-4 black-text', placeholder: 'Email' %>
+            </div>
+            <div class="field">
+              <%= f.text_area :body, class: 'form-control rounded-0 mb-2 black-text', placeholder: 'Tulis Komentar di Sini!' %>
+            </div>
+            <%= recaptcha_tags %>
+            <button class="btn btn-info btn-block mt-4" type="submit" name="action">Kirim
+              <i class="material-icons right">send</i>
+            </button>
+          <% end %>
+        </div>
+    </div>
   </div>
+  <!-- Card -->
 </div>
+
