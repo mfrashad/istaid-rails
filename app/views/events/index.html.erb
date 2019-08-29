@@ -1,53 +1,41 @@
-<div class='blog text-center'>
+<div class='blog text-center container-fluid p-5'>
   <h1 class="center-align"> Kegiatan </h1>
+  <%= render 'layouts/searchbar' %>
+</div>
 
-  <div class="row">
-    <div class="col s6 offset-s3 container">
 
-      <div class="row">
-      <%= form_tag(events_path, method: :get) do %>
-        <div class="input-field">
-          <i class="material-icons prefix">search</i>
-          <%= text_field_tag :search %>
-          <label for="search">Cari Sesuatu</label>
-        </div>
-      <% end %>
-      </div>
-
-      <% if params[:search] %>
-        <h3> Hasil Pencarian dari "<%= params[:search] %>"</h3>
-      <% end %>
-
-      <div class="row center-align categories">
-        <%= link_to "Semua", events_path(search: params[:search]), class: "waves-effect waves-light btn" %>
-        <% @categories.each do |category| %>
-          <%= link_to "#{category.name}", events_path(category: category.name, search: params[:search]), class: "waves-effect waves-light btn" %>
+  <div class='d-flex flex-wrap justify-content-center'>
+    <% @events.each do |event| %>
+    
+    <div class="post card">
+      <!-- Card image -->
+      <div class="view overlay">
+        <% if event.thumbnail_url %>
+          <%= image_tag event.thumbnail.thumb.url, class: 'card-img-top img-fluid' %>
+        <% else %>
+          <%= image_tag 'missing-image.jpg', class: 'card-img-top img-fluid' %>
+        <% end %>
+        <%= link_to event do %>
+          <div class="mask rgba-white-slight"></div>
         <% end %>
       </div>
-      <h3 class="center-align"><%= params[:category] %></h3>
-    </div> 
-  </div>
 
-  <div class='flex-container'>
+      <!-- Card content -->
+      <div class="card-body">
 
-    <% @events.each do |event| %>
-    <%= link_to event do %>
-    <div class='event'>
-      <div class="card hoverable z-depth-1">
-        <div class="card-image">
-          <% unless event.thumbnail_url.nil? %><%= image_tag event.thumbnail.thumb.url, class: 'responsive-img' %><br /><% end %>
-        </div>
-        <div class="card-content">
-          <h5><b><%= event.title%></b></h5>
-          <p><%= event.summary %></p>
-        </div>
-        <div class="card-action">
-          <a href="<%=events_path(category: event&.category&.name, search: params[:search])%>"><%= event&.category&.name %></a>
-        </div>
+        <!-- Title -->
+        <h4 class="card-title"><b><%= event.title%></b></h4>
+        <!-- Text -->
+        <p class="card-text"><%= event.summary %></p>
+        <!-- Button -->
+        <a href="<%=posts_path(category: event&.category&.name, search: params[:search])%>" class="btn dark-gradient white-text"><%= event.category.name %></a>
+
       </div>
+
     </div>
+    <!-- Card -->
     <% end%>
-    <% end %>
+    
   </div>
   <div class="center">
     <%= will_paginate @events, renderer: @custom_paginate_renderer %>
