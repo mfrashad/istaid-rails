@@ -1,0 +1,18 @@
+<div id="<%= "reply-#{comment.id}" %>" class="card-panel reply reply-box" style="display:none;">
+  <%= form_for([comment, comment.comments.build], html: {class: 'text-center border border-light'}) do |f| %>
+  <%= f.hidden_field :post_id, value: comment.post_id %>
+    <div class="field">
+      <%= f.text_field :name, class: 'form-control mb-4 black-text', placeholder: 'Nama' %>
+    </div>
+    <div class="field">
+      <%= f.text_field :email, class: 'form-control mb-4 black-text', placeholder: 'Email' %>
+    </div>
+    <div class="field">
+      <%= f.text_area :body, class: 'form-control rounded-0 mb-2 black-text', placeholder: 'Tulis Komentar di Sini!' %>
+    </div>
+    <%= recaptcha_tags %>
+    <button class="btn btn-block mt-4 dark-gradient" type="submit" name="action">Kirim
+      <i class="material-icons right">send</i>
+    </button>
+  <% end %>
+</div>

@@ -29,7 +29,7 @@
       <!-- Text -->
       <p class="card-text"><%= @post.body.html_safe %></p>
       <!-- Button -->
-      <a href="<%=posts_path(category: @post&.category&.name, search: params[:search])%>" class="btn dark-gradient white-text"><%= @post.category.name %></a>
+      <a href="<%=posts_path(category: @post&.category&.name, search: params[:search])%>" class="btn dark-gradient"><%= @post.category.name %></a>
       <div class=" text-muted mt-4">
         <h4>Share This</h4>
         <%= social_share_button_tag(@post.title, url: request.original_url, image: @post.thumbnail.thumb.url , desc: @post.summary) %>
@@ -54,7 +54,7 @@
               <%= f.text_area :body, class: 'form-control rounded-0 mb-2 black-text', placeholder: 'Tulis Komentar di Sini!' %>
             </div>
             <%= recaptcha_tags %>
-            <button class="btn btn-info btn-block mt-4" type="submit" name="action">Kirim
+            <button class="btn btn-block mt-4 dark-gradient" type="submit" name="action">Kirim
               <i class="material-icons right">send</i>
             </button>
           <% end %>

@@ -27,10 +27,6 @@ input.form-control:focus {
   outline: none;
 }
 
-@media (max-width: 768px) {
-}
-
-
 .video {
   color: $text-color;
   .card {
@@ -59,30 +55,6 @@ input.form-control:focus {
   }
 }
 
-
-.comment-box {
-  width: 800px;
-  color: $invert-text-color;
-  .comment-header {
-    padding: 0px 20px;
-  }
-  .comment-content {
-    width: 600px;
-    padding: 5px 20px;
-    font-size: 1.5em;
-  }
-}
-
-.reply {
-  textarea {
-    min-height: 8rem;
-    color: white;
-  }
-  input {
-    color: white;
-  }
-}
-
 .inline-icons {
   vertical-align: bottom;
 
@@ -91,18 +63,6 @@ input.form-control:focus {
 //FORM
 #summary-textarea {
   height: 6rem;
-}
-
-.comment-avatar {
-  width: 100px;
-  height: 100px;
-}
-
-.comment-box {
-  .reply-box .comment-box {
-    width: 100%;
-    max-width: 800px;
-  }
 }
 
 .video iframe {
@@ -132,8 +92,38 @@ input.form-control:focus {
     margin: 0 80px;
   }
 
+  .card-footer {
+    padding: 0 80px;
+  }
+
   form {
     padding: 0 80px 30px;
+  }
+}
+
+.comments{
+  margin: 20px 0px;
+  .comment-box {
+    margin: 0px;
+    max-width: 600px;
+    padding: 0px;
+  
+    .card-body{
+      margin: 0 0 0 35px;
+      text-align: left;
+      padding: 0px;
+      .row{
+        div {
+          padding: 0px;
+        }
+      }
+    }
+  
+    .comment-avatar {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+    }
   }
 }
 
@@ -153,21 +143,38 @@ input.form-control:focus {
       margin: 0 10px;
     }
 
+    .card-footer {
+      padding: 10px 15px;
+    }
+
     form {
       padding: 0px 5px 30px;
     }
   }
 
-  .comment-box {
-    width: 800px;
-    color: $invert-text-color;
-    .comment-header {
-      padding: 0px 20px;
-    }
-    .comment-content {
-      width: 600px;
-      padding: 5px 20px;
-      font-size: 1.5em;
+
+  .comments{
+    .comment-box {
+      margin: 0px;
+      max-width: 600px;
+      padding: 0px;
+    
+      .card-body{
+        margin: 0 0 0 25px;
+        text-align: left;
+        padding: 0px;
+        .row{
+          div {
+            padding: 0px;
+          }
+        }
+      }
+    
+      .comment-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
     }
   }
 

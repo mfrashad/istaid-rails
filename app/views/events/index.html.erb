@@ -28,7 +28,7 @@
         <!-- Text -->
         <p class="card-text"><%= event.summary %></p>
         <!-- Button -->
-        <a href="<%=posts_path(category: event&.category&.name, search: params[:search])%>" class="btn dark-gradient white-text"><%= event.category.name %></a>
+        <a href="<%=posts_path(category: event&.category&.name, search: params[:search])%>" class="btn dark-gradient"><%= event.category.name %></a>
 
       </div>
 

@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new comment_params
     if verify_recaptcha(model: @comment) && @comment.save
-      redirect_to :back, notice: 'Your comment was successfully posted!'
+      redirect_back(fallback_location: root_path, notice: 'Your comment was successfully posted!')
     else
-      redirect_to :back, notice: "Your comment wasn't posted! #{@comment.errors.messages}"
+      redirect_back(fallback_location: root_path, notice: "Your comment wasn't posted! #{@comment.errors.messages}")
     end
   end
 
@@ -21,8 +21,8 @@ class CommentsController < ApplicationController
   end
 
   def find_commentable
-    @commentable = Post.find_by_id(params[:post_id]) if params[:post_id]
+    @commentable = Post.find_by_slug(params[:post_slug]) if params[:post_slug]
     @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
-    @commentable = Event.find_by_id(params[:event_id]) if params[:event_id]
+    @commentable = Event.find_by_slug(params[:event_slug]) if params[:event_slug]
   end
 end
