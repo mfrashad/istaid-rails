@@ -1,32 +1,34 @@
-<div class='blog text-center'>
-  <h1 class="center-align"> Galeri </h1>
-
-  <div class='flex-container'>
-
-    <% @galleries.each do |gallery| %>
-    <%= link_to gallery do %>
-    <div class='gallery-image'>
-      <div class="card hoverable z-depth-1">
-        <div class="card-image">
-          <% unless gallery.gallery_images.nil? %>
-            <a href="<%= gallery.gallery_images.first.image.url %>" data-lightbox="<%= gallery.id %>">
-              <%= image_tag gallery.gallery_images.first.image.thumb.url, class: 'thumbnail' %>
-            </a>
-            <% gallery.gallery_images.offset(1).each do |gallery_image| %>
-              <a href="<%= gallery_image.image.url %>" data-lightbox="<%= gallery.id %>" style="display:none;"></a>
-            <% end %>
-          <% end %>
-          <span class="card-title"><%= gallery.title%></span>
-        </div>
+<div class="d-flex flex-wrap justify-content-center" >
+  <% @galleries.each do |gallery| %>
+    
+    <div class="gallery card">
+      <!-- Card image -->
+      <% unless gallery.gallery_images.nil? %>
+        
+        <%= image_tag gallery.gallery_images.first.image.thumb.url, class: 'thumbnail' %>
+        <% gallery.gallery_images.offset(1).each do |gallery_image| %>
+          <a href="<%= gallery_image.image.url %>" data-lightbox="<%= gallery.id %>" style="display:none;"></a>
+        <% end %>
+      <% end %>
+      <!-- Card content -->
+      <div class="card-body text-center">
+        <!-- Title -->
+        <h6 class="card-title"><b><%= gallery.title%></b></h6>
+        <!-- Text -->
       </div>
+      <a href="<%= gallery.gallery_images.first.image.url %>" data-lightbox="<%= gallery.id %>" class="stretched-link">
+          
+        </a>
     </div>
-    <% end%>
-    <% end %>
-  </div>
-  <div class="center">
-    <%= will_paginate @galleries, renderer: @custom_paginate_renderer %>
-  </div>
+
+  <% end %>
+  <!-- Card -->
 </div>
+<div class="center">
+  <%= will_paginate @galleries, renderer: @custom_paginate_renderer %>
+</div>
+
+
 <script>
 $(document).ready(function(event) {
   lightbox.init();
