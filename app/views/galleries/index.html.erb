@@ -1,25 +1,22 @@
 <div class="d-flex flex-wrap justify-content-center" >
   <% @galleries.each do |gallery| %>
+  
     
-    <div class="gallery card">
-      <!-- Card image -->
+    <div class="card bg-dark text-white shadow m-2 border-0">
+      <%= link_to gallery.gallery_images.first.image.thumb.url, data: {lightbox: gallery.id} do%>
+        <div class="card-img-overlay d-flex align-items-center justify-content-center rounded dark-gradient">
+          <h2 class="card-title font-weight-bold"><%= gallery.title %></h2>
+        </div>
+      <% end %>
       <% unless gallery.gallery_images.nil? %>
-        
-        <%= image_tag gallery.gallery_images.first.image.thumb.url, class: 'thumbnail' %>
+        <%= image_tag gallery.gallery_images.first.image.thumb.url, class: 'card-img img-fluid' %>
         <% gallery.gallery_images.offset(1).each do |gallery_image| %>
           <a href="<%= gallery_image.image.url %>" data-lightbox="<%= gallery.id %>" style="display:none;"></a>
         <% end %>
       <% end %>
-      <!-- Card content -->
-      <div class="card-body text-center">
-        <!-- Title -->
-        <h6 class="card-title"><b><%= gallery.title%></b></h6>
-        <!-- Text -->
-      </div>
-      <a href="<%= gallery.gallery_images.first.image.url %>" data-lightbox="<%= gallery.id %>" class="stretched-link">
-          
-        </a>
+      
     </div>
+    
 
   <% end %>
   <!-- Card -->
@@ -30,7 +27,5 @@
 
 
 <script>
-$(document).ready(function(event) {
-  lightbox.init();
-});
+lightbox.init();
 </script>
