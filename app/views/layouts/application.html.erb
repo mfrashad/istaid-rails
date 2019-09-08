@@ -45,33 +45,33 @@
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item <%= current_class?('/') %>">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <%= current_class?('/blog') %>">
         <a class="nav-link" href="/blog">Buletin</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <%= current_class?('/tentang-kami') %>">
         <a class="nav-link" href="/tentang-kami">Tentang Kami</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <%= current_class?('/videos') %>">
         <a class="nav-link" href="/videos">Video</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <%= current_class?('/events') %>">
         <a class="nav-link" href="/events">Kegiatan</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <%= current_class?('/galleries') %>">
         <a class="nav-link" href="/galleries">Galeri</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <%= current_class?('/donate') %>">
         <a class="nav-link" href="/donate">Donasi</a>
       </li>
       <% if current_user&.admin? %>
-        <li class="nav-item">
+        <li class="nav-item <%= current_class?('/admin') %>">
           <a class="nav-link" href="/admin">Admin</a>
         </li>
       <% else %>
-        <li class="nav-item">
+        <li class="nav-item <%= current_class?('/login') %>">
           <a class="nav-link" href="/login">Login</a>
         </li>
       <% end %>
