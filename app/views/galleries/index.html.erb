@@ -2,10 +2,10 @@
   <% @galleries.each do |gallery| %>
   
     
-    <div class="card bg-dark text-white shadow m-2 border-0">
+    <div class="gallery card bg-dark text-white shadow m-3 border-0">
       <%= link_to gallery.gallery_images.first.image.thumb.url, data: {lightbox: gallery.id} do%>
-        <div class="card-img-overlay d-flex align-items-center justify-content-center rounded dark-gradient">
-          <h2 class="card-title font-weight-bold"><%= gallery.title %></h2>
+        <div class="card-img-overlay d-flex align-items-end justify-content-center rounded">
+          <p class="card-title font-weight-bold"><%= gallery.title %></p>
         </div>
       <% end %>
       <% unless gallery.gallery_images.nil? %>
