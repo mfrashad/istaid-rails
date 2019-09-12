@@ -1,8 +1,26 @@
-<div class="container">
-<h1 class='center'> <%= @video.title %></h1>
-  <div class="iframe-video">
-    <iframe class="youtube-vido" src="https://www.youtube.com/embed/<%=@video.youtube_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% if notice %>
+    <div id="notice">
+      <h2><%= notice %></h2>
+    </div>
+<% end %>
+<div class='d-flex flex-wrap justify-content-center'>
+  <div class="single-video card">
+    <!-- Card content -->
+    <div class="card-body">
+      <!-- Title -->
+      <h3 class="card-title text-center"><b><%= @video.title%></b></h3>
+      <div class="meta-info text-center">
+        <i class="inline-icons material-icons">today</i>
+        <span><%= @video.created_at.strftime('%B %e, %Y') %></span>
+      </div>
+      <div class="iframe-video mb-5">
+        <iframe class="youtube-vido" src="https://www.youtube.com/embed/<%=@video.youtube_id%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class=" text-muted mt-4">
+        <h4>Share This</h4>
+        <%= social_share_button_tag(@video.title, url: request.original_url, image: @video.thumbnail) %>
+      </div>
+    </div>
   </div>
-  <h4 class="white-text">Share This</h4>
-  <%= social_share_button_tag(@video.title, url: request.original_url, image: @video.thumbnail) %>
+  <!-- Card -->
 </div>

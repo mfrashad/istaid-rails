@@ -27,34 +27,6 @@ input.form-control:focus {
   outline: none;
 }
 
-.video {
-  color: $text-color;
-  .card {
-    margin: 20px;
-    background-color: white;
-    .card-image {
-      height: 300px;
-      background-color: white;
-      img {
-        width: auto;
-        height: 100%;
-      }
-    }
-    .card-content {
-      padding-top: 5px;
-      h5 {
-        color: $invert-text-color;
-      }
-      p {
-        color: $invert-text-color;
-      }
-    }
-    .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating){
-      color: $primary-color;
-    }
-  }
-}
-
 .inline-icons {
   vertical-align: bottom;
 
@@ -63,11 +35,6 @@ input.form-control:focus {
 //FORM
 #summary-textarea {
   height: 6rem;
-}
-
-.video iframe {
-  width: 560px;
-  height: 360px;
 }
 
 .post.card {
@@ -80,8 +47,9 @@ input.form-control:focus {
   }
 }
 
-.article {
-  margin: 50px;
+.article, .single-video {
+  width:100%;
+  margin: 50px 80px;
   img {
     width: 100%;
     height: 200px;
@@ -131,7 +99,9 @@ input.form-control:focus {
 }
 
 @media only screen and (max-width: 768px) {
-  .article {
+  .article, .single-video {
+    min-height: 95vh;
+    height: 100%;
     margin: 0px;
     img {
       width: 100%;
@@ -176,10 +146,5 @@ input.form-control:focus {
         border-radius: 50%;
       }
     }
-  }
-
-  .video iframe {
-    margin: 10px;
-    width: 300px;
   }
 }
