@@ -188,6 +188,14 @@ $share-icon-size: 40px;
   }
 }
 
+.nav-banner {
+  background-color: rgb(43, 90, 110);
+  background-image: url("https://image.freepik.com/free-vector/decorative-islamic-lamps-banner-with-text-space_1017-18118.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @media only screen and (max-width: 768px) {
   .img_prev {
     object-fit: cover;
