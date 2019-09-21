@@ -55,14 +55,14 @@ class ApplicationController < ActionController::Base
     # Return nice pagination for materialize
     Class.new(WillPaginate::ActionView::LinkRenderer) do
     def container_attributes
-      { class: "pagination" }
+      { class: "pagination justify-content-center" }
     end
 
     def page_number(page)
       if page == current_page
-        "<li class=\"cyan active\">"+link(page, page, rel: rel_value(page))+"</li>"
+        "<li class='page-item active'>"+link(page, page, rel: rel_value(page), class: "page-link")+"</li>"
       else
-        "<li class=\"waves-effect\">"+link(page, page, rel: rel_value(page))+"</li>"
+        "<li class='page-item'>"+link(page, page, rel: rel_value(page), class: "page-link")+"</li>"
       end
     end
 
@@ -78,9 +78,9 @@ class ApplicationController < ActionController::Base
 
     def previous_or_next_page(page, text)
       if page
-        "<li class=\"waves-effect\">"+link(text, page)+"</li>"
+        "<li class='page-item'>"+link(text, page, class:"page-link")+"</li>"
       else
-        "<li class=\"waves-effect\">"+text+"</li>"
+        "<li class='page-item disabled'>"+link(text, page, class:"page-link")+"</li>"
       end
     end
     end
