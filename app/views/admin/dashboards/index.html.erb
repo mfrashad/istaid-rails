@@ -1,14 +1,21 @@
-<div class="container">
-<h3 class="center"> Dashboards </h3>
-<div class='flex-container'>
+
+<h1 class="text-center mt-2"> Dashboards </h3>
+<div class='d-flex justify-content-center flex-wrap'>
   <% @dashboards.each do |dashboard| %>
     <%= link_to dashboard[:url] do %>
-      <div class="card-panel valign-center text-center hoverable margin-10 green">
-        <h3><%= dashboard[:title] %></h3>
+      <div class="dashboard card dark-gradient">
+        <!-- Card content -->
+        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+          <i class="<%= dashboard[:icon] %> mb-3 fa-4x"></i>
+          <!-- Title -->
+          <h2 class="card-title"><%= dashboard[:title] %></h2>
+          
+          <!-- Button -->
+        </div>
+
       </div>
-    <% end%>
+    <% end %>
   <% end %>
 </div>
 
-</div>
 </div>

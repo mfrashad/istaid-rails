@@ -3,10 +3,22 @@ h3 {
   color: $text-color;
 }
 
-.admin .pagination > li > a{
-  color: black;
-}
-
-.admin .pagination > li.active > a {
-  color: $text-color;
-}
+  .dashboard {
+    width: 200px;
+    height: 200px;
+    padding: 0px;
+    margin: 15px 40px;
+  }
+  .pagination > li > a{
+    color: black;
+  }
+  .pagination > li.active > a {
+    color: $text-color;
+  }
+  @media only screen and (max-width: 768px) {
+    .dashboard {
+      width: 180px;
+      height: 180px;
+      margin: 15px 10px;
+    }
+  }
