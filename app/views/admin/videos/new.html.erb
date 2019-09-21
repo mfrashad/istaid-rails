@@ -1,10 +1,15 @@
-<div class="container">
-<h1>New Video</h1>
-<%= link_to admin_videos_path, class:'btn waves-effect waves-light' do %>
-  <i class="material-icons left">arrow_back</i>Back
-<% end%>
-<br>
-<%= render 'form' %>
+<div class="card single-card">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <%= link_to admin_videos_path, class:'btn dark-gradient' do %>
+        <i class="fas fa-arrow-left"></i> Back
+      <% end%>
+      <h2 class="float-none text-center">New Video </h2>
+      <div></div>
+    </div>
+  <br>
+  <%= render 'form' %>
+  </div>
 </div>
 
 <%= javascript_include_tag Ckeditor.cdn_url%>
