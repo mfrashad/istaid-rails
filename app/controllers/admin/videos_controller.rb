@@ -5,7 +5,6 @@ class Admin::VideosController < Admin::BaseController
   # GET /posts.json
   def index
     @videos = Video.all.order("published_at DESC").paginate(page: params[:page], per_page: 20)
-    render(layout: "admin")
   end
 
   # GET /posts/1

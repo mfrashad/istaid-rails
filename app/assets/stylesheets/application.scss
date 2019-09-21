@@ -117,6 +117,7 @@ h1 {
   color: $text-color;
 }
 
+
 .social-share-button {
   .ssb-icon {
     background-size: $share-icon-size $share-icon-size;
@@ -138,9 +139,22 @@ h1 {
 	position: absolute;
 }
 
-.dark-gradient {
+.dark-gradient, .btn-primary, .active .page-link {
   background: linear-gradient(40deg, #0F2027, #203A43) !important;
+  //background: linear-gradient(40deg,#0ba360, #3cba92) !important;
+  //background: linear-gradient(40deg,#13547a, #80d0c7) !important;
   color: white;
+  border: none;
+}
+
+.second-gradient {
+  //background: linear-gradient(40deg, #0F2027, #203A43) !important;
+  background: linear-gradient(40deg,#13547a, #80d0c7) !important;
+  color: white;
+}
+
+.dark-gradient:hover {
+  color: #AAA;
 }
 
 $share-icon-size: 40px;
@@ -161,5 +175,32 @@ $share-icon-size: 40px;
     border-radius: 5px;
     height: $share-icon-size + 5;
     width: $share-icon-size + 5;
+  }
+}
+
+.card.single-card {
+  width:100%;
+  max-width: calc(100vw - 160px);
+  margin: 50px 80px;
+
+  .card-body {
+    margin: 0 80px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .img_prev {
+    object-fit: cover;
+    width: 80vw;
+  }
+
+  .card.single-card {
+    min-height: 95vh;
+    height: 100%;
+    max-width: 100vw;
+    margin: 0px;
+    .card-body {
+      margin: 0 10px;
+    }
   }
 }

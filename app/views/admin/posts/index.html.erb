@@ -1,33 +1,42 @@
-<div class="container">
-<h3> Posts </h3>
-<%= link_to admin_root_path, class:'btn waves-effect waves-light' do %>
-  <i class="material-icons left">arrow_back</i>Back
-<% end%>
-<div class="card-panel">
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Author</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.category.name %></td>
-        <td><%= post.user.name %> </td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
-        <td><%= link_to 'Destroy', [:admin, post], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<div class="center">
-    <%= will_paginate @posts, renderer: @custom_paginate_renderer %>
+
+
+<div class="card single-card">
+  
+  <div class="card-body m-0">
+    <div class="d-flex justify-content-between">
+      <%= link_to admin_root_path, class:'btn dark-gradient' do %>
+        <i class="material-icons left">arrow_back</i>Back
+      <% end%>
+      <h2 class="float-none text-center"> Posts </h2>
+      <%= link_to 'New Post', new_admin_post_path, class:'btn dark-gradient' %>
+    </div>
+    <div class="table-responsive text-nowrap">
+      <table class="table ">
+        <thead class="dark-gradient">
+          <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Author</th>
+            <th colspan="3" class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post| %>
+            <tr>
+              <td><%= post.title %></td>
+              <td><%= post.category.name %></td>
+              <td><%= post.user.name %> </td>
+              <td class="text-center"><%= link_to 'Show', post, class: "btn btn-link " %></td>
+              <td class="text-center"><%= link_to 'Edit', edit_admin_post_path(post), class: "btn btn-link" %></td>
+              <td class="text-center"><%= link_to 'Destroy', [:admin, post], class: "btn btn-link", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <div>
+    <div class="center">
+        <%= will_paginate @posts, renderer: @custom_paginate_renderer %>
+    </div>
+  </div>
 </div>
-<%= link_to 'New Post', new_admin_post_path, class:'btn waves-effect waves-light' %><br>
-</div>
-</div>
+
