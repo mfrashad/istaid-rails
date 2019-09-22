@@ -20,7 +20,6 @@
 //= require mdb
 //= require rails_sortable
 //= require ckeditor/init
-//= require lightbox
 //= require social-share-button
 //= require_tree .
 
