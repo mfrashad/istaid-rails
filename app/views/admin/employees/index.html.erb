@@ -1,29 +1,36 @@
-<div class="container">
-<h3> Staff </h3>
-<%= link_to admin_root_path, class:'btn waves-effect waves-light' do %>
-  <i class="material-icons left">arrow_back</i>Back
-<% end%>
-<div class="card-panel">
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Position</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody class="sortable">
-    <% @employees.each do |employee| %>
-      <tr id="<%= employee.sortable_id %>">
-        <td><%= employee.name %></td>
-        <td><%= employee.position %></td>
-        <td><%= link_to 'Show', employees_path %></td>
-        <td><%= link_to 'Edit', edit_admin_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', [:admin, employee], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'New employee', new_admin_employee_path, class:'btn waves-effect waves-light' %><br>
-</div>
+<div class="card single-card">  
+  <div class="card-body m-0">
+    <div class="d-flex justify-content-between">
+      <%= link_to admin_root_path, class:'btn dark-gradient' do %>
+        <i class="material-icons left">arrow_back</i>Back
+      <% end%>
+      <h2 class="float-none text-center"> Staffs </h2>
+      <%= link_to 'New employee', new_admin_employee_path, class:'btn dark-gradient' %>
+    </div>
+    <div class="table-responsive text-nowrap">
+      <table class="table ">
+        <thead class="dark-gradient">
+          <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th colspan="3" class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @employees.each do |employee| %>
+            <tr id="<%= employee.sortable_id %>">
+              <td><%= employee.name %></td>
+              <td><%= employee.position %></td>
+              <td class="text-center"><%= link_to 'Show', employees_path, class: "btn btn-link " %></td>
+              <td class="text-center"><%= link_to 'Edit', edit_admin_employee_path(employee), class: "btn btn-link" %></td>
+              <td class="text-center"><%= link_to 'Destroy', [:admin, employee], class: "btn btn-link", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <div>
+    <div class="center">
+        <%= will_paginate @employees, renderer: @custom_paginate_renderer %>
+    </div>
+  </div>
 </div>

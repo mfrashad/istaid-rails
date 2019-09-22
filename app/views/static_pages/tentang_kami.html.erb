@@ -1,23 +1,29 @@
-<div class="container tentang-kami">
-  <h1 class="center-align white-text"> <%= @static_page.name %></h1>
-  <div class="card-panel">
-    <%= @static_page.body.html_safe %>
-  </div>
+<div class='d-flex flex-wrap justify-content-center'>
+  <div class="article card">
+    <!-- Card image -->
+    <!-- Card content -->
+    <div class="card-body">
+      <!-- Title -->
+      <h3 class="card-title text-center"><b><%= @static_page.name %></b></h3>
+      <!-- Text -->
+      <p class="card-text"><%= @static_page.body.html_safe %></p>
+    </div>
+  <!-- Card -->
 </div>
 
-<div class="container center-align">
-  <h1> Tim Istaid </h1>
-  <div class="flex-container <%= "sortable" if current_user&.admin? %> ">
-    <% @employees.each do |employee| %>
-    <div class="card person-card" id="<%= employee.sortable_id %>">
-      <div class="card-image">
-          <%= image_tag employee.image.thumb.url %>
-        </div>
-        <div class="card-action">
-          <h6><%= employee.name %></h6>
-          <b><%= employee.position %></b>
-        </div>
+<div class="d-flex flex-wrap justify-content-center <%= 'sortable' if current_user&.admin? %>" >
+  <% @employees.each do |employee| %>
+    <div class="employee card" id="<%= employee.sortable_id %>">
+      <!-- Card image -->
+      <%= image_tag employee.image.thumb.url %>
+      <!-- Card content -->
+      <div class="card-body text-center">
+        <!-- Title -->
+        <h6 class="card-title"><b><%= employee.name %></b></h6>
+        <!-- Text -->
+        <p class="card-text"><%= employee.position %></p>
       </div>
-    <% end%>
-  </div>
+    </div>
+  <% end%>
+  <!-- Card -->
 </div>

@@ -15,12 +15,14 @@
 //= require jquery-ui/widgets/sortable
 //= require jquery-fileupload/basic
 //= require jquery-ui/widgets/sortable
+//= require popper.min
+//= require bootstrap
+//= require mdb
 //= require rails_sortable
 //= require ckeditor/init
 //= require lightbox
 //= require social-share-button
 //= require_tree .
-//= require materialize
 
 function image_preview(input, width, height) {
   if (input.files && input.files[0]) {
@@ -37,7 +39,10 @@ function image_preview(input, width, height) {
 }
 
 $(document).ready(function(){
-  $('.sidenav').sidenav();
+  $('img').error(function() {
+    $(this).attr('src', '/images/missing-image.jpg');
+  });
+
   $('select').formSelect();
   $('.carousel.carousel-slider').carousel({
     fullWidth: true,

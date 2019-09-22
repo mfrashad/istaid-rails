@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.person-card.card {
-    width: 250px;
-    height: 400px;
-    img {
-      max-width: 250px;
-      height: 300px;
-      max-height: 300px;
-    }
-    margin: 20px;
+.employee.card {
+  width: 250px;
+  height: 400px;
+  margin: 20px;
+  img {
+    max-width: 250px;
+    height: 300px;
+    max-height: 300px;
   }
+}

@@ -13,6 +13,8 @@
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400%7CSource+Sans+Pro:700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+
   <%= favicon_link_tag 'favicon.ico' %>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -27,52 +29,65 @@
 
 
 </head>
-<body>
-<div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper">
-      <a href="/" class="left hide-on-med-and-down"><h5>ISTAID (Islamic Thought and Information for Da'wah)</h5></a>
-      <a href="/" class="center brand-logo">
-        <%= image_tag "white-istaid-logo-100.png"%>
-      </a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/blog">Buletin</a></li>
-        <li><a href="/tentang-kami">Tentang Kami</a></li>
-        <li><a href="/videos">Video</a></li>
-        <li><a href="/events">Kegiatan</a></li>
-        <li><a href="/galleries">Galeri</a></li>
-        <li><a href="/donate">Donasi</a></li>
-        <% if current_user&.admin? %>
-          <li><a href="/admin">Admin</a></li>
-        <% else %>
-          <li><a href="/login">Login</a></li>
-        <% end %>
-        <%# <li>
-          <div class="center row">
-            <div class="col s12 " >
-              <div class="row" id="topbarsearch">
-                <div class="input-field col s6 s12">
-                  <i class="material-icons prefix">search</i>
-                  <input type="text" placeholder="Search" id="autocomplete-input" class="autocomplete" >
-                </div>
-              </div>
-            </div>
-          </div>
-        </li> %>
-      </ul>
-    </div>
-  </nav>
-</div>
+<body class="grey lighten-4">
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-gradient">
 
-<ul class="sidenav" id="mobile-demo">
-  <li><a href="/">Buletin</a></li>
-  <li><a href="/tentang-kami">Tentang Kami</a></li>
-  <li><a href="/videos">Video</a></li>
-  <li><a href="/events">Kegiatan</a></li>
-  <li><a href="/galleries">Galeri</a></li>
-  <li><a href="/donate">Donasi</a></li>
-</ul>
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="/">ISTAID</a>
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item <%= current_class?('/') %>">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item <%= current_class?('/blog') %>">
+        <a class="nav-link" href="/blog">Buletin</a>
+      </li>
+      <li class="nav-item <%= current_class?('/tentang-kami') %>">
+        <a class="nav-link" href="/tentang-kami">Tentang Kami</a>
+      </li>
+      <li class="nav-item <%= current_class?('/videos') %>">
+        <a class="nav-link" href="/videos">Video</a>
+      </li>
+      <li class="nav-item <%= current_class?('/events') %>">
+        <a class="nav-link" href="/events">Kegiatan</a>
+      </li>
+      <li class="nav-item <%= current_class?('/galleries') %>">
+        <a class="nav-link" href="/galleries">Galeri</a>
+      </li>
+      <li class="nav-item <%= current_class?('/donate') %>">
+        <a class="nav-link" href="/donate">Donasi</a>
+      </li>
+      <% if current_user&.admin? %>
+        <li class="nav-item <%= current_class?('/admin') %>">
+          <a class="nav-link" href="/admin">Admin</a>
+        </li>
+      <% else %>
+        <li class="nav-item <%= current_class?('/login') %>">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      <% end %>
+
+    </ul>
+    <!-- Links -->
+
+    <%= image_tag "white-istaid-logo-50.png", class: "mt-2" %>
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+</div>
 <%= yield %>
 <% if notice %>
 <script>M.toast({html: '<%= notice %>' });</script>

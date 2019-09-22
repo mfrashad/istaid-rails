@@ -3,3 +3,23 @@
   width: 400px;
   height: 300px;
 }
+
+.card.gallery, .card.video {
+  border-radius: 20px;
+  .card-img-overlay {
+    color: #fff;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    opacity: 1;
+    transition: opacity 1s;
+  }
+  .card-img-overlay:hover {
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+}
+
+
+

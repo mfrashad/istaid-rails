@@ -1,42 +1,24 @@
-<div class="comment-box card-panel">
-  <div class="valign-wrapper">
-    <div class="comment-left left">
-      <%= image_tag "anonymous-avatar.jpg", class: "comment-avatar circle responsive-img large"%>
+<div class="comment-box">
+  <div class="card-body">
+    
+    <div class="row">
+        <div class="col-2 col-md-2 col-sm-0">
+          <%= image_tag "anonymous-avatar.jpg", class: "comment-avatar"%>
+        </div>
+        <div class="comment-content col-10 col-md-10 col-sm-12">
+          <h5 class="card-title"><%= comment.name %></h5>
+          <p class="card-text"><%= comment.body %></p>
+          <span class="float-left"><%= comment.persisted? ? time_ago_in_words(comment.created_at) : '0 minutes'%> ago </span>
+          <a href="#!" class="btn btn-primary float-right reply-button" data-id="<%= comment.id %>">Reply</a>
+        </div>
+        
     </div>
-    <div class="comment-right right">
-      <div class="comment-header">
-        <h6><%= comment.name %><h6>
-        <span><%= time_ago_in_words(comment.created_at) %> ago </span>
-        <button type='button' class="right reply-button btn waves-effect waves-light" data-id="<%= comment.id %>" >Balas</button>
-      </div>
-      <div class="comment-content">
-        <p> <%= comment.body %></p>
-      </div>
+    <%= render(partial: 'comments/comment_form', locals: {comment: comment}) if comment.persisted?%>
+    <div class="reply-box">
+      <% comment.comments.each do |comment| %>
+        <%= render partial: 'comments/comment', locals: { comment: comment } if comment.persisted? %>
+      <% end %>
     </div>
-  </div>
-  <div class="reply-box">
-    <%= render partial: 'comments/comment', collection: comment.comments %>
-  </div>
-  <div id="<%= "reply-#{comment.id}" %>" class="card-panel reply reply-box" style="display:none;">
-    <%= form_for [comment, comment.comments.build] do |f| %>
-      <%= f.hidden_field :post_id, value: comment.post_id%>
-      <div class="field">
-        <%= f.label :name, 'Nama' %><br>
-        <%= f.text_field :name %>
-      </div>
-      <div class="field">
-        <%= f.label :email %><br>
-        <%= f.text_field :email %>
-      </div>
-      <div class="field">
-        <%= f.label :body, 'Isi Komentar' %><br>
-        <%= f.text_area :body, class: 'materialize-textarea', placeholder: 'Write your comment here!' %>
-      </div>
-      <%= recaptcha_tags %>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Kirim
-        <i class="material-icons right">send</i>
-      </button>
-    <% end %>
+    
   </div>
 </div>
-<br>

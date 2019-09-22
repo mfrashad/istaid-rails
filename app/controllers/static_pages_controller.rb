@@ -2,6 +2,6 @@ class StaticPagesController < ApplicationController
   def show
     @static_page = StaticPage.find_by_slug(params[:page])
     @employees = Employee.order(:sort).all
-    render params[:page].underscore.parameterize('_')
+    render params[:page].underscore.parameterize(separator:'_')
   end
 end

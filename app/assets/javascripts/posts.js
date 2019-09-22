@@ -4,6 +4,7 @@
 $(document).ready(function(){
   $(".comment-box .reply-button").unbind("click").on("click", function(e){
     e.preventDefault()
+    console.log('show')
     $("#reply-"+this.dataset.id).toggle()
   })
 })

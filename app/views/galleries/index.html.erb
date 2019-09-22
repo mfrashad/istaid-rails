@@ -1,34 +1,29 @@
-<div class='blog text-center'>
-  <h1 class="center-align"> Galeri </h1>
-
-  <div class='flex-container'>
-
+<div class="fluid-container text-center">
+  <h2 class="center-align mt-3"> Galeri </h2>
+  <div class="d-flex flex-wrap justify-content-center" >
     <% @galleries.each do |gallery| %>
-    <%= link_to gallery do %>
-    <div class='gallery-image'>
-      <div class="card hoverable z-depth-1">
-        <div class="card-image">
-          <% unless gallery.gallery_images.nil? %>
-            <a href="<%= gallery.gallery_images.first.image.url %>" data-lightbox="<%= gallery.id %>">
-              <%= image_tag gallery.gallery_images.first.image.thumb.url, class: 'thumbnail' %>
-            </a>
-            <% gallery.gallery_images.offset(1).each do |gallery_image| %>
-              <a href="<%= gallery_image.image.url %>" data-lightbox="<%= gallery.id %>" style="display:none;"></a>
-            <% end %>
+
+
+      <div class="gallery card bg-dark text-white shadow m-3 border-0">
+        <%= link_to gallery.gallery_images.first.image.thumb.url, data: {lightbox: gallery.id} do%>
+          <div class="card-img-overlay d-flex align-items-end justify-content-center rounded">
+            <p class="card-title font-weight-bold"><%= gallery.title %></p>
+          </div>
+        <% end %>
+        <% unless gallery.gallery_images.nil? %>
+          <%= image_tag gallery.gallery_images.first.image.thumb.url, class: 'card-img img-fluid' %>
+          <% gallery.gallery_images.offset(1).each do |gallery_image| %>
+            <a href="<%= gallery_image.image.url %>" data-lightbox="<%= gallery.id %>" style="display:none;"></a>
           <% end %>
-          <span class="card-title"><%= gallery.title%></span>
-        </div>
+        <% end %>
       </div>
-    </div>
-    <% end%>
     <% end %>
+    <!-- Card -->
   </div>
-  <div class="center">
-    <%= will_paginate @galleries, renderer: @custom_paginate_renderer %>
-  </div>
+  <%= will_paginate @galleries, renderer: @custom_paginate_renderer %>
 </div>
+
+
 <script>
-$(document).ready(function(event) {
-  lightbox.init();
-});
+lightbox.init();
 </script>

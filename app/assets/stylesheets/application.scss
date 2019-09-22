@@ -10,19 +10,25 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *= require social-share-button
+ *= require bootstrap
+ *= require mdb
  *= require_tree .
  *= require_self
  */
 @import "lightbox";
-@import "materialize/components/color-variables";
 //@import "social-share-button";
 @import 'shared';
 // $secondary-color: color("yellow", "base") !default;
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
-@import "materialize";
+@import "bootstrap";
+@import "font-awesome";
 
 //social share button size
-$size: 30px;
+$share-icon-size: 30px;
+@font-face {
+  font-family: 'Montserrat';
+  src: font-url('Montserrat-Regular.ttf') format('truetype');
+}
 
 @font-face {
   font-family: 'BrandonText';
@@ -63,8 +69,9 @@ $size: 30px;
 
 body {
     margin: 0px;
-    font-family: 'BrandonText', 'Roboto';
+    font-family: 'Roboto', 'Montserrat','BrandonText', ;
     background-color: $background-color;
+    color: $text-color;
 }
 
 nav {
@@ -110,11 +117,12 @@ h1 {
   color: $text-color;
 }
 
+
 .social-share-button {
   .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
+    background-size: $share-icon-size $share-icon-size;
+    height: $share-icon-size;
+    width: $share-icon-size;
   }
 }
 
@@ -129,4 +137,84 @@ h1 {
 	width: 100%;
 	height: 100%;
 	position: absolute;
+}
+
+.navbar-gradient {
+  background: linear-gradient(40deg, #1C2F45, #010102) !important;
+  color: white;
+}
+
+.dark-gradient, .btn-primary, .active .page-link {
+  //background: linear-gradient(40deg, #0F2027, #203A43) !important;
+  background: linear-gradient(40deg, #1C2F45, #111D2A) !important;
+  //background: linear-gradient(40deg,#0ba360, #3cba92) !important;
+  //background: linear-gradient(40deg,#13547a, #80d0c7) !important;
+  color: white;
+  border: none;
+}
+
+.second-gradient {
+  //background: linear-gradient(40deg, #0F2027, #203A43) !important;
+  background: linear-gradient(40deg,#13547a, #80d0c7) !important;
+  color: white;
+}
+
+.dark-gradient:hover {
+  color: #AAA;
+}
+
+$share-icon-size: 40px;
+.social-share-button {
+  .ssb-icon {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 8px 10px;
+    background-size: $share-icon-size;
+    border-radius: 5px;
+    height: $share-icon-size;
+    width: $share-icon-size;
+  }
+
+  .ssb-icon:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 3px 5px;
+    background-size: $share-icon-size+ 5;
+    border-radius: 5px;
+    height: $share-icon-size + 5;
+    width: $share-icon-size + 5;
+  }
+}
+
+.card.single-card {
+  width:100%;
+  max-width: calc(100vw - 160px);
+  margin: 50px 80px;
+
+  .card-body {
+    margin: 0 80px;
+  }
+}
+
+.nav-banner {
+  background-color: rgb(43, 90, 110);
+  background-image: url("islamic-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 768px) {
+  .img_prev {
+    object-fit: cover;
+    width: 80vw;
+  }
+
+  .card.single-card {
+    min-height: 95vh;
+    height: 100%;
+    max-width: 100vw;
+    margin: 0px;
+    .card-body {
+      margin: 0 10px;
+    }
+  }
 }

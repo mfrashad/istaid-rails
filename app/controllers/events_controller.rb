@@ -2,8 +2,14 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i(show edit update destroy)
 
   def index
+    @form_url = events_path
+    @search_url = events_path(search: params[:search])
+    @tag_urls = {}
     @events = get_events
     @categories = Category.event
+    for category in @categories
+      @tag_urls[category.name] = events_path(category: category.name, search: params[:search])
+    end
   end
 
   def show

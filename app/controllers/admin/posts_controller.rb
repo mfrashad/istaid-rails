@@ -6,7 +6,6 @@ class Admin::PostsController < Admin::BaseController
   def index
     @posts = get_posts
     @categories = Category.all.order("published_at DESC")
-    render(layout: "admin")
   end
 
   # GET /posts/1

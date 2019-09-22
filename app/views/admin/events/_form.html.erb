@@ -15,42 +15,35 @@
   <% end %>
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control mb-4" %>
   </div>
   <div class="field">
     <%= f.label :published_at %><br>
-    <%= f.date_field :published_at, value: @event&.published_at.nil? ? Date.today : @event.published_at.to_date %>
+    <%= f.date_field :published_at, value: @event&.published_at.nil? ? Date.today : @event.published_at.to_date, class: "form-control mb-4" %>
   </div>
   <div class="input-field">
     <%= f.label :category_id %><br>
-    <%= f.collection_select(:category_id, Category.event, :id, :name) %>
+    <%= f.collection_select(:category_id, Category.event, :id, :name, {}, class: 'browser-default custom-select mb-4') %>
   </div>
   <div class="input-field">
     <%= f.label :gallery_id %><br>
-    <%= f.collection_select(:gallery_id, Gallery.all, :id, :title, include_blank: true) %>
+    <%= f.collection_select(:gallery_id, Gallery.all, :id, :title, {}, class: 'browser-default custom-select mb-4', include_blank: true) %>
   </div>
-  <%= image_tag(@event.thumbnail.thumb.url, class: 'img_prev', style: ('display:none;' if @event.thumbnail.nil? )) %>
-  <div class="file-field input-field">
-    <div class="btn">
-      <span>Image</span>
-      <%= f.file_field :thumbnail, onchange: 'image_preview(this);' %>
-    </div>
-    <div class="file-path-wrapper">
-      <input class="file-path validate" type="text" placeholder="Upload the thumbnail here">
-    </div>
+  <%= image_tag(@event.thumbnail.thumb.url, class: 'img_prev mb-4', style: ('display:none;' if @event.thumbnail.nil? )) %>
+  <div class="custom-file mb-4">
+    <%= f.file_field :thumbnail, onchange: 'image_preview(this);', class: 'custom-file-input' %>
+    <label class="custom-file-label" for="customFile">Choose file</label>
   </div>
   <div class="field">
     <%= f.label :summary %><br>
-    <%= f.text_area :summary, class: "materialize-textarea", id: "summary-textarea", data: { length: 300 }, placeholder: "Write the event summary here" %>
+    <%= f.text_area :summary, class: "form-control", id: "summary-textarea", data: { length: 300 }, placeholder: "Write the event summary here" %>
   </div>
   <div class="field">
     <%= f.label :body %><br>
     <%= f.cktext_area :body, class: 'someclass', rows: 40, ckeditor: { language: 'us' } %>
   </div>
   <br>
-  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
+  <button class="btn btn-primary btn-block btn-lg mb-4" type="submit" name="action">SUBMIT <i class="fas fa-paper-plane ml-1"></i></button>
 <% end %>
 </div>
 <script>

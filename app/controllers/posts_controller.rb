@@ -5,13 +5,25 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def home
+    @form_url = posts_path
+    @search_url = posts_path(search: params[:search])
+    @tag_urls = {}
     @posts = get_posts
     @categories = Category.post
+    for category in @categories
+      @tag_urls[category.name] = posts_path(category: category.name, search: params[:search])
+    end
   end
 
   def index
+    @form_url = posts_path
+    @search_url = posts_path(search: params[:search])
+    @tag_urls = {}
     @posts = get_posts
     @categories = Category.post
+    for category in @categories
+      @tag_urls[category.name] = posts_path(category: category.name, search: params[:search])
+    end
   end
 
   # GET /posts/1
