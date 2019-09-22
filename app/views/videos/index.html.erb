@@ -3,7 +3,7 @@
 
   <div class="d-flex flex-wrap justify-content-center" >
     <% @videos.each do |video| %>  
-      <div class="video card bg-dark text-white shadow m-3 border-0">
+      <div class="video card bg-dark text-white shadow m-3 border-0" data-aos="fade-up">
         <%= link_to video do%>
           <div class="card-img-overlay d-flex align-items-end justify-content-center rounded">
             <p class="card-title font-weight-bold"><%= video.title %></p>

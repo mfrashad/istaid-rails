@@ -7,7 +7,7 @@
 <div class='header-banner flex-container container-fluid mt-5'>
     <% @menus.each do |menu| %>
     <%= link_to menu[:url] do%>
-    <div class="card bg-dark text-white shadow m-2 border-0">
+    <div class="card bg-dark text-white shadow m-2 border-0" data-aos="fade-up">
       <%= cl_image_tag(menu[:image_url], class: 'card-img img-fluid', aspect_ratio: "16:9", width: 400, height: 250,
                            :crop => :fill) %>
       <div class="card-img-overlay d-flex align-items-center justify-content-center rounded dark-gradient">

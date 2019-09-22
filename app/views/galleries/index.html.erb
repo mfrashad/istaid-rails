@@ -2,9 +2,7 @@
   <h2 class="center-align mt-3"> Galeri </h2>
   <div class="d-flex flex-wrap justify-content-center" >
     <% @galleries.each do |gallery| %>
-
-
-      <div class="gallery card bg-dark text-white shadow m-3 border-0">
+      <div class="gallery card bg-dark text-white shadow m-3 border-0" data-aos="fade-up">
         <%= link_to gallery.gallery_images.first.image.thumb.url, data: {lightbox: gallery.id} do%>
           <div class="card-img-overlay d-flex align-items-end justify-content-center rounded">
             <p class="card-title font-weight-bold"><%= gallery.title %></p>
