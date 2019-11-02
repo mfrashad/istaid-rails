@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: bfe47345606e5dc977f8928d9d9db207232671d6
+  specs:
+    ckeditor (5.0.0)
+      orm_adapter (~> 0.5.0)
+
+GIT
   remote: git@github.com:mfrashad/social-share-button.git
   revision: 485eb4449d1d373a6c456089ff6a62abaefaf1fc
   specs:
@@ -86,8 +93,6 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    ckeditor (5.0.0)
-      orm_adapter (~> 0.5.0)
     cloudinary (1.9.1)
       aws_cf_signer
       rest-client
@@ -280,7 +285,7 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-yarn
   carrierwave
-  ckeditor
+  ckeditor!
   cloudinary
   dotenv-rails
   ed25519

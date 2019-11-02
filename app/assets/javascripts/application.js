@@ -19,7 +19,7 @@
 //= require bootstrap
 //= require mdb
 //= require rails_sortable
-//= require ckeditor/init
+//= require ckeditor/config
 //= require social-share-button
 //= require_tree .
 

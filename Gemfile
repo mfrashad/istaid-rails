@@ -41,7 +41,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem "mini_magick"
 gem 'puma'
-gem 'ckeditor'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 gem "jquery-fileupload-rails"
 gem 'lightbox2-rails'
 gem 'simple_form'
