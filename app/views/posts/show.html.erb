@@ -27,7 +27,7 @@
         <span><%= @post.user.name %></span>
       </div>
       <!-- Text -->
-      <p class="card-text"><%= @post.body.html_safe %></p>
+      <%= @post.body.html_safe %>
       <!-- Button -->
       <a href="<%=posts_path(category: @post&.category&.name, search: params[:search])%>" class="btn dark-gradient"><%= @post.category.name %></a>
       <div class=" text-muted mt-4">
