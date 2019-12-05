@@ -1,4 +1,4 @@
-class CreateGalleryImages < ActiveRecord::Migration[4.0]
+class CreateGalleryImages < ActiveRecord::Migration[4.2]
   def change
     create_table :gallery_images do |t|
       t.string :image

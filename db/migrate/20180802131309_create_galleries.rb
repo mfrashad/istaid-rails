@@ -1,4 +1,4 @@
-class CreateGalleries < ActiveRecord::Migration[4.0]
+class CreateGalleries < ActiveRecord::Migration[4.2]
   def change
     create_table :galleries do |t|
       t.string :title
