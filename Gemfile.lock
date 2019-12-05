@@ -6,7 +6,7 @@ GIT
       orm_adapter (~> 0.5.0)
 
 GIT
-  remote: git@github.com:mfrashad/social-share-button.git
+  remote: https://github.com/mfrashad/social-share-button.git
   revision: 485eb4449d1d373a6c456089ff6a62abaefaf1fc
   specs:
     social-share-button (1.1.0)
@@ -97,9 +97,9 @@ GEM
       aws_cf_signer
       rest-client
     coderay (1.1.2)
-    coffee-rails (4.2.2)
+    coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0)
+      railties (>= 5.2.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs

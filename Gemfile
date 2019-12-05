@@ -46,7 +46,7 @@ gem "jquery-fileupload-rails"
 gem 'lightbox2-rails'
 gem 'simple_form'
 gem "recaptcha"
-gem 'social-share-button', git: 'git@github.com:mfrashad/social-share-button.git'
+gem 'social-share-button', git: 'https://github.com/mfrashad/social-share-button.git'
 gem 'meta-tags'
 
 gem 'ed25519'
