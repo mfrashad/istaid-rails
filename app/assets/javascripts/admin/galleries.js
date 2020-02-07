@@ -27,7 +27,7 @@ readURL = function(input) {
   }
 };
 
-$(document).ready(function(){
+$(window).load(function(){
   $('#new_gallery_image').fileupload({
     dataType: 'script'
   })
