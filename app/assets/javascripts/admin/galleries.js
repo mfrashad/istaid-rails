@@ -27,12 +27,6 @@ readURL = function(input) {
   }
 };
 
-$(window).load(function(){
-  $('#new_gallery_image').fileupload({
-    dataType: 'script'
-  })
-})
-
 
 
 removeURL = function(remove_button, input) {
