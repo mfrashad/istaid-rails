@@ -114,7 +114,7 @@ GEM
     ed25519 (1.2.4)
     erubi (1.8.0)
     execjs (2.7.0)
-    ffi (1.9.23)
+    ffi (1.11.3)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
     globalid (0.4.2)
